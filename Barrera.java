@@ -14,3 +14,5 @@ public class Barrera {
 // tenemos un semaforo de capacidad iniciado a 3. 
 // entra y disminuye el semaforo, asi hasta que esta en 0. 
 // cuando esta a 0 termine, cuando estos que salen. hacen un release. 
+// cada vez que vayamos a usar una variable critica, tenemos que 
+// hacerlo en mutex. 

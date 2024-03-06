@@ -12,4 +12,18 @@ public abstract class Hilo extends Thread {
         int duracion = min + (int) (Math.random() * (max - min));
         Pausa(duracion);
     }
+
+    public void Join() {
+        try {
+            join();
+        } catch (Exception e) {
+            System.err.println(e);
+            System.exit(-1);
+        }
+    }
+
+    // Join
+    // adquit
+    // release
+
 }

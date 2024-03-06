@@ -33,16 +33,42 @@ public class Veiga {
     public static final int TMIN_RECOLECTAR_GUANO = 1000;
     public static final int TMAX_RECOLECTAR_GUANO = 5000;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         // Crear NMeigas. que son 30, 30 objetos de meigas.
         // uno de, Marxua, y de seforiano.
+        
+        Seforiano Seforiano = new Seforiano();
+        Marxua Marxua = new Marxua();
         // estos escriben durante 1s
 
-        // crear un hilo de anton este estara en bucle infinito
+        Meigas[] Megias_Array = new Meigas[N_MEIGAS];
 
-        // y esperar que terminen los 32 hilos
-        // una vez estos terminen.
+        Seforiano.start();
+        Marxua.start();
+
+        for (int i = 0; i < N_MEIGAS; i++) {
+
+            Megias_Array[i].start();
+
+        }
+
+        // crear un hilo de anton este estara en bucle infinito
+        TioAnton Anton = new TioAnton();
+
+        Anton.start();
+
+
+        Seforiano.join();
+        Marxua.join();
+        for (int i = 0; i < N_MEIGAS; i++) {
+
+            Megias_Array[i].join();
+
+        }
+
+        // Una vez que esto termine avisar de que tenemos que 
+        // acabar en el tio anton. 
 
     }
 
