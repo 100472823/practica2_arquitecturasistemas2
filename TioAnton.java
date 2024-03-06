@@ -18,7 +18,7 @@ public class TioAnton extends Hilo {
 
     public void end() {
 
-        end_tioAnton = 0;
+        end_tioAnton = 1;
 
     }
 
