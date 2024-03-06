@@ -9,3 +9,8 @@ public class Barrera {
 // esto sera un fifo en principio
 // abrira, con capacidad 2. Con 2 meigas. 
 // avanza y lo siguiente es embarcar
+
+
+// tenemos un semaforo de capacidad iniciado a 3. 
+// entra y disminuye el semaforo, asi hasta que esta en 0. 
+// cuando esta a 0 termine, cuando estos que salen. hacen un release. 
