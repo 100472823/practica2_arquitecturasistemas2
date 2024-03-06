@@ -1,10 +1,8 @@
 public class Marxua extends Hilo {
 
-    private Trazador trazador= new Trazador(2, "Marxua");
+    private Trazador trazador = new Trazador(2, "Marxua");
 
     public Marxua() {
-
-        this.trazador = trazador;
 
     }
 

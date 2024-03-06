@@ -32,12 +32,13 @@ public class Veiga {
     public static final int TMAX_RECOLECTAR_PLUMA = 5000;
     public static final int TMIN_RECOLECTAR_GUANO = 1000;
     public static final int TMAX_RECOLECTAR_GUANO = 5000;
+    // variables globales propias
 
     public static void main(String[] args) throws InterruptedException {
 
         // Crear NMeigas. que son 30, 30 objetos de meigas.
         // uno de, Marxua, y de seforiano.
-        
+
         Seforiano Seforiano = new Seforiano();
         Marxua Marxua = new Marxua();
         // estos escriben durante 1s
@@ -48,7 +49,7 @@ public class Veiga {
         Marxua.start();
 
         for (int i = 0; i < N_MEIGAS; i++) {
-
+            Megias_Array[i] = new Meigas(i);
             Megias_Array[i].start();
 
         }
@@ -58,17 +59,21 @@ public class Veiga {
 
         Anton.start();
 
-
         Seforiano.join();
         Marxua.join();
         for (int i = 0; i < N_MEIGAS; i++) {
-            Megias_Array[i] = new Meigas(i)
             Megias_Array[i].join();
 
         }
 
-        // Una vez que esto termine avisar de que tenemos que 
-        // acabar en el tio anton. 
+        // una vez que estas han terminado, que terminen todas las demas
+
+        Anton.end();
+
+        Anton.join();
+
+        // Una vez que esto termine avisar de que tenemos que
+        // acabar en el tio anton.
 
     }
 
