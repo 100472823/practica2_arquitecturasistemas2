@@ -62,7 +62,7 @@ public class Veiga {
         Seforiano.join();
         Marxua.join();
         for (int i = 0; i < N_MEIGAS; i++) {
-
+            Megias_Array[i] = new Meigas(i)
             Megias_Array[i].join();
 
         }
