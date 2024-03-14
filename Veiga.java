@@ -1,3 +1,4 @@
+import java.util.concurrent.Semaphore;
 
 public class Veiga {
 
@@ -45,6 +46,8 @@ public class Veiga {
 
         Meigas[] Megias_Array = new Meigas[N_MEIGAS];
 
+        Colas Colas = new Colas();
+
         Seforiano.start();
         Marxua.start();
 
@@ -55,11 +58,42 @@ public class Veiga {
         }
 
         // crear un hilo de anton este estara en bucle infinito
+        // Tio Anton se muere de viejo, y sera cuando el programa principal lo decida
         TioAnton Anton = new TioAnton();
 
         Anton.start();
 
+        // Como funciona el tema de los hilos, por que si anton esta esperando ????
+        // si el main, sigue fucnionando con anton.barcaAnton.embarco; ???????
+
+        // Quien se esta metiendo en la barca. // HAce falta saber quien ??????????
+
+        Colas.AñadirColaEmbarcadero();
+        // Cuando alguien quiera añadirse a la cola del embarcadero.
+        // metodo embarcadero, y playa
+
+        // Gestionar colas Embarcadero y Playa con Cola Barca.
+
+        // Cuando alguien quiera entrar ya sea en el embarcadero o en la playa,
+        // 1 pasaran por las colas de los sitios y cuando la barca,
+        // se encuentre en este, pasaran a la barca
+
+        // Estaria en bucle;
+        Cola.BarcaEnEmbarcadero();
+        Cola.BarcaEnLaPlaya();
+
+        if (Anton.status == Anton.playa) {
+
+            // Comprobamos el numero de personas en la barca
+            // Comprobamos el numero de personas en la cola del Playa.
+            // Si hay personas esperando en la playa
+            // pasaran, las que puedan, a la barca
+            // Resto quedan esperando en la cola
+
+        }
+
         Seforiano.join();
+
         Marxua.join();
         for (int i = 0; i < N_MEIGAS; i++) {
             Megias_Array[i].join();

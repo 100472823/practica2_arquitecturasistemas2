@@ -18,6 +18,10 @@ echo "Compilando TioAnton.java..."
 javac TioAnton.java
 echo "Compilando Trazador.java..."
 javac Trazador.java
+echo "Compilando Barca.java..."
+javac Barca.java
+echo "Compilando Colas.java..."
+javac Colas.java
 echo "Compilando Veiga.java..."
 javac Veiga.java
 
