@@ -6,24 +6,24 @@ public class TioAnton extends Hilo {
 
     private Trazador trazador = new Trazador(3, "TioAnton");
 
-    // Si hay gente en alguna de estas colas, son el orden
-    // en el que van a entrar en la barca.
     static private Semaphore BarreraEmbarcadero = new Semaphore(100);
     static private Semaphore BarreraPlaya = new Semaphore(100);
-    // Distincion de Semaforo Mutex Semaforos y Barreras de capacidad
+    private static Semaphore BARCA = new Semaphore(2);
 
-    // La modificacion de estas variables, es la zona critica necesitamos un mutex.
     static private Semaphore MutexBarreraEmbarcadero = new Semaphore(1);
     static private Semaphore MutexBarreraPlaya = new Semaphore(1);
+    static private Semaphore MutexBarreraBarca = new Semaphore(1);
+
+    // Antes de salir a navegar quito permisos en el mutex de la barca
+    // variables criticas, para añadirse gente
+    // Si la capacidad, de semaforo barca, es Z == 3, entonces no hace falta nada
+    // Si esta solo anton la ponemos en 1, si esta anton +1 entonces ponemos 2.
+
     private static int NBarreraPlaya = 0;
     private static int NBarreraEmbarcadero = 0;
 
-    static private Semaphore MutexBarreraBarca = new Semaphore(1);
     // Contando ya que anton esta dentro
     private static int NPERSONASBARCA = 0;
-    private static Semaphore BARCA = new Semaphore(2);
-
-    // Terminar de Implementarlo todo desde run.
 
     public static final int playa = 2;
     public static boolean navegando;
@@ -47,10 +47,7 @@ public class TioAnton extends Hilo {
             EsperarEmbarcadero();
             EmbarcaderoABarca();
             // Antes de Navegar Paso de una barrera a la otra.
-            // Antes de salir a navegar quito permisos en el mutex de la barca
-            // variables criticas, para añadirse gente
-            // Si la capacidad, de semaforo barca, es Z == 3, entonces no hace falta nada
-            // Si esta solo anton la ponemos en 1, si esta anton +1 entonces ponemos 2.
+
             trazador.Print("Navego con " + String.valueOf(NPERSONASBARCA) + "pasajeros");
             Navego();
             // DESEMBARCAR ??
@@ -60,14 +57,10 @@ public class TioAnton extends Hilo {
             trazador.Print("En la Playa");
             EsperarPlaya();
             PlayaABarca();
+
             // TryCatch Para NPERSONAS BARCA??
             trazador.Print("Vuelvo hacia el embarcadero con " + String.valueOf(NPERSONASBARCA) + "pasajeros");
             Navego();
-            // Antes de navegar paso de Barrera Playa
-            // A barrera barca,
-            // Quito los permisios de barca para modificar el mutex. // Duda semaforo?
-            // Si la capacidad, de semaforo barca, es == 3, entonces no hace falta nada
-            // Si esta solo anton la ponemos en 1, si esta anton +1 entonces ponemos 2.
 
         }
 
@@ -84,6 +77,16 @@ public class TioAnton extends Hilo {
         if (NPERSONASBARCA != 0) {
 
             BARCA.release(NPERSONASBARCA);
+            try {
+
+                MutexBarreraBarca.acquire();
+                NPERSONASBARCA = 0;
+                MutexBarreraBarca.release();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+
+            }
+
         }
 
     }
@@ -106,7 +109,7 @@ public class TioAnton extends Hilo {
 
     }
 
-    public void AñadirBarreraPlaya() {
+    public static void AñadirBarreraPlaya() {
 
         try {
 
@@ -179,21 +182,27 @@ public class TioAnton extends Hilo {
 
         }
 
+        trazador.Print(String.valueOf(local_embarcadero));
+
         if (local_embarcadero != 0) {
 
-            if (local_embarcadero == Veiga.CAPACIDAD_BARCA) {
+            if (local_embarcadero > Veiga.CAPACIDAD_BARCA) {
 
-                for (int i = 0; i < Veiga.CAPACIDAD_BARCA; i++) {
+                int Añadimos2 = 2;
 
+                for (int i = 0; i < Añadimos2; i++) {
+                    trazador.Print("Entro");
                     try {
 
                         MutexBarreraBarca.acquire();
                         MutexBarreraEmbarcadero.acquire();
 
                         // Añado una persona a la barca
-                        local_barca = NPERSONASBARCA++;
-                        local_embarcadero = NBarreraEmbarcadero--;
+                        NPERSONASBARCA++;
+                        NBarreraEmbarcadero--;
+                        local_embarcadero = NBarreraEmbarcadero;
                         BARCA.acquire();
+                        BarreraEmbarcadero.release();
 
                         MutexBarreraEmbarcadero.release();
                         MutexBarreraBarca.release();
@@ -202,7 +211,7 @@ public class TioAnton extends Hilo {
                         e.printStackTrace();
 
                     }
-
+                    trazador.Print(String.valueOf(local_barca) + " barca dentrop");
                 }
 
             }
@@ -218,6 +227,7 @@ public class TioAnton extends Hilo {
                     local_barca = NPERSONASBARCA++;
                     local_embarcadero = NBarreraEmbarcadero--;
                     BARCA.acquire();
+                    BarreraEmbarcadero.release();
 
                     MutexBarreraEmbarcadero.release();
                     MutexBarreraBarca.release();
@@ -236,12 +246,12 @@ public class TioAnton extends Hilo {
 
         }
 
-        trazador.Print("PASO DE EMBARCADERO A BARCA EN BARCA  " + String.valueOf(local_barca) + "pasajeros");
+        trazador.Print("PASO DE EMBARCADERO A BARCA EN BARCA  " + String.valueOf(NPERSONASBARCA) + "pasajeros");
         trazador.Print("EN EMBARCADERO  " + String.valueOf(local_embarcadero) + "pasajeros");
 
     }
 
-    public static void PlayaABarca() {
+    public void PlayaABarca() {
 
         int local_Playa = 0;
         int local_barca = 0;
@@ -251,7 +261,7 @@ public class TioAnton extends Hilo {
             MutexBarreraBarca.acquire();
             MutexBarreraPlaya.acquire();
             // Añado una persona a la barca
-            local_Playa = NBarreraEmbarcadero;
+            local_Playa = NBarreraPlaya;
             local_barca = NPERSONASBARCA;
 
             MutexBarreraPlaya.release();
@@ -264,9 +274,11 @@ public class TioAnton extends Hilo {
 
         if (local_Playa != 0) {
 
-            if (local_Playa == Veiga.CAPACIDAD_BARCA) {
+            if (local_Playa > Veiga.CAPACIDAD_BARCA) {
 
-                for (int i = 0; i < Veiga.CAPACIDAD_BARCA; i++) {
+                int Añadimos2 = 2;
+
+                for (int i = 0; i < 2; i++) {
 
                     try {
 
@@ -277,8 +289,9 @@ public class TioAnton extends Hilo {
                         NPERSONASBARCA++;
                         NBarreraPlaya--;
                         BARCA.acquire();
+                        BarreraPlaya.release();
 
-                        MutexBarreraEmbarcadero.release();
+                        MutexBarreraPlaya.release();
                         MutexBarreraBarca.release();
 
                     } catch (InterruptedException e) {
@@ -287,7 +300,7 @@ public class TioAnton extends Hilo {
                     }
 
                 }
-
+                trazador.Print("hasta aqui");
             }
 
             if (local_Playa == 1) {
@@ -301,6 +314,7 @@ public class TioAnton extends Hilo {
                     NPERSONASBARCA++;
                     NBarreraPlaya--;
                     BARCA.acquire();
+                    BarreraPlaya.release();
 
                     MutexBarreraPlaya.release();
                     MutexBarreraBarca.release();
@@ -312,13 +326,7 @@ public class TioAnton extends Hilo {
 
             }
 
-            if (local_Playa == 0) {
-
-                // SAl de la funcionm break;
-            }
-
         }
 
     }
-
 }
