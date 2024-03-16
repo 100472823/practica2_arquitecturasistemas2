@@ -11,12 +11,17 @@ public class Meigas extends Hilo {
 
     public void run() {
 
-        for (int i = 0; i < 5; i++) {
-
-            trazador.Print("Meiga" + Numero_Meiga);
-            Pausa(1000);
-
-        }
+        /*
+         * 
+         * for (int i = 0; i < 5; i++) {
+         * 
+         * trazador.Print("Meiga" + Numero_Meiga);
+         * Pausa(1000);
+         * 
+         * }
+         * 
+         */
+        TioAnton.AñadirBarreraEmbarcadero();
 
     }
 

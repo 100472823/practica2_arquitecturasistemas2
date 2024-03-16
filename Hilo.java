@@ -22,6 +22,8 @@ public abstract class Hilo extends Thread {
         }
     }
 
+    // Dejamos duda como implementar adquire, y release.
+
     // Join
     // adquit
     // release

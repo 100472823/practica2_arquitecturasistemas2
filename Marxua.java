@@ -8,13 +8,17 @@ public class Marxua extends Hilo {
 
     public void run() {
 
-        for (int i = 0; i < 5; i++) {
-
-            trazador.Print("Marxua");
-            Pausa(1000);
-
-        }
-
+        /*
+         * for (int i = 0; i < 5; i++) {
+         * 
+         * trazador.Print("Marxua");
+         * Pausa(1000);
+         * 
+         * }
+         * 
+         * 
+         * 
+         */
     }
 
 }

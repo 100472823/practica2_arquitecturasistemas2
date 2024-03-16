@@ -33,6 +33,20 @@ public class Veiga {
     public static final int TMAX_RECOLECTAR_PLUMA = 5000;
     public static final int TMIN_RECOLECTAR_GUANO = 1000;
     public static final int TMAX_RECOLECTAR_GUANO = 5000;
+
+    // Arma . java, crear
+    public enum Arma {
+        FIN_SIMULACION, FIN_LOTE,
+        MOSQUETE, LANZA, ALABARDA, TRABUCO;
+
+        private static Arma[] valores = values();
+
+        public static Arma Aleatoria() {
+            int i = (int) (Math.random() * (valores.length - 2) + 2);
+            return valores[i];
+        }
+    }
+
     // variables globales propias
 
     public static void main(String[] args) throws InterruptedException {
@@ -41,15 +55,12 @@ public class Veiga {
         // uno de, Marxua, y de seforiano.
 
         Seforiano Seforiano = new Seforiano();
-        Marxua Marxua = new Marxua();
+
         // estos escriben durante 1s
 
         Meigas[] Megias_Array = new Meigas[N_MEIGAS];
 
-        Colas Colas = new Colas();
-
         Seforiano.start();
-        Marxua.start();
 
         for (int i = 0; i < N_MEIGAS; i++) {
             Megias_Array[i] = new Meigas(i);
@@ -68,7 +79,6 @@ public class Veiga {
 
         // Quien se esta metiendo en la barca. // HAce falta saber quien ??????????
 
-        Colas.AñadirColaEmbarcadero();
         // Cuando alguien quiera añadirse a la cola del embarcadero.
         // metodo embarcadero, y playa
 
@@ -79,32 +89,15 @@ public class Veiga {
         // se encuentre en este, pasaran a la barca
 
         // Estaria en bucle;
-        Cola.BarcaEnEmbarcadero();
-        Cola.BarcaEnLaPlaya();
-
-        if (Anton.status == Anton.playa) {
-
-            // Comprobamos el numero de personas en la barca
-            // Comprobamos el numero de personas en la cola del Playa.
-            // Si hay personas esperando en la playa
-            // pasaran, las que puedan, a la barca
-            // Resto quedan esperando en la cola
-
-        }
 
         Seforiano.join();
 
-        Marxua.join();
         for (int i = 0; i < N_MEIGAS; i++) {
             Megias_Array[i].join();
 
         }
 
         // una vez que estas han terminado, que terminen todas las demas
-
-        Anton.end();
-
-        Anton.join();
 
         // Una vez que esto termine avisar de que tenemos que
         // acabar en el tio anton.
