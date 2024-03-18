@@ -22,6 +22,7 @@ public class Meigas extends Hilo {
          * 
          */
         TioAnton.AñadirBarreraEmbarcadero();
+        TioAnton.AñadirBarreraPlaya();
 
     }
 

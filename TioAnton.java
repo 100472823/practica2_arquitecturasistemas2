@@ -6,13 +6,21 @@ public class TioAnton extends Hilo {
 
     private Trazador trazador = new Trazador(3, "TioAnton");
 
-    static private Semaphore BarreraEmbarcadero = new Semaphore(100);
-    static private Semaphore BarreraPlaya = new Semaphore(100);
-    private static Semaphore BARCA = new Semaphore(2);
+    static private Semaphore BarreraEmbarcadero = new Semaphore(0);
+    static private Semaphore BarreraPlaya = new Semaphore(0);
+
+    // Le puedo dejar este semaforo a 2. ??
+    private static Semaphore BARCA = new Semaphore(0);
 
     static private Semaphore MutexBarreraEmbarcadero = new Semaphore(1);
     static private Semaphore MutexBarreraPlaya = new Semaphore(1);
     static private Semaphore MutexBarreraBarca = new Semaphore(1);
+    static private int Añadimos2 = 0;
+    static private int AñadimosPlaya = 0;
+
+    // Cruzar Puente.
+    // Barrera para esperar, a 0
+    // Mutex, a uno.
 
     // Antes de salir a navegar quito permisos en el mutex de la barca
     // variables criticas, para añadirse gente
@@ -42,7 +50,7 @@ public class TioAnton extends Hilo {
 
         while (end_tioAnton == 0) {
 
-            BajoATierra();
+            // La barca empieza vacia, ;
             trazador.Print("Llego A embarcadero");
             EsperarEmbarcadero();
             EmbarcaderoABarca();
@@ -59,9 +67,9 @@ public class TioAnton extends Hilo {
             PlayaABarca();
 
             // TryCatch Para NPERSONAS BARCA??
-            trazador.Print("Vuelvo hacia el embarcadero con " + String.valueOf(NPERSONASBARCA) + "pasajeros");
-            Navego();
 
+            Navego();
+            BajoATierra();
         }
 
     }
@@ -81,6 +89,7 @@ public class TioAnton extends Hilo {
 
                 MutexBarreraBarca.acquire();
                 NPERSONASBARCA = 0;
+
                 MutexBarreraBarca.release();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -95,13 +104,13 @@ public class TioAnton extends Hilo {
 
         try {
 
-            BarreraEmbarcadero.acquire();
             MutexBarreraEmbarcadero.acquire();
             // Añado una persona a la barca
             NBarreraEmbarcadero++;
-
             MutexBarreraEmbarcadero.release();
+            BarreraEmbarcadero.acquire();
 
+            // Primero modifico la variable, y hago que se me queden pillados aqui.
         } catch (InterruptedException e) {
             e.printStackTrace();
 
@@ -110,16 +119,15 @@ public class TioAnton extends Hilo {
     }
 
     public static void AñadirBarreraPlaya() {
-
         try {
 
-            BarreraPlaya.acquire();
             MutexBarreraPlaya.acquire();
             // Añado una persona a la barca
             NBarreraPlaya++;
-
             MutexBarreraPlaya.release();
+            BarreraPlaya.acquire();
 
+            // Primero modifico la variable, y hago que se me queden pillados aqui.
         } catch (InterruptedException e) {
             e.printStackTrace();
 
@@ -163,168 +171,99 @@ public class TioAnton extends Hilo {
 
     public void EmbarcaderoABarca() {
 
-        int local_embarcadero = 0;
-        int local_barca = 0;
-
         try {
 
-            MutexBarreraBarca.acquire();
             MutexBarreraEmbarcadero.acquire();
-            // Añado una persona a la barca
-            local_embarcadero = NBarreraEmbarcadero;
-            local_barca = NPERSONASBARCA;
+            trazador.Print(String.valueOf(NBarreraEmbarcadero));
 
-            MutexBarreraEmbarcadero.release();
-            MutexBarreraBarca.release();
+            if (NBarreraEmbarcadero != 0) {
+
+                // No separar local embarcadero y embarcadero.
+                trazador.Print(String.valueOf(NBarreraEmbarcadero));
+                if (NBarreraEmbarcadero >= 2) {
+                    Añadimos2 = 2;
+                } else if (NBarreraEmbarcadero == 1) {
+
+                    Añadimos2 = 1;
+
+                } else {
+                    Añadimos2 = 0;
+                }
+                trazador.Print(String.valueOf(Añadimos2) + "Añadimos");
+                MutexBarreraEmbarcadero.release();
+
+                for (int i = 0; i < Añadimos2; i++) {
+
+                    trazador.Print("Entro");
+                    BARCA.release();
+                    // Añado una persona a la barca
+                    BarreraEmbarcadero.release();
+                    BARCA.acquire();
+                    MutexBarreraBarca.acquire();
+                    NPERSONASBARCA++;
+                    MutexBarreraBarca.release();
+                    MutexBarreraEmbarcadero.acquire();
+                    NBarreraEmbarcadero--;
+                    MutexBarreraEmbarcadero.release();
+
+                }
+                MutexBarreraBarca.acquire();
+                trazador.Print(" Salgo desde el embarcadero con" + String.valueOf(NPERSONASBARCA) + "pasajeros");
+                MutexBarreraBarca.release();
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
 
         }
-
-        trazador.Print(String.valueOf(local_embarcadero));
-
-        if (local_embarcadero != 0) {
-
-            if (local_embarcadero > Veiga.CAPACIDAD_BARCA) {
-
-                int Añadimos2 = 2;
-
-                for (int i = 0; i < Añadimos2; i++) {
-                    trazador.Print("Entro");
-                    try {
-
-                        MutexBarreraBarca.acquire();
-                        MutexBarreraEmbarcadero.acquire();
-
-                        // Añado una persona a la barca
-                        NPERSONASBARCA++;
-                        NBarreraEmbarcadero--;
-                        local_embarcadero = NBarreraEmbarcadero;
-                        BARCA.acquire();
-                        BarreraEmbarcadero.release();
-
-                        MutexBarreraEmbarcadero.release();
-                        MutexBarreraBarca.release();
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-
-                    }
-                    trazador.Print(String.valueOf(local_barca) + " barca dentrop");
-                }
-
-            }
-
-            if (local_embarcadero == 1) {
-
-                try {
-
-                    MutexBarreraBarca.acquire();
-                    MutexBarreraEmbarcadero.acquire();
-
-                    // Añado una persona a la barca
-                    local_barca = NPERSONASBARCA++;
-                    local_embarcadero = NBarreraEmbarcadero--;
-                    BARCA.acquire();
-                    BarreraEmbarcadero.release();
-
-                    MutexBarreraEmbarcadero.release();
-                    MutexBarreraBarca.release();
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-
-                }
-
-            }
-
-            if (local_embarcadero == 0) {
-
-                // SAl de la funcionm break;
-            }
-
-        }
-
-        trazador.Print("PASO DE EMBARCADERO A BARCA EN BARCA  " + String.valueOf(NPERSONASBARCA) + "pasajeros");
-        trazador.Print("EN EMBARCADERO  " + String.valueOf(local_embarcadero) + "pasajeros");
 
     }
 
     public void PlayaABarca() {
 
-        int local_Playa = 0;
-        int local_barca = 0;
-
         try {
 
-            MutexBarreraBarca.acquire();
             MutexBarreraPlaya.acquire();
-            // Añado una persona a la barca
-            local_Playa = NBarreraPlaya;
-            local_barca = NPERSONASBARCA;
+            trazador.Print(String.valueOf(NBarreraPlaya) + "Esperando Playa");
 
-            MutexBarreraPlaya.release();
-            MutexBarreraBarca.release();
+            if (NBarreraPlaya != 0) {
+
+                // No separar local embarcadero y embarcadero.
+                trazador.Print(String.valueOf(NBarreraPlaya));
+                if (NBarreraPlaya >= 2) {
+                    AñadimosPlaya = 2;
+                } else if (NBarreraPlaya == 1) {
+
+                    AñadimosPlaya = 1;
+
+                } else {
+                    AñadimosPlaya = 0;
+                }
+                trazador.Print(String.valueOf(AñadimosPlaya) + "AñadimosPklaya");
+                MutexBarreraPlaya.release();
+
+                for (int i = 0; i < AñadimosPlaya; i++) {
+
+                    trazador.Print("Entro");
+                    BARCA.release();
+                    // Añado una persona a la barca
+                    BarreraPlaya.release();
+                    BARCA.acquire();
+                    MutexBarreraBarca.acquire();
+                    NPERSONASBARCA++;
+                    MutexBarreraBarca.release();
+                    MutexBarreraPlaya.acquire();
+                    NBarreraPlaya--;
+                    MutexBarreraPlaya.release();
+
+                }
+                MutexBarreraBarca.acquire();
+                trazador.Print("Vuelvo hacia el embarcadero con " + String.valueOf(NPERSONASBARCA) + "pasajeros");
+                MutexBarreraBarca.release();
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
-
-        }
-
-        if (local_Playa != 0) {
-
-            if (local_Playa > Veiga.CAPACIDAD_BARCA) {
-
-                int Añadimos2 = 2;
-
-                for (int i = 0; i < 2; i++) {
-
-                    try {
-
-                        MutexBarreraBarca.acquire();
-                        MutexBarreraPlaya.acquire();
-
-                        // Añado una persona a la barca
-                        NPERSONASBARCA++;
-                        NBarreraPlaya--;
-                        BARCA.acquire();
-                        BarreraPlaya.release();
-
-                        MutexBarreraPlaya.release();
-                        MutexBarreraBarca.release();
-
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-
-                    }
-
-                }
-                trazador.Print("hasta aqui");
-            }
-
-            if (local_Playa == 1) {
-
-                try {
-
-                    MutexBarreraBarca.acquire();
-                    MutexBarreraPlaya.acquire();
-
-                    // Añado una persona a la barca
-                    NPERSONASBARCA++;
-                    NBarreraPlaya--;
-                    BARCA.acquire();
-                    BarreraPlaya.release();
-
-                    MutexBarreraPlaya.release();
-                    MutexBarreraBarca.release();
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-
-                }
-
-            }
 
         }
 
