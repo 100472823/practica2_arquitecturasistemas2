@@ -1,7 +1,13 @@
+import java.util.concurrent.Semaphore;
+
 public class Meigas extends Hilo {
 
     private Trazador trazador = new Trazador(5, "Meigas");
     private int Numero_Meiga;
+
+    static private Semaphore EnvioEncargo = new Semaphore(0);
+    static private Semaphore EsperandEncargoMeigas = new Semaphore(0);
+    Receta Encargo;
 
     public Meigas(int n) {
 
@@ -10,6 +16,10 @@ public class Meigas extends Hilo {
     }
 
     public void run() {
+
+        // EsperandoEncargo();
+        // LO que necesite para ese Encargo
+        // SiguienteEncargo();
 
         /*
          * 
@@ -21,9 +31,40 @@ public class Meigas extends Hilo {
          * }
          * 
          */
-        TioAnton.AñadirBarreraEmbarcadero();
-        TioAnton.AñadirBarreraPlaya();
 
+        // TioAnton.AñadirBarreraEmbarcadero();
+        // TioAnton.AñadirBarreraPlaya();
+
+    }
+
+    public void EsperandoEncargo() {
+        // Meigas Esperando Mutex
+        try {
+            EsperandEncargoMeigas.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void SiguienteEncargo() {
+
+        EnvioEncargo.release();
+
+    }
+
+    public void EnvioEncargo(Veiga.Arma Arma, Paso[] receta) {
+
+        this.Encargo.armaActual = Arma;
+        this.Encargo.receta_Arma = receta;
+        EsperandEncargoMeigas.release();
+        try {
+            EnvioEncargo.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
 }

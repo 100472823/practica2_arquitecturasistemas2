@@ -12,12 +12,14 @@ echo "Compilando Marxua.java..."
 javac Marxua.java
 echo "Compilando Meigas.java..."
 javac Meigas.java
-echo "Compilando Seforiano.java..."
-javac Seforiano.java
+echo "Compilando Sinforiano.java..."
+javac Sinforiano.java
 echo "Compilando TioAnton.java..."
 javac TioAnton.java
 echo "Compilando Trazador.java..."
 javac Trazador.java
+echo "Compilando Paso.java..."
+javac Paso.java
 echo "Compilando Veiga.java..."
 javac Veiga.java
 

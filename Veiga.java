@@ -54,13 +54,13 @@ public class Veiga {
         // Crear NMeigas. que son 30, 30 objetos de meigas.
         // uno de, Marxua, y de seforiano.
 
-        Seforiano Seforiano = new Seforiano();
+        Sinforiano Seforiano = new Sinforiano();
 
         // estos escriben durante 1s
-
+        Marxua Marxua = new Marxua();
         Meigas[] Megias_Array = new Meigas[N_MEIGAS];
-
-        Seforiano.start();
+        // Marxua.start();
+        // Seforiano.start();
 
         for (int i = 0; i < N_MEIGAS; i++) {
             Megias_Array[i] = new Meigas(i);
