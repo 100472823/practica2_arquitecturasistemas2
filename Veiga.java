@@ -59,8 +59,8 @@ public class Veiga {
         // estos escriben durante 1s
         Marxua Marxua = new Marxua();
         Meigas[] Megias_Array = new Meigas[N_MEIGAS];
-        // Marxua.start();
-        // Seforiano.start();
+        Marxua.start();
+        Seforiano.start();
 
         for (int i = 0; i < N_MEIGAS; i++) {
             Megias_Array[i] = new Meigas(i);
@@ -72,7 +72,7 @@ public class Veiga {
         // Tio Anton se muere de viejo, y sera cuando el programa principal lo decida
         TioAnton Anton = new TioAnton();
 
-        Anton.start();
+        // Anton.start();
 
         // Como funciona el tema de los hilos, por que si anton esta esperando ????
         // si el main, sigue fucnionando con anton.barcaAnton.embarco; ???????

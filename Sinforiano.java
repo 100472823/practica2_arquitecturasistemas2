@@ -12,6 +12,7 @@ public class Sinforiano extends Hilo {
     static private Semaphore MutexAleatorioLotes_Vida = new Semaphore(1);
 
     private static int NumeroArmasEnLote;
+    static private Receta EncargoTerminado;
 
     static private Semaphore MutexNumeroArmasEnLote = new Semaphore(1);
 
@@ -37,6 +38,8 @@ public class Sinforiano extends Hilo {
 
                 MutexAleatorioLotes_Vida.release();
                 MakeArmas();
+                // Comprobar logica con el tema de finlote
+
             }
 
         } catch (InterruptedException e) {
@@ -108,9 +111,21 @@ public class Sinforiano extends Hilo {
             LotesCompletosTerminados++;
             MutexNumeroArmasEnLote.release();
 
+            // EsperoHasta que me avisen de que tienen lotes terminados para mi
+            Meigas.EntregandoArmasASinforiano.acquire();
+            // Entrego armas hasta fin lote, una vez que termino un lote
+            // Tengo que esperar hasta que me devuelvan las armas de una en una
+            // Cuando recoga todas las armas entonces enviara el siguiente lote
+
         } catch (InterruptedException e) {
 
         }
+
+    }
+
+    public static void EnviarArmaMeigas(Receta EncargoCompleto) {
+
+        EncargoTerminado = EncargoCompleto;
 
     }
 

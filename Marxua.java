@@ -35,6 +35,14 @@ public class Marxua extends Hilo {
                     ConstruirEncargo();
                     SiguienteArma();
                 }
+                HuertoXiana();
+
+                // COMO se que se ha acabado el lote igualmente antes de terminal la simulacion
+                // en el caso
+                // En el que fuera necesario, tendremos que ir al huerto de Xiana, y esperar,
+                // por
+                // Todas las meigas que le damos encargo, habra que tomar cuenta
+
                 SiguienteArma();
 
             }
@@ -53,6 +61,8 @@ public class Marxua extends Hilo {
         Paso[] receta_Arma = Receta();
         Pausa(Veiga.TESPERA_EMBARCADERO);
         Receta ArmayReceta = new Receta(armaActual, receta_Arma);
+        Meigas.EnvioEncargo(armaActual, receta_Arma);
+
         // le paso el objeto de la clase receta, a la meiga
         // tendremos una funcion, y luego maruxa, se queda pillada hasta
         // que la recibe
@@ -90,7 +100,6 @@ public class Marxua extends Hilo {
         // Y una vez termine con la actual, continue con la siguiente
         try {
             MutexArma.acquire();
-            // recibo = 1;
             armaActual = armaRecibida;
             MutexArma.release();
             BarreraArmaRecibo.release();
@@ -126,6 +135,49 @@ public class Marxua extends Hilo {
             trazador.Print(paso.ingrediente.name() + "(" + paso.tiempo_de_coccion + ")");
         }
         return (pasos);
+    }
+
+    public void HuertoXiana() {
+
+        // Una vez que mando fin lote, me vengo al huerto y espero que lleguen todas las
+        // meigas. que tienen encargo
+
+        // Hago una barrera y que vayan sumando hasta que lleguen todas, MeigasEnHuerto
+        // == MeigasConEncargo
+        // Recitan todas juntas, el conjuto que les lleva un tiempo aleatorio, A CADA
+        // UNA.
+
+        try {
+            Meigas.MutexHuerto.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        while (Meigas.NEsperandoEnHuerto != Meigas.nEncargosRecibidosPorMeigas) {
+            // Me quedo en bucle comprobando que han llegado todas solo termino
+            // Cuando han llegado
+        }
+
+        Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
+        Meigas.MutexHuerto.release();
+
+        Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
+        // Cuando todas y ella han concluido el conjuro
+        try {
+            Meigas.MutexHuerto.acquire();
+            while (Meigas.NesperandoTerminarConjuro != Meigas.nEncargosRecibidosPorMeigas) {
+                // Me quedo en bucle comprobando que han llegado todas solo termino
+                // Cuando han llegado
+            }
+
+            Meigas.EsperandoTemrminarConjuro.release(Meigas.nEncargosRecibidosPorMeigas);
+            Meigas.MutexHuerto.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        // Falta Mutex variables protegida
+
     }
 
 }

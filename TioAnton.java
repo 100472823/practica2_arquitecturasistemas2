@@ -81,7 +81,7 @@ public class TioAnton extends Hilo {
             try {
                 MutexBarca.acquire();
                 trazador.Print("Voy a hazer releases de" + NPERSONASBARCA);
-                BarreraBARCA.release(NPERSONASBARCA);
+                BarreraBARCA.release(2);
 
                 NPERSONASBARCA = 0;
                 NBarreraBarcaDespuesRelease = 0;
@@ -116,7 +116,8 @@ public class TioAnton extends Hilo {
             MutexBarca.acquire();
             NPERSONASBARCA++;
             MutexBarca.release();
-            trazador.Print("AÑADO " + String.valueOf(NPERSONASBARCA) + "pasajeros a la cola de BARCA COLA MEIGAS");
+            // trazador.Print("AÑADO " + String.valueOf(NPERSONASBARCA) + "pasajeros a la //
+            // cola de BARCA COLA MEIGAS");
             BarreraBARCA.acquire();
 
             // Primero modifico la variable, y hago que se me queden pillados aqui.
@@ -204,8 +205,6 @@ public class TioAnton extends Hilo {
          */
         trazador.Print("Entro");
         try {
-
-            // Añado una persona a la barca
 
             // Habra que hacer un acquire
             // para cerrar el embarcadero, si solo se monta 1 persona
