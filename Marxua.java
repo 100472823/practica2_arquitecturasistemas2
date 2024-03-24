@@ -21,17 +21,17 @@ public class Marxua extends Hilo {
 
     public void run() {
 
-        trazador.Print("Marxua");
+        trazador.Print(" Inicio Hilo Marxua");
 
-        // Esperando recibir arma
-
+        // Esperando recibir Lote
+        trazador.Print("Esperando Recibir Lote");
         try {
 
             BarreraArmaRecibo.acquire();
 
             while (!armaActual.name().equals(Veiga.Arma.FIN_SIMULACION.name())) {
 
-                while (!armaActual.equals(Veiga.Arma.FIN_LOTE.name())) {
+                while (!armaActual.name().equals(Veiga.Arma.FIN_LOTE.name())) {
                     ConstruirEncargo();
                     SiguienteArma();
                 }
@@ -52,15 +52,21 @@ public class Marxua extends Hilo {
 
         }
 
+        // Si el arma, es fin de simulacion, tendremos que avisar
+        // A todas las meigas
+        trazador.Print("Recibo Fin Simulacion");
+        Meigas.MaruxaAvisaMuerte();
+
     }
 
     private void ConstruirEncargo() {
         // Que haga los ingredientes y Pasos, correspondientes a cada
         // Arma
-
+        trazador.Print("He recibido" + armaActual.name());
         Paso[] receta_Arma = Receta();
         Pausa(Veiga.TESPERA_EMBARCADERO);
         Receta ArmayReceta = new Receta(armaActual, receta_Arma);
+        trazador.Print("Entrego Encargo a Meiga");
         Meigas.EnvioEncargo(armaActual, receta_Arma);
 
         // le paso el objeto de la clase receta, a la meiga
@@ -77,6 +83,7 @@ public class Marxua extends Hilo {
 
     }
 
+    /* SOLICITO A SINFORIANO SIGUIENTE ARMA */
     public void SiguienteArma() {
 
         // Liberamos La barrera para que sinforiano
@@ -92,6 +99,8 @@ public class Marxua extends Hilo {
         }
 
     }
+
+    /* ENVIO ARMA SINFORIANO */
 
     public static void EnvioArma(Veiga.Arma armaRecibida) {
 
@@ -119,6 +128,7 @@ public class Marxua extends Hilo {
 
     }
 
+    /* GENERACION DE RECETA ARMA */
     private Paso[] Receta() {
         trazador.Print("Redactar receta");
         Paso[] pasos;
@@ -137,6 +147,7 @@ public class Marxua extends Hilo {
         return (pasos);
     }
 
+    /* HUERTO XIANA */
     public void HuertoXiana() {
 
         // Una vez que mando fin lote, me vengo al huerto y espero que lleguen todas las
@@ -146,7 +157,7 @@ public class Marxua extends Hilo {
         // == MeigasConEncargo
         // Recitan todas juntas, el conjuto que les lleva un tiempo aleatorio, A CADA
         // UNA.
-
+        trazador.Print("En el Huerto");
         try {
             Meigas.MutexHuerto.acquire();
         } catch (InterruptedException e) {
@@ -160,8 +171,11 @@ public class Marxua extends Hilo {
 
         Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
         Meigas.MutexHuerto.release();
+        trazador.Print("Estamos todas en el huerto");
 
         Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
+        trazador.Print("He recitado");
+
         // Cuando todas y ella han concluido el conjuro
         try {
             Meigas.MutexHuerto.acquire();
@@ -177,6 +191,7 @@ public class Marxua extends Hilo {
             e.printStackTrace();
         }
         // Falta Mutex variables protegida
+        trazador.Print("Hemos recitado todas");
 
     }
 

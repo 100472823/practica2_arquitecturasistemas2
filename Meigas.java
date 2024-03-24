@@ -2,20 +2,23 @@ import java.util.concurrent.Semaphore;
 
 public class Meigas extends Hilo {
 
-    private static Trazador trazador = new Trazador(5, "Meigas");
     private int Numero_Meiga;
+    private static Trazador trazador = new Trazador(5, "Meigas");
     private static int NumeroMeigasEsperando;
     public static int NEsperandoEnHuerto;
     public static int NesperandoTerminarConjuro;
     public static int nEncargosRecibidosPorMeigas = 0;
+    private static int vida = 0;
 
     static private Semaphore EsperandoComprobacionEnvio = new Semaphore(0);
     static private Semaphore EsperandoEncargoMeigas = new Semaphore(0);
     static public Semaphore EsperandoHuerto = new Semaphore(0);
     static public Semaphore EsperandoTemrminarConjuro = new Semaphore(0);
     static public Semaphore EntregandoArmasASinforiano = new Semaphore(0);
+    static public Semaphore EsperandoMeigasASinforiano = new Semaphore(0);
 
     static private Semaphore MutexMeigas = new Semaphore(1);
+    static public Semaphore MutexMeigasVida = new Semaphore(1);
     static public Semaphore MutexHuerto = new Semaphore(1);
 
     static private Receta EncargoAux;
@@ -29,32 +32,46 @@ public class Meigas extends Hilo {
 
     public void run() {
 
+        trazador.Print("Inicio Hilo Meiga n " + String.valueOf(Numero_Meiga));
         /*************************
          * IMPLEMENTACION DE HILOS MEIGAS***********************
          */
 
-        // Inician las 30 meigas esperando en la casa de maruxa.
-        // Las 30 se quedan esperando encarco.
         // FALTA WHILE
-        EsperandoEncargo();
-        // En cuanto Maruxa libera por que tiene un encargo
-        // Compruebo ese encargo, y se lo confirmo a Maruxa que lo he recibido por que
-        // se quedara ahi
-        // Hasta que yo se lo confirme
-        ReciboEncargo();
+        try {
+            MutexMeigasVida.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        while (vida == 0) {
+            MutexMeigasVida.release();
 
-        // BUSCAR INGREDIENTES INDIVIDUALESingredientes
-        Pausa(Veiga.TMAX_COCCION);
-        HuertoXiana();
-        EntregoARMASinforiano();
+            EsperandoEncargo();
 
-        // Cuando todas han terminado , el conjuro, se entrega su arma del lote a
-        // sinforiano, y
-        // se vuelve a esperar a la casa
+            // En cuanto Maruxa libera por que tiene un encargo
+            // Compruebo ese encargo, y se lo confirmo a Maruxa que lo he recibido por que
+            // se quedara ahi
+            // Hasta que yo se lo confirme
+            ReciboEncargo();
 
-        /*************************
-         * * IMPLEMENTACION DE HILOS MEIGAS
-         ********************/
+            // Dependiendo del ingrediente que necesite, realizare una cosa
+            // Realizare otra
+
+            // BUSCAR INGREDIENTES INDIVIDUALESingredientes
+            Pausa(Veiga.TMIN_COCCION, Veiga.TMAX_COCCION);
+            HuertoXiana();
+            EntregoARMASinforiano();
+            // Entran todas Al entregoArmas, que tiene una
+            // Barrera, por lo tanto una vez terminen todas
+            // Habran terminado el Lote
+            EncargoAux.armaActual = Veiga.Arma.FIN_LOTE;
+            Sinforiano.RecibirArmaMeigas(EncargoAux);
+
+            /*************************
+             * * IMPLEMENTACION DE HILOS MEIGAS
+             ********************/
+        }
 
         /****************** PARTE PRUEBAS BARCA *********************************** */
 
@@ -64,9 +81,10 @@ public class Meigas extends Hilo {
         /****************** PARTE PRUEBAS BARCA *********************************** */
     }
 
+    /* LAS MEIGAS SE QUEDAN PILLADAS ESPERANDO EL ENCARGO DE MARUXA */
     public void EsperandoEncargo() {
         // Todas las meigas se quedan esperando a que maruxa, tenga un encargo
-
+        trazador.Print("Esperando encargo de Maruxa");
         try {
             MutexMeigas.acquire();
             NumeroMeigasEsperando++;
@@ -76,32 +94,37 @@ public class Meigas extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        trazador.Print("Maruxa me ha soltado");
     }
 
     public void ReciboEncargo() {
-
-        // Como compruebo que hay uno para mi.
         this.Encargo = EncargoAux;
+        trazador.Print("He recibido un encargo" + this.Encargo.armaActual.name());
+        // Como compruebo que hay uno para mi.
+
         // FALTA TRY CATCH MUTEX INTERVIENEN 2HILOS
         try {
             MutexHuerto.acquire();
             nEncargosRecibidosPorMeigas++;
-            MutexHuerto.acquire();
+            MutexHuerto.release();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         EsperandoComprobacionEnvio.release();
+        trazador.Print("He soltado a maruxa");
 
     }
 
+    /* MARUXA LLAMA A ESTA FUNCION PARA ENVIAR UN ENCARGO A UNA MEIGA */
     public static void EnvioEncargo(Veiga.Arma Arma, Paso[] receta) {
 
-        EncargoAux.armaActual = Arma;
-        EncargoAux.receta_Arma = receta;
+        // EncargoAux.armaActual = Arma;
+        //
+        // EncargoAux.receta_Arma = receta;
 
+        EncargoAux = new Receta(Arma, receta);
         EsperandoEncargoMeigas.release();
         try {
             // Me quedo pillado hasta que me confirmen que han recibido el encargo , y yo
@@ -153,12 +176,25 @@ public class Meigas extends Hilo {
         // Suelto a sinforiano
 
         // Entrego armas a la funcion de sinforiano
-        Sinforiano.EnviarArmaMeigas(this.Encargo);
-        EntregandoArmasASinforiano.release();
+        trazador.Print("Entrego" + this.Encargo.armaActual.name());
+
+        Sinforiano.RecibirArmaMeigas(this.Encargo);
+
         // Me quedo pillado hasta que sinforiano, me haga release, confirmando que ha
         // recibido las armas , y
         // Se vuelva a quedar pillado ya que es de 1 en 1.
 
+    }
+
+    public static void MaruxaAvisaMuerte() {
+        try {
+            MutexMeigasVida.acquire();
+            vida = 1;
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        MutexMeigasVida.release();
     }
 
 }

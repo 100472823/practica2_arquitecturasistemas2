@@ -1,5 +1,6 @@
 
 public abstract class Hilo extends Thread {
+
     public static void Pausa(int duracion) {
         try {
             Thread.sleep(duracion);

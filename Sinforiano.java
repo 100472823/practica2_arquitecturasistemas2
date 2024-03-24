@@ -3,12 +3,13 @@ import java.util.concurrent.Semaphore;
 
 public class Sinforiano extends Hilo {
 
-    private Trazador trazador = new Trazador(1, "Sinforiano");
+    private static Trazador trazador = new Trazador(1, "Sinforiano");
 
     public static int NumeroAleatorioLotes_Vida;
     // hace falta mutex?
     private static int LotesCompletosTerminados;
 
+    static private Semaphore BarreraEnvioArmasMeigas = new Semaphore(0);
     static private Semaphore MutexAleatorioLotes_Vida = new Semaphore(1);
 
     private static int NumeroArmasEnLote;
@@ -38,18 +39,28 @@ public class Sinforiano extends Hilo {
 
                 MutexAleatorioLotes_Vida.release();
                 MakeArmas();
-                // Comprobar logica con el tema de finlote
-                // EncargoRecibido,
+                // Cuando termine de hacer las armas de un lote las procesa
+                // y una vez despues de procesarlas,
+                // Entonces comprueba
+                EsperarSiguienteMeiga();
+                while (!EncargoTerminado.armaActual.name().equals(Veiga.Arma.FIN_LOTE)) {
+                    EsperarSiguienteMeiga();
+                    ProcesarArmaMeigas();
+
+                }
+                // La ultima vez, le mandan FINLOTE, procesa, y al comprobar en el while
+                // Ahi es cuando sale
             }
 
         } catch (InterruptedException e) {
 
         }
-
+        // Si no hay que hacer mas lotes aviso a maruxa de que me muero
         Marxua.EnvioArma(Veiga.Arma.FIN_SIMULACION);
         trazador.Print("Entrego" + Veiga.Arma.FIN_SIMULACION.name());
         // Cuando termine el while, tengo que pasarle, el FIN SIMULACION
         // UNA vez termine el ultimo lote.
+        trazador.Print("Fin Hilo Sinforiano");
     }
 
     public void NumeroAleatorioDeLotes() {
@@ -111,8 +122,6 @@ public class Sinforiano extends Hilo {
             LotesCompletosTerminados++;
             MutexNumeroArmasEnLote.release();
 
-            // EsperoHasta que me avisen de que tienen lotes terminados para mi
-            Meigas.EntregandoArmasASinforiano.acquire();
             // Entrego armas hasta fin lote, una vez que termino un lote
             // Tengo que esperar hasta que me devuelvan las armas de una en una
             // Cuando recoga todas las armas entonces enviara el siguiente lote
@@ -123,12 +132,43 @@ public class Sinforiano extends Hilo {
 
     }
 
-    public static void EnviarArmaMeigas(Receta EncargoCompleto) {
+    public static void RecibirArmaMeigas(Receta EncargoCompleto) {
 
         EncargoTerminado = EncargoCompleto;
         // Suelta a sinforiano antes para que pueda continuar, y pilla a la meiga por
+        // Imprimo el arma que me ha llegado de encargo.
+        // Suelto a la meiga
+
+        Meigas.EntregandoArmasASinforiano.release();
+        // Aqui se quedarian todas las meigas pilladas
+        // Del acquire
+        try {
+            Meigas.EsperandoMeigasASinforiano.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         // que va de arma en arma
         // Se pilla la meiga por que van de una en una y tiene que procesar el encargo
+
+    }
+
+    public void ProcesarArmaMeigas() {
+
+        trazador.Print("He recibido" + EncargoTerminado.armaActual.name() + "Arma");
+        // Me vuelvo a quedar pillado hasta que haya el siguiente arma que procesar.
+        // Libero a las meigas
+        Meigas.EsperandoMeigasASinforiano.release();
+
+    }
+
+    public void EsperarSiguienteMeiga() {
+        try {
+            Meigas.EntregandoArmasASinforiano.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
 
