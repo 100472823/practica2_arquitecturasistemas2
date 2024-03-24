@@ -39,7 +39,7 @@ public class Sinforiano extends Hilo {
                 MutexAleatorioLotes_Vida.release();
                 MakeArmas();
                 // Comprobar logica con el tema de finlote
-
+                // EncargoRecibido,
             }
 
         } catch (InterruptedException e) {
@@ -126,6 +126,9 @@ public class Sinforiano extends Hilo {
     public static void EnviarArmaMeigas(Receta EncargoCompleto) {
 
         EncargoTerminado = EncargoCompleto;
+        // Suelta a sinforiano antes para que pueda continuar, y pilla a la meiga por
+        // que va de arma en arma
+        // Se pilla la meiga por que van de una en una y tiene que procesar el encargo
 
     }
 
