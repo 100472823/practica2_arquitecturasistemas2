@@ -34,8 +34,8 @@ public class Meigas extends Hilo {
 
         trazador.Print("Inicio Hilo Meiga n " + String.valueOf(Numero_Meiga));
         /*************************
-         * IMPLEMENTACION DE HILOS MEIGAS***********************
-         */
+         * IMPLEMENTACION DE HILOS MEIGAS
+         ***********************/
 
         // FALTA WHILE
         try {
@@ -50,7 +50,8 @@ public class Meigas extends Hilo {
             EsperandoEncargo();
 
             // En cuanto Maruxa libera por que tiene un encargo
-            // Compruebo ese encargo, y se lo confirmo a Maruxa que lo he recibido por que
+            // Compruebo ese encargo, y se lo confirmo a Maruxa que lo he recibido por
+
             // se quedara ahi
             // Hasta que yo se lo confirme
             ReciboEncargo();
@@ -70,7 +71,7 @@ public class Meigas extends Hilo {
 
             /*************************
              * * IMPLEMENTACION DE HILOS MEIGAS
-             ********************/
+             *******************/
         }
 
         /****************** PARTE PRUEBAS BARCA *********************************** */
@@ -152,17 +153,11 @@ public class Meigas extends Hilo {
         }
 
         Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
-
+        trazador.Print("Meiga" + String.valueOf(this.Numero_Meiga) + "Ha terminado conjuro");
         try {
             MutexHuerto.acquire();
             NesperandoTerminarConjuro++;
             MutexHuerto.release();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        try {
             EsperandoTemrminarConjuro.acquire();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
@@ -171,11 +166,20 @@ public class Meigas extends Hilo {
 
     }
 
+    /* ENTREGO ARMA DE 1 A UNA A SINFORIANO y ESPERO QUE LA PROCESE */
+    /*
+     * FALTA MUTEX EN LA VARIABLE ENCARGO TERMINADO Y ERROR SE MODIFICAN HABRA QUE
+     * HACER AQUI UNA BARRERA
+     */
     public void EntregoARMASinforiano() {
 
-        // Suelto a sinforiano
+        try {
+            EsperandoMeigasASinforiano.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-        // Entrego armas a la funcion de sinforiano
         trazador.Print("Entrego" + this.Encargo.armaActual.name());
 
         Sinforiano.RecibirArmaMeigas(this.Encargo);

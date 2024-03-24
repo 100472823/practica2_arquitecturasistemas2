@@ -1,0 +1,544 @@
+./do.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compilando Barrera.java...
+error: file not found: Barrera.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+Compilando Hilo.java...
+Compilando Marxua.java...
+Compilando Meigas.java...
+Compilando Sinforiano.java...
+Compilando TioAnton.java...
+Compilando Trazador.java...
+Compilando Paso.java...
+Compilando Veiga.java...
+Ejecutando Veiga.java...
+		[Marxua] Inicio Hilo Marxua
+		[Marxua]Esperando Recibir Lote
+	[Sinforiano] Inicio Sinforiano
+					[Meigas]Inicio Hilo Meiga n 1
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 0
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 3
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 4
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 5
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 6
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 7
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 8
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 9
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 2
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 10
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 11
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 12
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 13
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 14
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 15
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 16
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 17
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 18
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 19
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 20
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 21
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 22
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 23
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 24
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 25
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 26
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 27
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 28
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 29
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]n_lotes2
+	[Sinforiano]n_armas23
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(952)
+		[Marxua]AGUA(1063)
+		[Marxua]MANDRAGORA(1018)
+		[Marxua]MANDRAGORA(3369)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1796)
+		[Marxua]PLUMA(4627)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4242)
+		[Marxua]AGUA(2503)
+		[Marxua]PLUMA(65)
+		[Marxua]MANDRAGORA(256)
+		[Marxua]AGUA(304)
+		[Marxua]MANDRAGORA(1368)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(935)
+		[Marxua]GUANO(1659)
+		[Marxua]MANDRAGORA(3941)
+		[Marxua]PLUMA(2536)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1677)
+		[Marxua]PLUMA(1212)
+		[Marxua]GUANO(4458)
+		[Marxua]PLUMA(197)
+		[Marxua]GUANO(1247)
+		[Marxua]AGUA(48)
+		[Marxua]MANDRAGORA(1964)
+		[Marxua]AGUA(1491)
+		[Marxua]AGUA(2363)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2846)
+		[Marxua]PLUMA(4011)
+		[Marxua]GUANO(4255)
+		[Marxua]PLUMA(1597)
+		[Marxua]PLUMA(965)
+		[Marxua]AGUA(2471)
+		[Marxua]PLUMA(3338)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4060)
+		[Marxua]MANDRAGORA(4257)
+		[Marxua]AGUA(3743)
+		[Marxua]GUANO(4072)
+		[Marxua]GUANO(3872)
+		[Marxua]PLUMA(4545)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoLANZA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1350)
+		[Marxua]AGUA(4582)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoLANZA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1394)
+		[Marxua]GUANO(854)
+		[Marxua]PLUMA(4084)
+		[Marxua]GUANO(113)
+		[Marxua]PLUMA(4720)
+		[Marxua]PLUMA(565)
+		[Marxua]GUANO(506)
+		[Marxua]AGUA(2675)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoALABARDA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(30)
+		[Marxua]GUANO(1185)
+		[Marxua]AGUA(3063)
+		[Marxua]AGUA(3422)
+		[Marxua]GUANO(3900)
+		[Marxua]PLUMA(4845)
+		[Marxua]MANDRAGORA(4599)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoLANZA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(2529)
+		[Marxua]GUANO(1705)
+		[Marxua]GUANO(2829)
+		[Marxua]PLUMA(4066)
+		[Marxua]AGUA(2749)
+		[Marxua]MANDRAGORA(3845)
+		[Marxua]AGUA(3349)
+		[Marxua]MANDRAGORA(2633)
+		[Marxua]GUANO(1007)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(3069)
+		[Marxua]PLUMA(195)
+		[Marxua]PLUMA(255)
+		[Marxua]AGUA(4181)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(246)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoALABARDA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3680)
+		[Marxua]AGUA(1826)
+		[Marxua]GUANO(3487)
+		[Marxua]MANDRAGORA(3771)
+		[Marxua]PLUMA(1419)
+		[Marxua]AGUA(1487)
+		[Marxua]GUANO(2972)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1502)
+		[Marxua]PLUMA(3492)
+		[Marxua]MANDRAGORA(868)
+		[Marxua]PLUMA(434)
+		[Marxua]AGUA(1674)
+		[Marxua]GUANO(433)
+		[Marxua]PLUMA(2535)
+		[Marxua]PLUMA(2101)
+		[Marxua]GUANO(3877)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1838)
+		[Marxua]GUANO(4897)
+		[Marxua]PLUMA(1087)
+		[Marxua]PLUMA(1814)
+		[Marxua]AGUA(4150)
+		[Marxua]PLUMA(3624)
+		[Marxua]GUANO(2319)
+		[Marxua]GUANO(2729)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4769)
+		[Marxua]PLUMA(1795)
+		[Marxua]MANDRAGORA(423)
+		[Marxua]GUANO(480)
+		[Marxua]GUANO(3332)
+		[Marxua]PLUMA(1338)
+		[Marxua]MANDRAGORA(3305)
+		[Marxua]AGUA(410)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoALABARDA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3633)
+		[Marxua]PLUMA(113)
+		[Marxua]MANDRAGORA(588)
+		[Marxua]GUANO(753)
+		[Marxua]AGUA(1835)
+		[Marxua]PLUMA(4249)
+		[Marxua]MANDRAGORA(1629)
+		[Marxua]MANDRAGORA(3762)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoALABARDA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(280)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(3704)
+		[Marxua]GUANO(2781)
+		[Marxua]AGUA(1227)
+		[Marxua]AGUA(1668)
+		[Marxua]AGUA(4960)
+		[Marxua]GUANO(3651)
+		[Marxua]GUANO(3854)
+		[Marxua]MANDRAGORA(1270)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(346)
+		[Marxua]MANDRAGORA(4622)
+		[Marxua]PLUMA(3391)
+		[Marxua]GUANO(4288)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoLANZA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2986)
+		[Marxua]AGUA(2662)
+		[Marxua]AGUA(2205)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(2938)
+		[Marxua]AGUA(4155)
+		[Marxua]MANDRAGORA(2889)
+		[Marxua]PLUMA(4579)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+
+                    // Problema he recibido fin lote, pero no esta liberado sinforiano, creo Por que justo abajo pone finlote
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+		[Marxua]Estamos todas en el huerto
+					[Meigas]Meiga5Ha terminado conjuro
+					[Meigas]Meiga10Ha terminado conjuro
+					[Meigas]Meiga1Ha terminado conjuro
+					[Meigas]Meiga7Ha terminado conjuro
+					[Meigas]Meiga16Ha terminado conjuro
+					[Meigas]Meiga21Ha terminado conjuro
+					[Meigas]Meiga2Ha terminado conjuro
+					[Meigas]Meiga14Ha terminado conjuro
+					[Meigas]Meiga17Ha terminado conjuro
+					[Meigas]Meiga22Ha terminado conjuro
+					[Meigas]Meiga12Ha terminado conjuro
+					[Meigas]Meiga11Ha terminado conjuro
+					[Meigas]Meiga4Ha terminado conjuro
+					[Meigas]Meiga3Ha terminado conjuro
+                    // Tengo que preguntarle por que si Maruxa termina el conjuro
+                    // Y esta todo el rato comprobando, no suel
+		[Marxua]He recitado
+					[Meigas]Meiga13Ha terminado conjuro
+					[Meigas]Meiga0Ha terminado conjuro
+					[Meigas]Meiga18Ha terminado conjuro
+					[Meigas]Meiga19Ha terminado conjuro
+					[Meigas]Meiga6Ha terminado conjuro
+					[Meigas]Meiga15Ha terminado conjuro
+					[Meigas]Meiga20Ha terminado conjuro
+					[Meigas]Meiga9Ha terminado conjuro
+					[Meigas]Meiga8Ha terminado conjuro
+		[Marxua]Hemos recitado todas
+					[Meigas]EntregoMOSQUETE
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoALABARDA
+					[Meigas]EntregoLANZA
+					[Meigas]EntregoMOSQUETE
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoMOSQUETE
+					[Meigas]EntregoMOSQUETE
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoALABARDA
+					[Meigas]EntregoLANZA
+					[Meigas]EntregoMOSQUETE
+	[Sinforiano]EntregoFIN_LOTE
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoLANZA
+					[Meigas]EntregoMOSQUETE
+					[Meigas]EntregoALABARDA
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoMOSQUETE
+					[Meigas]EntregoTRABUCO
+					[Meigas]EntregoLANZA
+					[Meigas]EntregoALABARDA
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Esperando encargo de Maruxa
+^CBorrando archivos .class...

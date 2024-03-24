@@ -117,8 +117,8 @@ public class Sinforiano extends Hilo {
 
             }
             // Cuando termine el bucle, tenemos que traspasar el VEIGA.FINLOTE
-            Marxua.EnvioArma(Veiga.Arma.FIN_LOTE);
             trazador.Print("Entrego" + Veiga.Arma.FIN_LOTE.name());
+            Marxua.EnvioArma(Veiga.Arma.FIN_LOTE);
             LotesCompletosTerminados++;
             MutexNumeroArmasEnLote.release();
 
@@ -163,6 +163,7 @@ public class Sinforiano extends Hilo {
     }
 
     public void EsperarSiguienteMeiga() {
+        trazador.Print("Esperando Recibir Armas Completa de Meiga");
         try {
             Meigas.EntregandoArmasASinforiano.acquire();
         } catch (InterruptedException e) {

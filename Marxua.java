@@ -35,6 +35,7 @@ public class Marxua extends Hilo {
                     ConstruirEncargo();
                     SiguienteArma();
                 }
+                trazador.Print("He recibido FIN LOTE, Me voy al HUERTO");
                 HuertoXiana();
 
                 // COMO se que se ha acabado el lote igualmente antes de terminal la simulacion
@@ -147,7 +148,7 @@ public class Marxua extends Hilo {
         return (pasos);
     }
 
-    /* HUERTO XIANA */
+    /* HUERTO XIANA MARUXA */
     public void HuertoXiana() {
 
         // Una vez que mando fin lote, me vengo al huerto y espero que lleguen todas las
@@ -158,8 +159,12 @@ public class Marxua extends Hilo {
         // Recitan todas juntas, el conjuto que les lleva un tiempo aleatorio, A CADA
         // UNA.
         trazador.Print("En el Huerto");
+        // Preguntarle si puedo hacer aqui una pausa
+        // O poner el Mutex para 2 hilos
+
         try {
             Meigas.MutexHuerto.acquire();
+
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -167,6 +172,7 @@ public class Marxua extends Hilo {
         while (Meigas.NEsperandoEnHuerto != Meigas.nEncargosRecibidosPorMeigas) {
             // Me quedo en bucle comprobando que han llegado todas solo termino
             // Cuando han llegado
+            Meigas.MutexHuerto.release();
         }
 
         Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
@@ -182,6 +188,7 @@ public class Marxua extends Hilo {
             while (Meigas.NesperandoTerminarConjuro != Meigas.nEncargosRecibidosPorMeigas) {
                 // Me quedo en bucle comprobando que han llegado todas solo termino
                 // Cuando han llegado
+                Meigas.MutexHuerto.release();
             }
 
             Meigas.EsperandoTemrminarConjuro.release(Meigas.nEncargosRecibidosPorMeigas);
