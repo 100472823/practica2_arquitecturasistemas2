@@ -42,11 +42,10 @@ public class Sinforiano extends Hilo {
                 // Cuando termine de hacer las armas de un lote las procesa
                 // y una vez despues de procesarlas,
                 // Entonces comprueba
-                EsperarSiguienteMeiga();
-                while (!EncargoTerminado.armaActual.name().equals(Veiga.Arma.FIN_LOTE)) {
-                    EsperarSiguienteMeiga();
+                EsperandoTerminarMeigas();
+                while (!EncargoTerminado.armaActual.name().equals(Veiga.Arma.FIN_LOTE.name())) {
                     ProcesarArmaMeigas();
-
+                    EsperarSiguienteMeiga();
                 }
                 // La ultima vez, le mandan FINLOTE, procesa, y al comprobar en el while
                 // Ahi es cuando sale
@@ -134,7 +133,7 @@ public class Sinforiano extends Hilo {
 
     public static void RecibirArmaMeigas(Receta EncargoCompleto) {
 
-        EncargoTerminado = EncargoCompleto;
+        EncargoTerminado = new Receta(EncargoCompleto.armaActual, EncargoCompleto.receta_Arma);
         // Suelta a sinforiano antes para que pueda continuar, y pilla a la meiga por
         // Imprimo el arma que me ha llegado de encargo.
         // Suelto a la meiga
@@ -166,6 +165,27 @@ public class Sinforiano extends Hilo {
         trazador.Print("Esperando Recibir Armas Completa de Meiga");
         try {
             Meigas.EntregandoArmasASinforiano.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void EsperandoTerminarMeigas() {
+        trazador.Print("Esperando que todas las meigas Terminen");
+        try {
+            Meigas.MutexEntregaSinforiano.acquire();
+            MutexNumeroArmasEnLote.acquire();
+            while (NumeroArmasEnLote > Meigas.nMeigasTerminadasEsperando) {
+
+                trazador.Print("Han terminado " + String.valueOf(Meigas.nMeigasTerminadasEsperando));
+                Meigas.MutexEntregaSinforiano.release();
+                MutexNumeroArmasEnLote.release();
+                Meigas.MutexEntregaSinforiano.acquire();
+                MutexNumeroArmasEnLote.acquire();
+            }
+
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -9,6 +9,7 @@ public class Meigas extends Hilo {
     public static int NesperandoTerminarConjuro;
     public static int nEncargosRecibidosPorMeigas = 0;
     private static int vida = 0;
+    public static int nMeigasTerminadasEsperando = 0;
 
     static private Semaphore EsperandoComprobacionEnvio = new Semaphore(0);
     static private Semaphore EsperandoEncargoMeigas = new Semaphore(0);
@@ -20,6 +21,7 @@ public class Meigas extends Hilo {
     static private Semaphore MutexMeigas = new Semaphore(1);
     static public Semaphore MutexMeigasVida = new Semaphore(1);
     static public Semaphore MutexHuerto = new Semaphore(1);
+    static public Semaphore MutexEntregaSinforiano = new Semaphore(1);
 
     static private Receta EncargoAux;
     public Receta Encargo;
@@ -66,8 +68,11 @@ public class Meigas extends Hilo {
             // Entran todas Al entregoArmas, que tiene una
             // Barrera, por lo tanto una vez terminen todas
             // Habran terminado el Lote
-            EncargoAux.armaActual = Veiga.Arma.FIN_LOTE;
-            Sinforiano.RecibirArmaMeigas(EncargoAux);
+
+            // lo envian todas
+
+            // EncargoAux.armaActual = Veiga.Arma.FIN_LOTE;
+            // Sinforiano.RecibirArmaMeigas(EncargoAux);
 
             /*************************
              * * IMPLEMENTACION DE HILOS MEIGAS
@@ -174,6 +179,9 @@ public class Meigas extends Hilo {
     public void EntregoARMASinforiano() {
 
         try {
+            MutexEntregaSinforiano.acquire();
+            nMeigasTerminadasEsperando++;
+            MutexEntregaSinforiano.release();
             EsperandoMeigasASinforiano.acquire();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block

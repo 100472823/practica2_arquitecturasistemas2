@@ -164,15 +164,16 @@ public class Marxua extends Hilo {
 
         try {
             Meigas.MutexHuerto.acquire();
+            while (Meigas.NEsperandoEnHuerto != Meigas.nEncargosRecibidosPorMeigas) {
+                // Me quedo en bucle comprobando que han llegado todas solo termino
+                // Cuando han llegado
+                Meigas.MutexHuerto.release();
+                Meigas.MutexHuerto.acquire();
+            }
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-        while (Meigas.NEsperandoEnHuerto != Meigas.nEncargosRecibidosPorMeigas) {
-            // Me quedo en bucle comprobando que han llegado todas solo termino
-            // Cuando han llegado
-            Meigas.MutexHuerto.release();
         }
 
         Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
@@ -189,6 +190,7 @@ public class Marxua extends Hilo {
                 // Me quedo en bucle comprobando que han llegado todas solo termino
                 // Cuando han llegado
                 Meigas.MutexHuerto.release();
+                Meigas.MutexHuerto.acquire();
             }
 
             Meigas.EsperandoTemrminarConjuro.release(Meigas.nEncargosRecibidosPorMeigas);
