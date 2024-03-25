@@ -42,17 +42,21 @@ public class Sinforiano extends Hilo {
                 // Cuando termine de hacer las armas de un lote las procesa
                 // y una vez despues de procesarlas,
                 // Entonces comprueba
-                EsperandoTerminarMeigas();
-                while (!EncargoTerminado.armaActual.name().equals(Veiga.Arma.FIN_LOTE.name())) {
-                    // Suelto a la meiga
-                    // Imprimo la proceso
-                    ProcesarArmaMeigas();
-                    // Me quedo pillado esperando a la siguiente arma
-                    EsperarSiguienteMeiga();
-                    trazador.Print("Me han despertado inicio otra vez bucle");
-                }
-                ProcesarArmaMeigas();
-
+                // EsperandoTerminarMeigas();
+                /*
+                 * while
+                 * (!EncargoTerminado.armaActual.name().equals(Veiga.Arma.FIN_LOTE.name())) {
+                 * // Suelto a la meiga
+                 * // Imprimo la proceso
+                 * ProcesarArmaMeigas();
+                 * // Me quedo pillado esperando a la siguiente arma
+                 * EsperarSiguienteMeiga();
+                 * trazador.Print("Me han despertado inicio otra vez bucle");
+                 * }
+                 * ProcesarArmaMeigas();
+                 * 
+                 * 
+                 */
                 // La ultima vez, le mandan FINLOTE, procesa, y al comprobar en el while
                 // Ahi es cuando sale
                 // Se pillan todas las meigas que le van pasando ARMAS

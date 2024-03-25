@@ -1,0 +1,6 @@
+/**Sinforiano
+.........
+SueltaAUnaMeiga(Solo a 1)
+BarreraEsperaMeigasArmaTerminada
+RecogeArma
+VuelveALinea3

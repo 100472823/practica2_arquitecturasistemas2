@@ -145,6 +145,8 @@ public class TioAnton extends Hilo {
         }
 
     }
+    /* MODIFICAR NOMBRES */
+    /* SACAR FUNCION ABRIR */
 
     public void EsperarEmbarcadero() {
 
@@ -153,7 +155,7 @@ public class TioAnton extends Hilo {
 
         try {
             MutexTioAnton.acquire();
-            trazador.Print(String.valueOf(NBarreraEmbarcadero) + "Hay esperando en el embarcadero");
+            trazador.Print(NBarreraEmbarcadero + "Hay esperando en el embarcadero");
             MutexTioAnton.release();
 
             BarreraEmbarcadero.release(Veiga.CAPACIDAD_BARCA);
@@ -208,6 +210,8 @@ public class TioAnton extends Hilo {
 
             // Habra que hacer un acquire
             // para cerrar el embarcadero, si solo se monta 1 persona
+            /* Cambiar de BARCA */
+            /* Comprobar x-capacidad */
             MutexBarca.acquire();
             if (NPERSONASBARCA == 1) {
 

@@ -3,7 +3,7 @@ import java.util.concurrent.Semaphore;
 public class Meigas extends Hilo {
 
     private int Numero_Meiga;
-    private static Trazador trazador = new Trazador(5, "Meigas");
+    private Trazador trazador = new Trazador(5, "Meiga" + this.Numero_Meiga);
     private static int NumeroMeigasEsperando;
     public static int NEsperandoEnHuerto;
     public static int NesperandoTerminarConjuro;
@@ -35,7 +35,7 @@ public class Meigas extends Hilo {
 
     public void run() {
 
-        trazador.Print("Inicio Hilo Meiga n " + String.valueOf(Numero_Meiga));
+        this.trazador.Print("Inicio Hilo Meiga n " + String.valueOf(Numero_Meiga));
         /*************************
          * IMPLEMENTACION DE HILOS MEIGAS
          ***********************/
@@ -65,7 +65,7 @@ public class Meigas extends Hilo {
             // BUSCAR INGREDIENTES INDIVIDUALESingredientes
             Pausa(Veiga.TMIN_COCCION, Veiga.TMAX_COCCION);
             HuertoXiana();
-            EntregoARMASinforiano();
+            // EntregoARMASinforiano();
 
             // Hay que limpiar las variables
             // Para el siguiente Lote
@@ -86,24 +86,24 @@ public class Meigas extends Hilo {
     /* LAS MEIGAS SE QUEDAN PILLADAS ESPERANDO EL ENCARGO DE MARUXA */
     public void EsperandoEncargo() {
         // Todas las meigas se quedan esperando a que maruxa, tenga un encargo
-        trazador.Print("Esperando encargo de Maruxa");
+        this.trazador.Print("Esperando encargo de Maruxa");
         try {
             MutexMeigas.acquire();
             NumeroMeigasEsperando++;
-            trazador.Print("Hay Esperando un Encargo de Maruxa" + String.valueOf(NumeroMeigasEsperando));
+            this.trazador.Print("Hay Esperando un Encargo de Maruxa" + String.valueOf(NumeroMeigasEsperando));
             MutexMeigas.release();
             EsperandoEncargoMeigas.acquire();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        trazador.Print("Maruxa me ha soltado");
+        this.trazador.Print("Maruxa me ha soltado");
     }
 
     /* RECIBO ENCARGO DE MARUXA */
     public void ReciboEncargo() {
         this.Encargo = EncargoAux;
-        trazador.Print("He recibido un encargo" + this.Encargo.armaActual.name());
+        this.trazador.Print("He recibido un encargo" + this.Encargo.armaActual.name());
         // Como compruebo que hay uno para mi.
 
         // FALTA TRY CATCH MUTEX INTERVIENEN 2HILOS
@@ -119,7 +119,7 @@ public class Meigas extends Hilo {
         }
 
         EsperandoComprobacionEnvio.release();
-        trazador.Print("He soltado a maruxa");
+        this.trazador.Print("He soltado a maruxa");
 
     }
 
@@ -144,12 +144,19 @@ public class Meigas extends Hilo {
     }
 
     public void HuertoXiana() {
-        // Limpiar para la proxima Ejecucion
 
         // Nada mas llegar, se suman uno y se pillan
+        // Comprueban que no son la ultima
+        // Si son la ultima, sueltan a NEsperandoHuerto
+
         try {
             MutexHuerto.acquire();
             NEsperandoEnHuerto++;
+            this.trazador.Print("Acabo de llegar al Huerto ");
+            if (NEsperandoEnHuerto == nEncargosRecibidosPorMeigas) {
+                Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
+                this.trazador.Print("Estamos todas en el huerto");
+            }
             MutexHuerto.release();
             EsperandoHuerto.acquire();
 
@@ -158,11 +165,16 @@ public class Meigas extends Hilo {
             e.printStackTrace();
         }
 
+        this.trazador.Print("Empiezo el Conjuro");
         Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
-        trazador.Print("Meiga" + String.valueOf(this.Numero_Meiga) + "Ha terminado conjuro");
+        this.trazador.Print("He terminado conjuro");
         try {
             MutexHuerto.acquire();
             NesperandoTerminarConjuro++;
+            if (NesperandoTerminarConjuro == nEncargosRecibidosPorMeigas) {
+                EsperandoTemrminarConjuro.release(nEncargosRecibidosPorMeigas);
+                this.trazador.Print("Hemos recitado todas");
+            }
             MutexHuerto.release();
             EsperandoTemrminarConjuro.acquire();
         } catch (InterruptedException e) {
@@ -189,21 +201,24 @@ public class Meigas extends Hilo {
             e.printStackTrace();
         }
 
-        trazador.Print("Entrego" + this.Encargo.armaActual.name());
+        this.trazador.Print("Entrego" + this.Encargo.armaActual.name());
 
         Sinforiano.RecibirArmaMeigas(this.Encargo);
 
         try {
             MutexEntregaSinforiano.acquire();
             nMeigasTerminadasHanEnviadoASinforiano++;
-            trazador.Print("Han Entregado Armas" + String.valueOf(nMeigasTerminadasHanEnviadoASinforiano));
+            this.trazador.Print("Han Entregado Armas" + String.valueOf(nMeigasTerminadasHanEnviadoASinforiano));
             if (nMeigasTerminadasEsperando == nMeigasTerminadasHanEnviadoASinforiano) {
                 this.Encargo.armaActual = Veiga.Arma.FIN_LOTE;
                 Sinforiano.RecibirArmaMeigas(this.Encargo);
                 nMeigasTerminadasEsperando = 0;
                 nMeigasTerminadasHanEnviadoASinforiano = 0;
+                MutexEntregaSinforiano.release();
+                MutexHuerto.acquire();
+                NEsperandoEnHuerto = 0;
+                MutexHuerto.release();
             }
-            MutexEntregaSinforiano.release();
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block

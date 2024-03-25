@@ -1,0 +1,6 @@
+ while (Meigas.NEsperandoEnHuerto != Meigas.nEncargosRecibidosPorMeigas) {
+                // Me quedo en bucle comprobando que han llegado todas solo termino
+                // Cuando han llegado
+                Meigas.MutexHuerto.release();
+                Meigas.MutexHuerto.acquire();
+            }

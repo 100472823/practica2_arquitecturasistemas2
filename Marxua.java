@@ -151,56 +151,46 @@ public class Marxua extends Hilo {
     /* HUERTO XIANA MARUXA */
     public void HuertoXiana() {
 
-        // Una vez que mando fin lote, me vengo al huerto y espero que lleguen todas las
-        // meigas. que tienen encargo
-
-        // Hago una barrera y que vayan sumando hasta que lleguen todas, MeigasEnHuerto
-        // == MeigasConEncargo
-        // Recitan todas juntas, el conjuto que les lleva un tiempo aleatorio, A CADA
-        // UNA.
         trazador.Print("En el Huerto");
-        // Preguntarle si puedo hacer aqui una pausa
-        // O poner el Mutex para 2 hilos
+        // Me sumo a la barrera, por que soy la que primero llego
 
         try {
             Meigas.MutexHuerto.acquire();
-            while (Meigas.NEsperandoEnHuerto != Meigas.nEncargosRecibidosPorMeigas) {
-                // Me quedo en bucle comprobando que han llegado todas solo termino
-                // Cuando han llegado
-                Meigas.MutexHuerto.release();
-                Meigas.MutexHuerto.acquire();
+            Meigas.NEsperandoEnHuerto++;
+            if (Meigas.NEsperandoEnHuerto == Meigas.nEncargosRecibidosPorMeigas) {
+                Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
+                trazador.Print("Estamos todas en el huerto");
             }
-
+            Meigas.MutexHuerto.release();
+            Meigas.EsperandoHuerto.acquire();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
-        Meigas.MutexHuerto.release();
-        trazador.Print("Estamos todas en el huerto");
-
+        trazador.Print("Empiezo a recitar");
         Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
         trazador.Print("He recitado");
 
-        // Cuando todas y ella han concluido el conjuro
+        // Quitamos la espera activa
+        // Tendremos que comprobar que no somos la ultima
+        // En terminar de recitar el conjuro
         try {
             Meigas.MutexHuerto.acquire();
-            while (Meigas.NesperandoTerminarConjuro != Meigas.nEncargosRecibidosPorMeigas) {
+            Meigas.NesperandoTerminarConjuro++;
+            if (Meigas.NesperandoTerminarConjuro == Meigas.nEncargosRecibidosPorMeigas) {
                 // Me quedo en bucle comprobando que han llegado todas solo termino
                 // Cuando han llegado
-                Meigas.MutexHuerto.release();
-                Meigas.MutexHuerto.acquire();
+                Meigas.EsperandoTemrminarConjuro.release(Meigas.nEncargosRecibidosPorMeigas);
+                trazador.Print("Hemos recitado todas");
             }
 
-            Meigas.EsperandoTemrminarConjuro.release(Meigas.nEncargosRecibidosPorMeigas);
             Meigas.MutexHuerto.release();
+            Meigas.EsperandoTemrminarConjuro.acquire();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         // Falta Mutex variables protegida
-        trazador.Print("Hemos recitado todas");
 
     }
 
