@@ -44,9 +44,15 @@ public class Sinforiano extends Hilo {
                 // Entonces comprueba
                 EsperandoTerminarMeigas();
                 while (!EncargoTerminado.armaActual.name().equals(Veiga.Arma.FIN_LOTE.name())) {
+                    // Suelto a la meiga
+                    // Imprimo la proceso
                     ProcesarArmaMeigas();
+                    // Me quedo pillado esperando a la siguiente arma
                     EsperarSiguienteMeiga();
+                    trazador.Print("Me han despertado inicio otra vez bucle");
                 }
+                ProcesarArmaMeigas();
+
                 // La ultima vez, le mandan FINLOTE, procesa, y al comprobar en el while
                 // Ahi es cuando sale
                 // Se pillan todas las meigas que le van pasando ARMAS
@@ -143,12 +149,15 @@ public class Sinforiano extends Hilo {
         Meigas.EntregandoArmasASinforiano.release();
         // Aqui se quedarian todas las meigas pilladas
         // Del acquire
-        try {
-            Meigas.EsperandoMeigasASinforiano.acquire();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        /*
+         * try {
+         * Meigas.EsperandoMeigasASinforiano.acquire();
+         * } catch (InterruptedException e) {
+         * // TODO Auto-generated catch block
+         * e.printStackTrace();
+         * }
+         * 
+         */
         // que va de arma en arma
         // Se pilla la meiga por que van de una en una y tiene que procesar el encargo
 

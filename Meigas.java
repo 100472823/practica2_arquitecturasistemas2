@@ -66,14 +66,9 @@ public class Meigas extends Hilo {
             Pausa(Veiga.TMIN_COCCION, Veiga.TMAX_COCCION);
             HuertoXiana();
             EntregoARMASinforiano();
-            // Entran todas Al entregoArmas, que tiene una
-            // Barrera, por lo tanto una vez terminen todas
-            // Habran terminado el Lote
 
-            // lo envian todas
-
-            // EncargoAux.armaActual = Veiga.Arma.FIN_LOTE;
-            // Sinforiano.RecibirArmaMeigas(EncargoAux);
+            // Hay que limpiar las variables
+            // Para el siguiente Lote
 
             /*************************
              * * IMPLEMENTACION DE HILOS MEIGAS
@@ -95,6 +90,7 @@ public class Meigas extends Hilo {
         try {
             MutexMeigas.acquire();
             NumeroMeigasEsperando++;
+            trazador.Print("Hay Esperando un Encargo de Maruxa" + String.valueOf(NumeroMeigasEsperando));
             MutexMeigas.release();
             EsperandoEncargoMeigas.acquire();
         } catch (InterruptedException e) {
@@ -113,6 +109,8 @@ public class Meigas extends Hilo {
         // FALTA TRY CATCH MUTEX INTERVIENEN 2HILOS
         try {
             MutexHuerto.acquire();
+            // Ya no estoy esperando
+            NumeroMeigasEsperando--;
             nEncargosRecibidosPorMeigas++;
             MutexHuerto.release();
         } catch (InterruptedException e) {
@@ -146,6 +144,7 @@ public class Meigas extends Hilo {
     }
 
     public void HuertoXiana() {
+        // Limpiar para la proxima Ejecucion
 
         // Nada mas llegar, se suman uno y se pillan
         try {
@@ -197,9 +196,12 @@ public class Meigas extends Hilo {
         try {
             MutexEntregaSinforiano.acquire();
             nMeigasTerminadasHanEnviadoASinforiano++;
-            if (nMeigasTerminadasEsperando - 1 == nMeigasTerminadasHanEnviadoASinforiano) {
+            trazador.Print("Han Entregado Armas" + String.valueOf(nMeigasTerminadasHanEnviadoASinforiano));
+            if (nMeigasTerminadasEsperando == nMeigasTerminadasHanEnviadoASinforiano) {
                 this.Encargo.armaActual = Veiga.Arma.FIN_LOTE;
                 Sinforiano.RecibirArmaMeigas(this.Encargo);
+                nMeigasTerminadasEsperando = 0;
+                nMeigasTerminadasHanEnviadoASinforiano = 0;
             }
             MutexEntregaSinforiano.release();
 

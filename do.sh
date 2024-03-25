@@ -27,6 +27,9 @@ javac Veiga.java
 echo "Ejecutando Veiga.java..."
 java Veiga
 
+# Ejecutar el programa principal (Veiga.java)
+echo "Ejecutando Veiga.java..."
+java Veiga > log.txt
 
 # Borrar archivos .class
 echo "Borrando archivos .class..."

@@ -50,6 +50,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 Compilando Barrera.java...
 error: file not found: Barrera.java
 Usage: javac <options> <source files>
@@ -66,15 +78,14 @@ Ejecutando Veiga.java...
 		[Marxua] Inicio Hilo Marxua
 		[Marxua]Esperando Recibir Lote
 	[Sinforiano] Inicio Sinforiano
-					[Meigas]Inicio Hilo Meiga n 1
-					[Meigas]Esperando encargo de Maruxa
 					[Meigas]Inicio Hilo Meiga n 0
+					[Meigas]Inicio Hilo Meiga n 1
 					[Meigas]Esperando encargo de Maruxa
 					[Meigas]Inicio Hilo Meiga n 3
 					[Meigas]Esperando encargo de Maruxa
-					[Meigas]Inicio Hilo Meiga n 4
-					[Meigas]Esperando encargo de Maruxa
 					[Meigas]Inicio Hilo Meiga n 5
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Inicio Hilo Meiga n 4
 					[Meigas]Esperando encargo de Maruxa
 					[Meigas]Inicio Hilo Meiga n 6
 					[Meigas]Esperando encargo de Maruxa
@@ -121,105 +132,54 @@ Ejecutando Veiga.java...
 					[Meigas]Inicio Hilo Meiga n 26
 					[Meigas]Esperando encargo de Maruxa
 					[Meigas]Inicio Hilo Meiga n 27
-					[Meigas]Esperando encargo de Maruxa
 					[Meigas]Inicio Hilo Meiga n 28
 					[Meigas]Esperando encargo de Maruxa
 					[Meigas]Inicio Hilo Meiga n 29
 					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]n_lotes2
+	[Sinforiano]n_lotes1
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa1
+					[Meigas]Esperando encargo de Maruxa
 	[Sinforiano]n_armas23
-	[Sinforiano]EntregoTRABUCO
-		[Marxua]He recibidoTRABUCO
-		[Marxua]Redactar receta
-		[Marxua]MANDRAGORA(952)
-		[Marxua]AGUA(1063)
-		[Marxua]MANDRAGORA(1018)
-		[Marxua]MANDRAGORA(3369)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoTRABUCO
-					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoTRABUCO
-		[Marxua]He recibidoTRABUCO
-		[Marxua]Redactar receta
-		[Marxua]MANDRAGORA(1796)
-		[Marxua]PLUMA(4627)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoTRABUCO
-					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoMOSQUETE
-		[Marxua]He recibidoMOSQUETE
-		[Marxua]Redactar receta
-		[Marxua]AGUA(4242)
-		[Marxua]AGUA(2503)
-		[Marxua]PLUMA(65)
-		[Marxua]MANDRAGORA(256)
-		[Marxua]AGUA(304)
-		[Marxua]MANDRAGORA(1368)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoMOSQUETE
-					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoTRABUCO
-		[Marxua]He recibidoTRABUCO
-		[Marxua]Redactar receta
-		[Marxua]MANDRAGORA(935)
-		[Marxua]GUANO(1659)
-		[Marxua]MANDRAGORA(3941)
-		[Marxua]PLUMA(2536)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoTRABUCO
-					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoMOSQUETE
-		[Marxua]He recibidoMOSQUETE
-		[Marxua]Redactar receta
-		[Marxua]GUANO(1677)
-		[Marxua]PLUMA(1212)
-		[Marxua]GUANO(4458)
-		[Marxua]PLUMA(197)
-		[Marxua]GUANO(1247)
-		[Marxua]AGUA(48)
-		[Marxua]MANDRAGORA(1964)
-		[Marxua]AGUA(1491)
-		[Marxua]AGUA(2363)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoMOSQUETE
-					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoMOSQUETE
-		[Marxua]He recibidoMOSQUETE
-		[Marxua]Redactar receta
-		[Marxua]AGUA(2846)
-		[Marxua]PLUMA(4011)
-		[Marxua]GUANO(4255)
-		[Marxua]PLUMA(1597)
-		[Marxua]PLUMA(965)
-		[Marxua]AGUA(2471)
-		[Marxua]PLUMA(3338)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoMOSQUETE
-					[Meigas]He soltado a maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa2
+					[Meigas]Hay Esperando un Encargo de Maruxa3
+					[Meigas]Hay Esperando un Encargo de Maruxa4
+					[Meigas]Hay Esperando un Encargo de Maruxa5
 	[Sinforiano]EntregoLANZA
+					[Meigas]Hay Esperando un Encargo de Maruxa6
+					[Meigas]Hay Esperando un Encargo de Maruxa7
 		[Marxua]He recibidoLANZA
+					[Meigas]Hay Esperando un Encargo de Maruxa8
 		[Marxua]Redactar receta
-		[Marxua]AGUA(4060)
-		[Marxua]MANDRAGORA(4257)
-		[Marxua]AGUA(3743)
-		[Marxua]GUANO(4072)
-		[Marxua]GUANO(3872)
-		[Marxua]PLUMA(4545)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoLANZA
-					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoLANZA
-		[Marxua]He recibidoLANZA
-		[Marxua]Redactar receta
-		[Marxua]PLUMA(1350)
-		[Marxua]AGUA(4582)
+					[Meigas]Hay Esperando un Encargo de Maruxa9
+					[Meigas]Hay Esperando un Encargo de Maruxa10
+					[Meigas]Hay Esperando un Encargo de Maruxa11
+					[Meigas]Hay Esperando un Encargo de Maruxa12
+					[Meigas]Hay Esperando un Encargo de Maruxa13
+					[Meigas]Hay Esperando un Encargo de Maruxa14
+					[Meigas]Hay Esperando un Encargo de Maruxa15
+					[Meigas]Hay Esperando un Encargo de Maruxa16
+					[Meigas]Hay Esperando un Encargo de Maruxa17
+					[Meigas]Hay Esperando un Encargo de Maruxa18
+					[Meigas]Hay Esperando un Encargo de Maruxa19
+					[Meigas]Hay Esperando un Encargo de Maruxa20
+					[Meigas]Hay Esperando un Encargo de Maruxa21
+					[Meigas]Hay Esperando un Encargo de Maruxa22
+					[Meigas]Hay Esperando un Encargo de Maruxa23
+					[Meigas]Hay Esperando un Encargo de Maruxa24
+					[Meigas]Hay Esperando un Encargo de Maruxa25
+					[Meigas]Hay Esperando un Encargo de Maruxa26
+					[Meigas]Hay Esperando un Encargo de Maruxa27
+					[Meigas]Hay Esperando un Encargo de Maruxa28
+					[Meigas]Hay Esperando un Encargo de Maruxa29
+					[Meigas]Hay Esperando un Encargo de Maruxa30
+		[Marxua]AGUA(3620)
+		[Marxua]AGUA(2636)
+		[Marxua]GUANO(1025)
+		[Marxua]GUANO(3087)
+		[Marxua]GUANO(1110)
+		[Marxua]PLUMA(1207)
+		[Marxua]MANDRAGORA(3854)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoLANZA
@@ -227,14 +187,7 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoALABARDA
 		[Marxua]He recibidoALABARDA
 		[Marxua]Redactar receta
-		[Marxua]GUANO(1394)
-		[Marxua]GUANO(854)
-		[Marxua]PLUMA(4084)
-		[Marxua]GUANO(113)
-		[Marxua]PLUMA(4720)
-		[Marxua]PLUMA(565)
-		[Marxua]GUANO(506)
-		[Marxua]AGUA(2675)
+		[Marxua]MANDRAGORA(983)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoALABARDA
@@ -242,48 +195,25 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoLANZA
 		[Marxua]He recibidoLANZA
 		[Marxua]Redactar receta
-		[Marxua]PLUMA(30)
-		[Marxua]GUANO(1185)
-		[Marxua]AGUA(3063)
-		[Marxua]AGUA(3422)
-		[Marxua]GUANO(3900)
-		[Marxua]PLUMA(4845)
-		[Marxua]MANDRAGORA(4599)
+		[Marxua]MANDRAGORA(4896)
+		[Marxua]GUANO(515)
+		[Marxua]PLUMA(1700)
+		[Marxua]MANDRAGORA(4054)
+		[Marxua]MANDRAGORA(3201)
+		[Marxua]AGUA(828)
+		[Marxua]MANDRAGORA(1261)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoLANZA
 					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoMOSQUETE
-		[Marxua]He recibidoMOSQUETE
-		[Marxua]Redactar receta
-		[Marxua]PLUMA(2529)
-		[Marxua]GUANO(1705)
-		[Marxua]GUANO(2829)
-		[Marxua]PLUMA(4066)
-		[Marxua]AGUA(2749)
-		[Marxua]MANDRAGORA(3845)
-		[Marxua]AGUA(3349)
-		[Marxua]MANDRAGORA(2633)
-		[Marxua]GUANO(1007)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoMOSQUETE
-					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoMOSQUETE
-		[Marxua]He recibidoMOSQUETE
-		[Marxua]Redactar receta
-		[Marxua]GUANO(3069)
-		[Marxua]PLUMA(195)
-		[Marxua]PLUMA(255)
-		[Marxua]AGUA(4181)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoMOSQUETE
-					[Meigas]He soltado a maruxa
 	[Sinforiano]EntregoALABARDA
 		[Marxua]He recibidoALABARDA
 		[Marxua]Redactar receta
-		[Marxua]MANDRAGORA(246)
+		[Marxua]PLUMA(4184)
+		[Marxua]PLUMA(3455)
+		[Marxua]AGUA(2940)
+		[Marxua]PLUMA(2329)
+		[Marxua]MANDRAGORA(3439)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoALABARDA
@@ -291,13 +221,16 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoMOSQUETE
 		[Marxua]He recibidoMOSQUETE
 		[Marxua]Redactar receta
-		[Marxua]AGUA(3680)
-		[Marxua]AGUA(1826)
-		[Marxua]GUANO(3487)
-		[Marxua]MANDRAGORA(3771)
-		[Marxua]PLUMA(1419)
-		[Marxua]AGUA(1487)
-		[Marxua]GUANO(2972)
+		[Marxua]MANDRAGORA(4054)
+		[Marxua]AGUA(2130)
+		[Marxua]GUANO(739)
+		[Marxua]AGUA(2043)
+		[Marxua]GUANO(1497)
+		[Marxua]AGUA(4562)
+		[Marxua]AGUA(3388)
+		[Marxua]MANDRAGORA(2539)
+		[Marxua]PLUMA(672)
+		[Marxua]GUANO(894)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoMOSQUETE
@@ -305,45 +238,117 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoTRABUCO
 		[Marxua]He recibidoTRABUCO
 		[Marxua]Redactar receta
-		[Marxua]AGUA(1502)
-		[Marxua]PLUMA(3492)
-		[Marxua]MANDRAGORA(868)
-		[Marxua]PLUMA(434)
-		[Marxua]AGUA(1674)
-		[Marxua]GUANO(433)
-		[Marxua]PLUMA(2535)
-		[Marxua]PLUMA(2101)
-		[Marxua]GUANO(3877)
+		[Marxua]MANDRAGORA(4504)
+		[Marxua]PLUMA(2758)
+		[Marxua]AGUA(3724)
+		[Marxua]MANDRAGORA(3607)
+		[Marxua]MANDRAGORA(4027)
+		[Marxua]MANDRAGORA(4226)
+		[Marxua]MANDRAGORA(2655)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoTRABUCO
 					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoTRABUCO
-		[Marxua]He recibidoTRABUCO
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
 		[Marxua]Redactar receta
-		[Marxua]MANDRAGORA(1838)
-		[Marxua]GUANO(4897)
-		[Marxua]PLUMA(1087)
-		[Marxua]PLUMA(1814)
-		[Marxua]AGUA(4150)
-		[Marxua]PLUMA(3624)
-		[Marxua]GUANO(2319)
-		[Marxua]GUANO(2729)
+		[Marxua]PLUMA(308)
+		[Marxua]GUANO(2531)
+		[Marxua]MANDRAGORA(3089)
+		[Marxua]GUANO(3416)
+		[Marxua]GUANO(2178)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(762)
+		[Marxua]MANDRAGORA(481)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoLANZA
 					[Meigas]He soltado a maruxa
 	[Sinforiano]EntregoALABARDA
 		[Marxua]He recibidoALABARDA
 		[Marxua]Redactar receta
-		[Marxua]AGUA(4769)
-		[Marxua]PLUMA(1795)
-		[Marxua]MANDRAGORA(423)
-		[Marxua]GUANO(480)
-		[Marxua]GUANO(3332)
-		[Marxua]PLUMA(1338)
-		[Marxua]MANDRAGORA(3305)
-		[Marxua]AGUA(410)
+		[Marxua]AGUA(282)
+		[Marxua]PLUMA(1849)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoALABARDA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1739)
+		[Marxua]MANDRAGORA(2808)
+		[Marxua]AGUA(1398)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoLANZA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3487)
+		[Marxua]MANDRAGORA(3836)
+		[Marxua]GUANO(3822)
+		[Marxua]MANDRAGORA(3276)
+		[Marxua]MANDRAGORA(3425)
+		[Marxua]MANDRAGORA(2565)
+		[Marxua]PLUMA(775)
+		[Marxua]PLUMA(2195)
+		[Marxua]PLUMA(2942)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoALABARDA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2925)
+		[Marxua]PLUMA(3178)
+		[Marxua]AGUA(1005)
+		[Marxua]MANDRAGORA(3130)
+		[Marxua]AGUA(4273)
+		[Marxua]AGUA(3473)
+		[Marxua]AGUA(1988)
+		[Marxua]MANDRAGORA(918)
+		[Marxua]PLUMA(769)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2424)
+		[Marxua]AGUA(1037)
+		[Marxua]GUANO(4410)
+		[Marxua]AGUA(502)
+		[Marxua]GUANO(4411)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2996)
+		[Marxua]GUANO(4328)
+		[Marxua]PLUMA(3087)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4449)
+		[Marxua]MANDRAGORA(418)
+		[Marxua]GUANO(1569)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoALABARDA
@@ -351,14 +356,40 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoALABARDA
 		[Marxua]He recibidoALABARDA
 		[Marxua]Redactar receta
-		[Marxua]AGUA(3633)
-		[Marxua]PLUMA(113)
-		[Marxua]MANDRAGORA(588)
-		[Marxua]GUANO(753)
-		[Marxua]AGUA(1835)
-		[Marxua]PLUMA(4249)
-		[Marxua]MANDRAGORA(1629)
-		[Marxua]MANDRAGORA(3762)
+		[Marxua]AGUA(3128)
+		[Marxua]PLUMA(4204)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoALABARDA
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1511)
+		[Marxua]MANDRAGORA(4280)
+		[Marxua]AGUA(623)
+		[Marxua]GUANO(1083)
+		[Marxua]PLUMA(3462)
+		[Marxua]MANDRAGORA(3694)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoMOSQUETE
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(2874)
+		[Marxua]Entrego Encargo a Meiga
+					[Meigas]Maruxa me ha soltado
+					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(338)
+		[Marxua]AGUA(1152)
+		[Marxua]PLUMA(3665)
+		[Marxua]MANDRAGORA(3334)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoALABARDA
@@ -366,7 +397,8 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoTRABUCO
 		[Marxua]He recibidoTRABUCO
 		[Marxua]Redactar receta
-		[Marxua]GUANO(280)
+		[Marxua]MANDRAGORA(3212)
+		[Marxua]GUANO(4087)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoTRABUCO
@@ -374,14 +406,15 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoTRABUCO
 		[Marxua]He recibidoTRABUCO
 		[Marxua]Redactar receta
-		[Marxua]GUANO(3704)
-		[Marxua]GUANO(2781)
-		[Marxua]AGUA(1227)
-		[Marxua]AGUA(1668)
-		[Marxua]AGUA(4960)
-		[Marxua]GUANO(3651)
-		[Marxua]GUANO(3854)
-		[Marxua]MANDRAGORA(1270)
+		[Marxua]PLUMA(2824)
+		[Marxua]AGUA(3554)
+		[Marxua]PLUMA(2059)
+		[Marxua]AGUA(1642)
+		[Marxua]MANDRAGORA(2296)
+		[Marxua]PLUMA(3413)
+		[Marxua]AGUA(4954)
+		[Marxua]MANDRAGORA(4471)
+		[Marxua]AGUA(447)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoTRABUCO
@@ -389,156 +422,631 @@ Ejecutando Veiga.java...
 	[Sinforiano]EntregoLANZA
 		[Marxua]He recibidoLANZA
 		[Marxua]Redactar receta
-		[Marxua]MANDRAGORA(346)
-		[Marxua]MANDRAGORA(4622)
-		[Marxua]PLUMA(3391)
-		[Marxua]GUANO(4288)
+		[Marxua]GUANO(3723)
+		[Marxua]AGUA(2163)
+		[Marxua]MANDRAGORA(3054)
+		[Marxua]MANDRAGORA(4631)
+		[Marxua]AGUA(1670)
+		[Marxua]MANDRAGORA(4639)
+		[Marxua]AGUA(3529)
+		[Marxua]AGUA(1415)
+		[Marxua]PLUMA(708)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
 					[Meigas]He recibido un encargoLANZA
 					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoTRABUCO
-		[Marxua]He recibidoTRABUCO
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
 		[Marxua]Redactar receta
-		[Marxua]GUANO(2986)
-		[Marxua]AGUA(2662)
-		[Marxua]AGUA(2205)
+		[Marxua]MANDRAGORA(2927)
+		[Marxua]MANDRAGORA(4902)
+		[Marxua]AGUA(1642)
 		[Marxua]Entrego Encargo a Meiga
 					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoTRABUCO
+					[Meigas]He recibido un encargoLANZA
 					[Meigas]He soltado a maruxa
-	[Sinforiano]EntregoMOSQUETE
-		[Marxua]He recibidoMOSQUETE
-		[Marxua]Redactar receta
-		[Marxua]MANDRAGORA(2938)
-		[Marxua]AGUA(4155)
-		[Marxua]MANDRAGORA(2889)
-		[Marxua]PLUMA(4579)
-		[Marxua]Entrego Encargo a Meiga
-					[Meigas]Maruxa me ha soltado
-					[Meigas]He recibido un encargoMOSQUETE
-					[Meigas]He soltado a maruxa
-
-                    // Problema he recibido fin lote, pero no esta liberado sinforiano, creo Por que justo abajo pone finlote
+	[Sinforiano]EntregoFIN_LOTE
 		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
 		[Marxua]En el Huerto
 		[Marxua]Estamos todas en el huerto
+					[Meigas]Meiga19Ha terminado conjuro
+					[Meigas]Meiga14Ha terminado conjuro
+					[Meigas]Meiga6Ha terminado conjuro
+					[Meigas]Meiga23Ha terminado conjuro
+					[Meigas]Meiga12Ha terminado conjuro
+					[Meigas]Meiga20Ha terminado conjuro
+					[Meigas]Meiga13Ha terminado conjuro
+					[Meigas]Meiga3Ha terminado conjuro
+		[Marxua]He recitado
+					[Meigas]Meiga4Ha terminado conjuro
+					[Meigas]Meiga17Ha terminado conjuro
+					[Meigas]Meiga16Ha terminado conjuro
+					[Meigas]Meiga9Ha terminado conjuro
+					[Meigas]Meiga2Ha terminado conjuro
 					[Meigas]Meiga5Ha terminado conjuro
 					[Meigas]Meiga10Ha terminado conjuro
-					[Meigas]Meiga1Ha terminado conjuro
 					[Meigas]Meiga7Ha terminado conjuro
-					[Meigas]Meiga16Ha terminado conjuro
 					[Meigas]Meiga21Ha terminado conjuro
-					[Meigas]Meiga2Ha terminado conjuro
-					[Meigas]Meiga14Ha terminado conjuro
-					[Meigas]Meiga17Ha terminado conjuro
-					[Meigas]Meiga22Ha terminado conjuro
-					[Meigas]Meiga12Ha terminado conjuro
+					[Meigas]Meiga1Ha terminado conjuro
 					[Meigas]Meiga11Ha terminado conjuro
-					[Meigas]Meiga4Ha terminado conjuro
-					[Meigas]Meiga3Ha terminado conjuro
-                    // Tengo que preguntarle por que si Maruxa termina el conjuro
-                    // Y esta todo el rato comprobando, no suel
-		[Marxua]He recitado
-					[Meigas]Meiga13Ha terminado conjuro
-					[Meigas]Meiga0Ha terminado conjuro
-					[Meigas]Meiga18Ha terminado conjuro
-					[Meigas]Meiga19Ha terminado conjuro
-					[Meigas]Meiga6Ha terminado conjuro
 					[Meigas]Meiga15Ha terminado conjuro
-					[Meigas]Meiga20Ha terminado conjuro
-					[Meigas]Meiga9Ha terminado conjuro
+					[Meigas]Meiga18Ha terminado conjuro
+					[Meigas]Meiga22Ha terminado conjuro
 					[Meigas]Meiga8Ha terminado conjuro
 		[Marxua]Hemos recitado todas
-					[Meigas]EntregoMOSQUETE
-					[Meigas]EntregoTRABUCO
+	[Sinforiano]Esperando que todas las meigas Terminen
+	[Sinforiano]Han terminado 5
+	[Sinforiano]Han terminado 5
+	[Sinforiano]Han terminado 5
+	[Sinforiano]Han terminado 5
+	[Sinforiano]Han terminado 5
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado 6
+	[Sinforiano]Han terminado Todas las meigas23
 					[Meigas]EntregoALABARDA
-					[Meigas]EntregoLANZA
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
 					[Meigas]EntregoMOSQUETE
-					[Meigas]EntregoTRABUCO
-					[Meigas]EntregoMOSQUETE
-					[Meigas]EntregoMOSQUETE
-					[Meigas]EntregoTRABUCO
-					[Meigas]EntregoTRABUCO
-					[Meigas]EntregoTRABUCO
-					[Meigas]EntregoALABARDA
-					[Meigas]EntregoLANZA
-					[Meigas]EntregoMOSQUETE
-	[Sinforiano]EntregoFIN_LOTE
-					[Meigas]EntregoTRABUCO
-					[Meigas]EntregoLANZA
-					[Meigas]EntregoMOSQUETE
-					[Meigas]EntregoALABARDA
-					[Meigas]EntregoTRABUCO
-					[Meigas]EntregoMOSQUETE
-					[Meigas]EntregoTRABUCO
-					[Meigas]EntregoLANZA
-					[Meigas]EntregoALABARDA
+					[Meigas]Han Entregado Armas1
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa8
+					[Meigas]Han Entregado Armas2
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa9
+	[Sinforiano]Me han despertado inicio otra vez bucle
 	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoMOSQUETE
+					[Meigas]Han Entregado Armas3
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+					[Meigas]Hay Esperando un Encargo de Maruxa10
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoLANZA
+					[Meigas]Han Entregado Armas4
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa11
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoMOSQUETE
+					[Meigas]Han Entregado Armas5
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa12
+					[Meigas]EntregoMOSQUETE
+					[Meigas]Han Entregado Armas6
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoTRABUCO
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Han Entregado Armas7
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa13
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]Hay Esperando un Encargo de Maruxa14
+					[Meigas]EntregoALABARDA
+					[Meigas]Han Entregado Armas8
+					[Meigas]Esperando encargo de Maruxa
+	[Sinforiano]Me han despertado inicio otra vez bucle
 	[Sinforiano]He recibidoALABARDAArma
+					[Meigas]Hay Esperando un Encargo de Maruxa15
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoMOSQUETE
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]Han Entregado Armas9
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa16
+					[Meigas]EntregoTRABUCO
+					[Meigas]Han Entregado Armas10
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa17
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoALABARDA
+					[Meigas]Han Entregado Armas11
+					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa18
+	[Sinforiano]Me han despertado inicio otra vez bucle
 	[Sinforiano]He recibidoALABARDAArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoLANZA
+					[Meigas]Han Entregado Armas12
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa19
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoALABARDA
+					[Meigas]Han Entregado Armas13
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa20
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoALABARDA
+					[Meigas]Han Entregado Armas14
 					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Hay Esperando un Encargo de Maruxa21
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoLANZA
+					[Meigas]Han Entregado Armas15
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa22
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoLANZA
+					[Meigas]Han Entregado Armas16
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa23
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoTRABUCO
+					[Meigas]Han Entregado Armas17
 					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Hay Esperando un Encargo de Maruxa24
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoTRABUCO
+					[Meigas]Han Entregado Armas18
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa25
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoALABARDA
+					[Meigas]Han Entregado Armas19
 					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Hay Esperando un Encargo de Maruxa26
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoLANZA
+					[Meigas]Han Entregado Armas20
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa27
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoALABARDA
+					[Meigas]Han Entregado Armas21
 					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
+					[Meigas]Hay Esperando un Encargo de Maruxa28
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoTRABUCO
+					[Meigas]Han Entregado Armas22
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa29
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+					[Meigas]EntregoLANZA
+					[Meigas]Han Entregado Armas23
 					[Meigas]Esperando encargo de Maruxa
+					[Meigas]Hay Esperando un Encargo de Maruxa30
+	[Sinforiano]Me han despertado inicio otra vez bucle
 	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-					[Meigas]Esperando encargo de Maruxa
-					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-					[Meigas]Esperando encargo de Maruxa
-					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-					[Meigas]Esperando encargo de Maruxa
-					[Meigas]Esperando encargo de Maruxa
-					[Meigas]Esperando encargo de Maruxa
-					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-					[Meigas]Esperando encargo de Maruxa
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-	[Sinforiano]He recibidoFIN_LOTEArma
-					[Meigas]Esperando encargo de Maruxa
-^CBorrando archivos .class...
+		[Marxua]Recibo Fin Simulacion
