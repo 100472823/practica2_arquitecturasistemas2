@@ -49,6 +49,7 @@ public class Sinforiano extends Hilo {
                 }
                 // La ultima vez, le mandan FINLOTE, procesa, y al comprobar en el while
                 // Ahi es cuando sale
+                // Se pillan todas las meigas que le van pasando ARMAS
             }
 
         } catch (InterruptedException e) {
@@ -131,6 +132,7 @@ public class Sinforiano extends Hilo {
 
     }
 
+    /* Las meigas me pasan por argumento Las Armas */
     public static void RecibirArmaMeigas(Receta EncargoCompleto) {
 
         EncargoTerminado = new Receta(EncargoCompleto.armaActual, EncargoCompleto.receta_Arma);
@@ -152,6 +154,7 @@ public class Sinforiano extends Hilo {
 
     }
 
+    /* Proceso El arma Imprimiendolo, y suelto a la Siguiente Meiga */
     public void ProcesarArmaMeigas() {
 
         trazador.Print("He recibido" + EncargoTerminado.armaActual.name() + "Arma");
@@ -161,6 +164,7 @@ public class Sinforiano extends Hilo {
 
     }
 
+    /* Me quedo pillado hasta que la siguiente meiga me suelte */
     public void EsperarSiguienteMeiga() {
         trazador.Print("Esperando Recibir Armas Completa de Meiga");
         try {
@@ -185,12 +189,19 @@ public class Sinforiano extends Hilo {
                 Meigas.MutexEntregaSinforiano.acquire();
                 MutexNumeroArmasEnLote.acquire();
             }
+            trazador.Print("Han terminado Todas las meigas" + String.valueOf(Meigas.nMeigasTerminadasEsperando));
+
+            Meigas.MutexEntregaSinforiano.release();
+            MutexNumeroArmasEnLote.release();
+            Meigas.EsperandoMeigasASinforiano.release();
+            // Sinforiano, suelta a una, y espera a que esta modifique la
+            // Variable y luego le suelte
+            Meigas.EntregandoArmasASinforiano.acquire();
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
     }
 
 }

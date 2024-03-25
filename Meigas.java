@@ -10,6 +10,7 @@ public class Meigas extends Hilo {
     public static int nEncargosRecibidosPorMeigas = 0;
     private static int vida = 0;
     public static int nMeigasTerminadasEsperando = 0;
+    public static int nMeigasTerminadasHanEnviadoASinforiano = 0;
 
     static private Semaphore EsperandoComprobacionEnvio = new Semaphore(0);
     static private Semaphore EsperandoEncargoMeigas = new Semaphore(0);
@@ -103,6 +104,7 @@ public class Meigas extends Hilo {
         trazador.Print("Maruxa me ha soltado");
     }
 
+    /* RECIBO ENCARGO DE MARUXA */
     public void ReciboEncargo() {
         this.Encargo = EncargoAux;
         trazador.Print("He recibido un encargo" + this.Encargo.armaActual.name());
@@ -191,6 +193,20 @@ public class Meigas extends Hilo {
         trazador.Print("Entrego" + this.Encargo.armaActual.name());
 
         Sinforiano.RecibirArmaMeigas(this.Encargo);
+
+        try {
+            MutexEntregaSinforiano.acquire();
+            nMeigasTerminadasHanEnviadoASinforiano++;
+            if (nMeigasTerminadasEsperando - 1 == nMeigasTerminadasHanEnviadoASinforiano) {
+                this.Encargo.armaActual = Veiga.Arma.FIN_LOTE;
+                Sinforiano.RecibirArmaMeigas(this.Encargo);
+            }
+            MutexEntregaSinforiano.release();
+
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         // Me quedo pillado hasta que sinforiano, me haga release, confirmando que ha
         // recibido las armas , y
