@@ -3,7 +3,7 @@ import java.util.concurrent.Semaphore;
 public class Meigas extends Hilo {
 
     private int Numero_Meiga;
-    private Trazador trazador = new Trazador(5, "Meiga" + this.Numero_Meiga);
+    private Trazador trazador;
     private static int NumeroMeigasEsperando;
     public static int NEsperandoEnHuerto;
     public static int NesperandoTerminarConjuro;
@@ -30,6 +30,7 @@ public class Meigas extends Hilo {
     public Meigas(int n) {
 
         this.Numero_Meiga = n;
+        this.trazador = new Trazador(3, "Meiga" + this.Numero_Meiga);
 
     }
 
@@ -106,7 +107,6 @@ public class Meigas extends Hilo {
         this.trazador.Print("He recibido un encargo" + this.Encargo.armaActual.name());
         // Como compruebo que hay uno para mi.
 
-        // FALTA TRY CATCH MUTEX INTERVIENEN 2HILOS
         try {
             MutexHuerto.acquire();
             // Ya no estoy esperando
@@ -125,10 +125,6 @@ public class Meigas extends Hilo {
 
     /* MARUXA LLAMA A ESTA FUNCION PARA ENVIAR UN ENCARGO A UNA MEIGA */
     public static void EnvioEncargo(Veiga.Arma Arma, Paso[] receta) {
-
-        // EncargoAux.armaActual = Arma;
-        //
-        // EncargoAux.receta_Arma = receta;
 
         EncargoAux = new Receta(Arma, receta);
         EsperandoEncargoMeigas.release();
@@ -152,10 +148,16 @@ public class Meigas extends Hilo {
         try {
             MutexHuerto.acquire();
             NEsperandoEnHuerto++;
-            this.trazador.Print("Acabo de llegar al Huerto ");
-            if (NEsperandoEnHuerto == nEncargosRecibidosPorMeigas) {
-                Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
+            this.trazador.Print("Acabo de llegar al Huerto " + "Hay esperando : " + NEsperandoEnHuerto);
+            if (NEsperandoEnHuerto == nEncargosRecibidosPorMeigas + 1) {
+
                 this.trazador.Print("Estamos todas en el huerto");
+                this.trazador
+                        .Print("Esperando en el huerto" + Meigas.NEsperandoEnHuerto + "Encargos Recibidos por Meigas"
+                                + Meigas.nEncargosRecibidosPorMeigas);
+                Meigas.EsperandoHuerto.release(Meigas.NEsperandoEnHuerto);
+                NEsperandoEnHuerto = 0;
+
             }
             MutexHuerto.release();
             EsperandoHuerto.acquire();
@@ -165,15 +167,23 @@ public class Meigas extends Hilo {
             e.printStackTrace();
         }
 
-        this.trazador.Print("Empiezo el Conjuro");
+        this.trazador.Print("Empiezo a recitar el conjuro");
         Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
         this.trazador.Print("He terminado conjuro");
         try {
             MutexHuerto.acquire();
             NesperandoTerminarConjuro++;
-            if (NesperandoTerminarConjuro == nEncargosRecibidosPorMeigas) {
-                EsperandoTemrminarConjuro.release(nEncargosRecibidosPorMeigas);
+            /* SE SUMA UNO MAS POR QUE TB ESPERAMOS A MARUXA */
+            if (NesperandoTerminarConjuro == nEncargosRecibidosPorMeigas + 1) {
+
                 this.trazador.Print("Hemos recitado todas");
+                this.trazador
+                        .Print("Han recitado ya" + Meigas.NesperandoTerminarConjuro + "Encargos Recibidos por Meigas"
+                                + Meigas.nEncargosRecibidosPorMeigas);
+
+                EsperandoTemrminarConjuro.release(NesperandoTerminarConjuro);
+                NesperandoTerminarConjuro = 0;
+                nEncargosRecibidosPorMeigas = 0;
             }
             MutexHuerto.release();
             EsperandoTemrminarConjuro.acquire();
@@ -212,8 +222,8 @@ public class Meigas extends Hilo {
             if (nMeigasTerminadasEsperando == nMeigasTerminadasHanEnviadoASinforiano) {
                 this.Encargo.armaActual = Veiga.Arma.FIN_LOTE;
                 Sinforiano.RecibirArmaMeigas(this.Encargo);
-                nMeigasTerminadasEsperando = 0;
-                nMeigasTerminadasHanEnviadoASinforiano = 0;
+                nMeigasTerminadasEsperando = 1;
+                nMeigasTerminadasHanEnviadoASinforiano = 1;
                 MutexEntregaSinforiano.release();
                 MutexHuerto.acquire();
                 NEsperandoEnHuerto = 0;

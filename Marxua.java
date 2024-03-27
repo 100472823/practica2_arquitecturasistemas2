@@ -157,9 +157,12 @@ public class Marxua extends Hilo {
         try {
             Meigas.MutexHuerto.acquire();
             Meigas.NEsperandoEnHuerto++;
-            if (Meigas.NEsperandoEnHuerto == Meigas.nEncargosRecibidosPorMeigas) {
+            if (Meigas.NEsperandoEnHuerto == Meigas.nEncargosRecibidosPorMeigas + 1) {
                 Meigas.EsperandoHuerto.release(Meigas.nEncargosRecibidosPorMeigas);
                 trazador.Print("Estamos todas en el huerto");
+                trazador.Print("Esperando en el huerto" + Meigas.NEsperandoEnHuerto + "Encargos Recibidos por Meigas"
+                        + Meigas.nEncargosRecibidosPorMeigas);
+                Meigas.NEsperandoEnHuerto = 0;
             }
             Meigas.MutexHuerto.release();
             Meigas.EsperandoHuerto.acquire();
@@ -167,7 +170,7 @@ public class Marxua extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        trazador.Print("Empiezo a recitar");
+        trazador.Print("Empiezo a recitar el conjuro");
         Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
         trazador.Print("He recitado");
 
@@ -177,11 +180,12 @@ public class Marxua extends Hilo {
         try {
             Meigas.MutexHuerto.acquire();
             Meigas.NesperandoTerminarConjuro++;
-            if (Meigas.NesperandoTerminarConjuro == Meigas.nEncargosRecibidosPorMeigas) {
+            if (Meigas.NesperandoTerminarConjuro == Meigas.nEncargosRecibidosPorMeigas + 1) {
                 // Me quedo en bucle comprobando que han llegado todas solo termino
                 // Cuando han llegado
-                Meigas.EsperandoTemrminarConjuro.release(Meigas.nEncargosRecibidosPorMeigas);
+                Meigas.EsperandoTemrminarConjuro.release(Meigas.NesperandoTerminarConjuro);
                 trazador.Print("Hemos recitado todas");
+                Meigas.NesperandoTerminarConjuro = 0;
             }
 
             Meigas.MutexHuerto.release();
