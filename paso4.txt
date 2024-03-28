@@ -1,0 +1,15 @@
+
+Sinforiano 
+Se ha modificado para que ahora en vez de tener 
+que estar esperandfo todo el rato 
+Suelta a 1 meiga, y se espera 
+la meiga que llega le pasa el arma 
+lo despierta 
+y suma 1, para trakear cuandos encargops hemos hecho
+va soltado de 1 en una 
+y sinforiano se va durmiendo segun vaya proceasando
+Asi hasta llegar a fin de lote. 
+
+
+
+
