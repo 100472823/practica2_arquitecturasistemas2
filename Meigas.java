@@ -66,7 +66,7 @@ public class Meigas extends Hilo {
             // BUSCAR INGREDIENTES INDIVIDUALESingredientes
             Pausa(Veiga.TMIN_COCCION, Veiga.TMAX_COCCION);
             HuertoXiana();
-            // EntregoARMASinforiano();
+            EntregoARMASinforiano();
 
             // Hay que limpiar las variables
             // Para el siguiente Lote
@@ -183,7 +183,7 @@ public class Meigas extends Hilo {
 
                 EsperandoTemrminarConjuro.release(NesperandoTerminarConjuro);
                 NesperandoTerminarConjuro = 0;
-                nEncargosRecibidosPorMeigas = 0;
+
             }
             MutexHuerto.release();
             EsperandoTemrminarConjuro.acquire();
@@ -212,32 +212,32 @@ public class Meigas extends Hilo {
         }
 
         this.trazador.Print("Entrego" + this.Encargo.armaActual.name());
-
         Sinforiano.RecibirArmaMeigas(this.Encargo);
+        Meigas.EntregandoArmasASinforiano.release();
 
         try {
             MutexEntregaSinforiano.acquire();
             nMeigasTerminadasHanEnviadoASinforiano++;
             this.trazador.Print("Han Entregado Armas" + String.valueOf(nMeigasTerminadasHanEnviadoASinforiano));
-            if (nMeigasTerminadasEsperando == nMeigasTerminadasHanEnviadoASinforiano) {
+            /*
+             * CONTEAMOS LAS QUE TERMINAN DE ENVIAR PASA SABER CUANDO TENEMOS QUE PASAR
+             * FIN DE LOTE
+             */
+            if (nEncargosRecibidosPorMeigas == nMeigasTerminadasHanEnviadoASinforiano) {
                 this.Encargo.armaActual = Veiga.Arma.FIN_LOTE;
                 Sinforiano.RecibirArmaMeigas(this.Encargo);
-                nMeigasTerminadasEsperando = 1;
-                nMeigasTerminadasHanEnviadoASinforiano = 1;
-                MutexEntregaSinforiano.release();
-                MutexHuerto.acquire();
-                NEsperandoEnHuerto = 0;
-                MutexHuerto.release();
+                Meigas.EntregandoArmasASinforiano.release();
+                nMeigasTerminadasEsperando = 0;
+                nMeigasTerminadasHanEnviadoASinforiano = 0;
+                nEncargosRecibidosPorMeigas = 0;
+
             }
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        // Me quedo pillado hasta que sinforiano, me haga release, confirmando que ha
-        // recibido las armas , y
-        // Se vuelva a quedar pillado ya que es de 1 en 1.
+        MutexEntregaSinforiano.release();
 
     }
 

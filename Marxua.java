@@ -174,15 +174,16 @@ public class Marxua extends Hilo {
         Pausa(Veiga.TMIN_CONJURO, Veiga.TMAX_CONJURO);
         trazador.Print("He recitado");
 
-        // Quitamos la espera activa
-        // Tendremos que comprobar que no somos la ultima
-        // En terminar de recitar el conjuro
+        // Aqui comprobaamos que no somos los ultimos, y hacemos el release a todos
+        // los que estan esperando
         try {
             Meigas.MutexHuerto.acquire();
             Meigas.NesperandoTerminarConjuro++;
             if (Meigas.NesperandoTerminarConjuro == Meigas.nEncargosRecibidosPorMeigas + 1) {
-                // Me quedo en bucle comprobando que han llegado todas solo termino
-                // Cuando han llegado
+
+                trazador.Print("Esperando terminen conjuro" + Meigas.NesperandoTerminarConjuro
+                        + "Encargos Recibidos por Meigas"
+                        + Meigas.nEncargosRecibidosPorMeigas);
                 Meigas.EsperandoTemrminarConjuro.release(Meigas.NesperandoTerminarConjuro);
                 trazador.Print("Hemos recitado todas");
                 Meigas.NesperandoTerminarConjuro = 0;
@@ -194,7 +195,6 @@ public class Marxua extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        // Falta Mutex variables protegida
 
     }
 

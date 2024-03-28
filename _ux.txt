@@ -1,6 +1,3179 @@
- while (Meigas.NEsperandoEnHuerto != Meigas.nEncargosRecibidosPorMeigas) {
-                // Me quedo en bucle comprobando que han llegado todas solo termino
-                // Cuando han llegado
-                Meigas.MutexHuerto.release();
-                Meigas.MutexHuerto.acquire();
-            }
+./do.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compilando Barrera.java...
+error: file not found: Barrera.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+Compilando Hilo.java...
+Compilando Marxua.java...
+Compilando Meigas.java...
+Compilando Sinforiano.java...
+Compilando TioAnton.java...
+Compilando Trazador.java...
+Compilando Paso.java...
+Compilando Veiga.java...
+Ejecutando Veiga.java...
+	[Sinforiano] Inicio Sinforiano
+		[Marxua] Inicio Hilo Marxua
+		[Marxua]Esperando Recibir Lote
+	[Sinforiano]n_lotes6
+			[Meiga3]Inicio Hilo Meiga n 3
+			[Meiga0]Inicio Hilo Meiga n 0
+			[Meiga0]Esperando encargo de Maruxa
+			[Meiga1]Inicio Hilo Meiga n 1
+			[Meiga1]Esperando encargo de Maruxa
+			[Meiga2]Inicio Hilo Meiga n 2
+			[Meiga2]Esperando encargo de Maruxa
+			[Meiga9]Inicio Hilo Meiga n 9
+			[Meiga9]Esperando encargo de Maruxa
+	[Sinforiano]n_armas26
+			[Meiga3]Esperando encargo de Maruxa
+			[Meiga4]Inicio Hilo Meiga n 4
+			[Meiga4]Esperando encargo de Maruxa
+			[Meiga5]Inicio Hilo Meiga n 5
+			[Meiga5]Esperando encargo de Maruxa
+			[Meiga0]Hay Esperando un Encargo de Maruxa1
+			[Meiga6]Inicio Hilo Meiga n 6
+			[Meiga6]Esperando encargo de Maruxa
+			[Meiga7]Inicio Hilo Meiga n 7
+			[Meiga7]Esperando encargo de Maruxa
+			[Meiga8]Inicio Hilo Meiga n 8
+			[Meiga8]Esperando encargo de Maruxa
+			[Meiga10]Inicio Hilo Meiga n 10
+			[Meiga10]Esperando encargo de Maruxa
+			[Meiga11]Inicio Hilo Meiga n 11
+			[Meiga11]Esperando encargo de Maruxa
+			[Meiga12]Inicio Hilo Meiga n 12
+			[Meiga12]Esperando encargo de Maruxa
+			[Meiga13]Inicio Hilo Meiga n 13
+			[Meiga13]Esperando encargo de Maruxa
+			[Meiga14]Inicio Hilo Meiga n 14
+			[Meiga14]Esperando encargo de Maruxa
+			[Meiga15]Inicio Hilo Meiga n 15
+			[Meiga15]Esperando encargo de Maruxa
+			[Meiga16]Inicio Hilo Meiga n 16
+			[Meiga16]Esperando encargo de Maruxa
+			[Meiga17]Inicio Hilo Meiga n 17
+			[Meiga17]Esperando encargo de Maruxa
+			[Meiga18]Inicio Hilo Meiga n 18
+			[Meiga18]Esperando encargo de Maruxa
+			[Meiga19]Inicio Hilo Meiga n 19
+			[Meiga19]Esperando encargo de Maruxa
+			[Meiga20]Inicio Hilo Meiga n 20
+			[Meiga20]Esperando encargo de Maruxa
+			[Meiga21]Inicio Hilo Meiga n 21
+			[Meiga21]Esperando encargo de Maruxa
+			[Meiga22]Inicio Hilo Meiga n 22
+			[Meiga22]Esperando encargo de Maruxa
+			[Meiga23]Inicio Hilo Meiga n 23
+			[Meiga23]Esperando encargo de Maruxa
+			[Meiga24]Inicio Hilo Meiga n 24
+			[Meiga24]Esperando encargo de Maruxa
+			[Meiga25]Inicio Hilo Meiga n 25
+			[Meiga25]Esperando encargo de Maruxa
+			[Meiga26]Inicio Hilo Meiga n 26
+			[Meiga26]Esperando encargo de Maruxa
+	[Sinforiano]EntregoALABARDA
+			[Meiga27]Inicio Hilo Meiga n 27
+			[Meiga27]Esperando encargo de Maruxa
+			[Meiga28]Inicio Hilo Meiga n 28
+			[Meiga28]Esperando encargo de Maruxa
+			[Meiga29]Inicio Hilo Meiga n 29
+			[Meiga29]Esperando encargo de Maruxa
+			[Meiga1]Hay Esperando un Encargo de Maruxa2
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+			[Meiga2]Hay Esperando un Encargo de Maruxa3
+			[Meiga9]Hay Esperando un Encargo de Maruxa4
+			[Meiga3]Hay Esperando un Encargo de Maruxa5
+			[Meiga4]Hay Esperando un Encargo de Maruxa6
+			[Meiga5]Hay Esperando un Encargo de Maruxa7
+			[Meiga6]Hay Esperando un Encargo de Maruxa8
+			[Meiga7]Hay Esperando un Encargo de Maruxa9
+			[Meiga8]Hay Esperando un Encargo de Maruxa10
+			[Meiga10]Hay Esperando un Encargo de Maruxa11
+			[Meiga11]Hay Esperando un Encargo de Maruxa12
+			[Meiga12]Hay Esperando un Encargo de Maruxa13
+			[Meiga13]Hay Esperando un Encargo de Maruxa14
+			[Meiga14]Hay Esperando un Encargo de Maruxa15
+			[Meiga15]Hay Esperando un Encargo de Maruxa16
+			[Meiga16]Hay Esperando un Encargo de Maruxa17
+			[Meiga17]Hay Esperando un Encargo de Maruxa18
+			[Meiga18]Hay Esperando un Encargo de Maruxa19
+			[Meiga19]Hay Esperando un Encargo de Maruxa20
+			[Meiga20]Hay Esperando un Encargo de Maruxa21
+			[Meiga21]Hay Esperando un Encargo de Maruxa22
+			[Meiga22]Hay Esperando un Encargo de Maruxa23
+			[Meiga23]Hay Esperando un Encargo de Maruxa24
+			[Meiga24]Hay Esperando un Encargo de Maruxa25
+			[Meiga25]Hay Esperando un Encargo de Maruxa26
+			[Meiga26]Hay Esperando un Encargo de Maruxa27
+			[Meiga27]Hay Esperando un Encargo de Maruxa28
+			[Meiga28]Hay Esperando un Encargo de Maruxa29
+			[Meiga29]Hay Esperando un Encargo de Maruxa30
+		[Marxua]PLUMA(913)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga0]Maruxa me ha soltado
+			[Meiga0]He recibido un encargoALABARDA
+			[Meiga0]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(983)
+		[Marxua]PLUMA(2837)
+		[Marxua]MANDRAGORA(3466)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga1]Maruxa me ha soltado
+			[Meiga1]He recibido un encargoLANZA
+			[Meiga1]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(516)
+		[Marxua]PLUMA(4790)
+		[Marxua]MANDRAGORA(4946)
+		[Marxua]MANDRAGORA(415)
+		[Marxua]GUANO(3606)
+		[Marxua]MANDRAGORA(25)
+		[Marxua]PLUMA(3142)
+		[Marxua]MANDRAGORA(3187)
+			[Meiga0]Acabo de llegar al Huerto Hay esperando : 1
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga2]Maruxa me ha soltado
+			[Meiga2]He recibido un encargoLANZA
+			[Meiga2]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1521)
+		[Marxua]PLUMA(4080)
+		[Marxua]GUANO(2466)
+		[Marxua]AGUA(36)
+		[Marxua]AGUA(7)
+		[Marxua]PLUMA(2161)
+			[Meiga1]Acabo de llegar al Huerto Hay esperando : 2
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga9]Maruxa me ha soltado
+			[Meiga9]He recibido un encargoLANZA
+			[Meiga9]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4320)
+		[Marxua]PLUMA(2528)
+			[Meiga2]Acabo de llegar al Huerto Hay esperando : 3
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga3]Maruxa me ha soltado
+			[Meiga3]He recibido un encargoTRABUCO
+			[Meiga3]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(2841)
+			[Meiga9]Acabo de llegar al Huerto Hay esperando : 4
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga4]Maruxa me ha soltado
+			[Meiga4]He recibido un encargoLANZA
+			[Meiga4]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4433)
+		[Marxua]AGUA(1340)
+		[Marxua]AGUA(2283)
+		[Marxua]PLUMA(2622)
+		[Marxua]GUANO(3685)
+		[Marxua]GUANO(3474)
+			[Meiga3]Acabo de llegar al Huerto Hay esperando : 5
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga5]Maruxa me ha soltado
+			[Meiga5]He recibido un encargoALABARDA
+			[Meiga5]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4571)
+		[Marxua]MANDRAGORA(1667)
+		[Marxua]AGUA(3664)
+		[Marxua]GUANO(2438)
+		[Marxua]AGUA(235)
+		[Marxua]GUANO(4159)
+		[Marxua]GUANO(1997)
+		[Marxua]AGUA(4885)
+		[Marxua]MANDRAGORA(3219)
+			[Meiga4]Acabo de llegar al Huerto Hay esperando : 6
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga6]Maruxa me ha soltado
+			[Meiga6]He recibido un encargoLANZA
+			[Meiga6]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4285)
+		[Marxua]PLUMA(4811)
+		[Marxua]MANDRAGORA(1761)
+		[Marxua]PLUMA(3986)
+		[Marxua]MANDRAGORA(33)
+		[Marxua]AGUA(2254)
+		[Marxua]MANDRAGORA(4201)
+		[Marxua]AGUA(3897)
+		[Marxua]AGUA(4244)
+			[Meiga5]Acabo de llegar al Huerto Hay esperando : 7
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga7]Maruxa me ha soltado
+			[Meiga7]He recibido un encargoLANZA
+			[Meiga7]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(3101)
+		[Marxua]PLUMA(2796)
+			[Meiga6]Acabo de llegar al Huerto Hay esperando : 8
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga8]Maruxa me ha soltado
+			[Meiga8]He recibido un encargoLANZA
+			[Meiga8]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4754)
+		[Marxua]MANDRAGORA(254)
+		[Marxua]GUANO(722)
+		[Marxua]PLUMA(1189)
+			[Meiga7]Acabo de llegar al Huerto Hay esperando : 9
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga10]Maruxa me ha soltado
+			[Meiga10]He recibido un encargoALABARDA
+			[Meiga10]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1140)
+		[Marxua]PLUMA(754)
+		[Marxua]MANDRAGORA(1341)
+		[Marxua]PLUMA(1331)
+			[Meiga8]Acabo de llegar al Huerto Hay esperando : 10
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga11]Maruxa me ha soltado
+			[Meiga11]He recibido un encargoMOSQUETE
+			[Meiga11]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2017)
+		[Marxua]GUANO(1476)
+		[Marxua]MANDRAGORA(973)
+			[Meiga10]Acabo de llegar al Huerto Hay esperando : 11
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga12]Maruxa me ha soltado
+			[Meiga12]He recibido un encargoMOSQUETE
+			[Meiga12]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1437)
+		[Marxua]AGUA(393)
+		[Marxua]MANDRAGORA(4249)
+		[Marxua]AGUA(660)
+		[Marxua]PLUMA(2887)
+		[Marxua]PLUMA(1675)
+		[Marxua]MANDRAGORA(3680)
+		[Marxua]AGUA(1878)
+		[Marxua]GUANO(1817)
+			[Meiga11]Acabo de llegar al Huerto Hay esperando : 12
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga13]Maruxa me ha soltado
+			[Meiga13]He recibido un encargoTRABUCO
+			[Meiga13]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1310)
+		[Marxua]AGUA(1299)
+		[Marxua]MANDRAGORA(1755)
+		[Marxua]PLUMA(59)
+		[Marxua]MANDRAGORA(1578)
+		[Marxua]PLUMA(569)
+		[Marxua]GUANO(1920)
+		[Marxua]MANDRAGORA(2440)
+			[Meiga12]Acabo de llegar al Huerto Hay esperando : 13
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga14]Maruxa me ha soltado
+			[Meiga14]He recibido un encargoALABARDA
+			[Meiga14]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2894)
+		[Marxua]PLUMA(2899)
+		[Marxua]PLUMA(3398)
+		[Marxua]MANDRAGORA(1398)
+		[Marxua]MANDRAGORA(1909)
+		[Marxua]PLUMA(369)
+		[Marxua]MANDRAGORA(171)
+			[Meiga13]Acabo de llegar al Huerto Hay esperando : 14
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga15]Maruxa me ha soltado
+			[Meiga15]He recibido un encargoALABARDA
+			[Meiga15]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(166)
+		[Marxua]MANDRAGORA(3565)
+		[Marxua]AGUA(1501)
+		[Marxua]MANDRAGORA(2368)
+		[Marxua]GUANO(2135)
+			[Meiga14]Acabo de llegar al Huerto Hay esperando : 15
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga16]Maruxa me ha soltado
+			[Meiga16]He recibido un encargoLANZA
+			[Meiga16]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4025)
+		[Marxua]GUANO(1107)
+		[Marxua]AGUA(2057)
+		[Marxua]PLUMA(3519)
+		[Marxua]GUANO(2122)
+		[Marxua]MANDRAGORA(4967)
+		[Marxua]MANDRAGORA(785)
+		[Marxua]GUANO(247)
+			[Meiga15]Acabo de llegar al Huerto Hay esperando : 16
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga17]Maruxa me ha soltado
+			[Meiga17]He recibido un encargoTRABUCO
+			[Meiga17]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(3247)
+		[Marxua]PLUMA(2418)
+		[Marxua]AGUA(3602)
+			[Meiga16]Acabo de llegar al Huerto Hay esperando : 17
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga18]Maruxa me ha soltado
+			[Meiga18]He recibido un encargoLANZA
+			[Meiga18]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4658)
+		[Marxua]MANDRAGORA(2890)
+			[Meiga17]Acabo de llegar al Huerto Hay esperando : 18
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga19]Maruxa me ha soltado
+			[Meiga19]He recibido un encargoLANZA
+			[Meiga19]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4369)
+		[Marxua]PLUMA(3236)
+		[Marxua]MANDRAGORA(1281)
+		[Marxua]PLUMA(3124)
+		[Marxua]PLUMA(2613)
+		[Marxua]PLUMA(3194)
+		[Marxua]PLUMA(1874)
+		[Marxua]PLUMA(2469)
+		[Marxua]AGUA(3277)
+		[Marxua]AGUA(2086)
+			[Meiga18]Acabo de llegar al Huerto Hay esperando : 19
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga20]Maruxa me ha soltado
+			[Meiga20]He recibido un encargoMOSQUETE
+			[Meiga20]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4984)
+		[Marxua]AGUA(4894)
+		[Marxua]GUANO(3383)
+		[Marxua]GUANO(4031)
+		[Marxua]AGUA(4103)
+			[Meiga19]Acabo de llegar al Huerto Hay esperando : 20
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga21]Maruxa me ha soltado
+			[Meiga21]He recibido un encargoALABARDA
+			[Meiga21]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3982)
+		[Marxua]GUANO(1971)
+		[Marxua]GUANO(3866)
+		[Marxua]PLUMA(26)
+		[Marxua]PLUMA(3571)
+		[Marxua]MANDRAGORA(3098)
+		[Marxua]MANDRAGORA(2217)
+		[Marxua]PLUMA(3481)
+			[Meiga20]Acabo de llegar al Huerto Hay esperando : 21
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga22]Maruxa me ha soltado
+			[Meiga22]He recibido un encargoMOSQUETE
+			[Meiga22]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(664)
+		[Marxua]MANDRAGORA(2480)
+		[Marxua]AGUA(1326)
+			[Meiga21]Acabo de llegar al Huerto Hay esperando : 22
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga23]Maruxa me ha soltado
+			[Meiga23]He recibido un encargoLANZA
+			[Meiga23]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4799)
+		[Marxua]PLUMA(3802)
+		[Marxua]AGUA(2272)
+		[Marxua]GUANO(3231)
+		[Marxua]AGUA(3015)
+		[Marxua]AGUA(4810)
+			[Meiga22]Acabo de llegar al Huerto Hay esperando : 23
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga24]Maruxa me ha soltado
+			[Meiga24]He recibido un encargoALABARDA
+			[Meiga24]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1986)
+		[Marxua]AGUA(2677)
+		[Marxua]PLUMA(157)
+		[Marxua]GUANO(1663)
+		[Marxua]AGUA(686)
+		[Marxua]AGUA(1159)
+			[Meiga23]Acabo de llegar al Huerto Hay esperando : 24
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga25]Maruxa me ha soltado
+			[Meiga25]He recibido un encargoMOSQUETE
+			[Meiga25]He soltado a maruxa
+	[Sinforiano]EntregoFIN_LOTE
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+			[Meiga24]Acabo de llegar al Huerto Hay esperando : 26
+			[Meiga25]Acabo de llegar al Huerto Hay esperando : 27
+			[Meiga25]Estamos todas en el huerto
+			[Meiga25]Esperando en el huerto27Encargos Recibidos por Meigas26
+			[Meiga25]Empiezo a recitar el conjuro
+			[Meiga0]Empiezo a recitar el conjuro
+			[Meiga1]Empiezo a recitar el conjuro
+			[Meiga2]Empiezo a recitar el conjuro
+			[Meiga9]Empiezo a recitar el conjuro
+			[Meiga3]Empiezo a recitar el conjuro
+			[Meiga4]Empiezo a recitar el conjuro
+			[Meiga5]Empiezo a recitar el conjuro
+			[Meiga6]Empiezo a recitar el conjuro
+			[Meiga7]Empiezo a recitar el conjuro
+			[Meiga8]Empiezo a recitar el conjuro
+			[Meiga12]Empiezo a recitar el conjuro
+			[Meiga13]Empiezo a recitar el conjuro
+			[Meiga14]Empiezo a recitar el conjuro
+			[Meiga15]Empiezo a recitar el conjuro
+			[Meiga16]Empiezo a recitar el conjuro
+			[Meiga17]Empiezo a recitar el conjuro
+			[Meiga10]Empiezo a recitar el conjuro
+			[Meiga20]Empiezo a recitar el conjuro
+			[Meiga21]Empiezo a recitar el conjuro
+			[Meiga11]Empiezo a recitar el conjuro
+			[Meiga22]Empiezo a recitar el conjuro
+			[Meiga18]Empiezo a recitar el conjuro
+			[Meiga19]Empiezo a recitar el conjuro
+		[Marxua]Empiezo a recitar el conjuro
+			[Meiga24]Empiezo a recitar el conjuro
+			[Meiga23]Empiezo a recitar el conjuro
+		[Marxua]He recitado
+			[Meiga0]He terminado conjuro
+			[Meiga11]He terminado conjuro
+			[Meiga20]He terminado conjuro
+			[Meiga17]He terminado conjuro
+			[Meiga4]He terminado conjuro
+			[Meiga22]He terminado conjuro
+			[Meiga9]He terminado conjuro
+			[Meiga16]He terminado conjuro
+			[Meiga1]He terminado conjuro
+			[Meiga21]He terminado conjuro
+			[Meiga8]He terminado conjuro
+			[Meiga19]He terminado conjuro
+			[Meiga13]He terminado conjuro
+			[Meiga7]He terminado conjuro
+			[Meiga3]He terminado conjuro
+			[Meiga23]He terminado conjuro
+			[Meiga24]He terminado conjuro
+			[Meiga14]He terminado conjuro
+			[Meiga5]He terminado conjuro
+			[Meiga12]He terminado conjuro
+			[Meiga25]He terminado conjuro
+			[Meiga15]He terminado conjuro
+			[Meiga10]He terminado conjuro
+			[Meiga6]He terminado conjuro
+			[Meiga2]He terminado conjuro
+			[Meiga18]He terminado conjuro
+			[Meiga18]Hemos recitado todas
+			[Meiga18]Han recitado ya27Encargos Recibidos por Meigas26
+	[Sinforiano]Esperando que las meigas tengan Armas Para mi
+			[Meiga20]EntregoMOSQUETE
+			[Meiga20]Han Entregado Armas1
+			[Meiga20]Esperando encargo de Maruxa
+			[Meiga20]Hay Esperando un Encargo de Maruxa5
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga18]EntregoLANZA
+			[Meiga18]Han Entregado Armas2
+			[Meiga18]Esperando encargo de Maruxa
+			[Meiga18]Hay Esperando un Encargo de Maruxa6
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga0]EntregoALABARDA
+			[Meiga0]Han Entregado Armas3
+			[Meiga0]Esperando encargo de Maruxa
+			[Meiga0]Hay Esperando un Encargo de Maruxa7
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga11]EntregoMOSQUETE
+			[Meiga11]Han Entregado Armas4
+			[Meiga11]Esperando encargo de Maruxa
+			[Meiga11]Hay Esperando un Encargo de Maruxa8
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga17]EntregoTRABUCO
+			[Meiga17]Han Entregado Armas5
+			[Meiga17]Esperando encargo de Maruxa
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga4]EntregoLANZA
+			[Meiga4]Han Entregado Armas6
+			[Meiga4]Esperando encargo de Maruxa
+			[Meiga17]Hay Esperando un Encargo de Maruxa9
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga4]Hay Esperando un Encargo de Maruxa10
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga22]EntregoMOSQUETE
+			[Meiga22]Han Entregado Armas7
+			[Meiga22]Esperando encargo de Maruxa
+			[Meiga22]Hay Esperando un Encargo de Maruxa11
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga8]EntregoLANZA
+			[Meiga8]Han Entregado Armas8
+			[Meiga8]Esperando encargo de Maruxa
+			[Meiga8]Hay Esperando un Encargo de Maruxa12
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga9]EntregoLANZA
+			[Meiga9]Han Entregado Armas9
+			[Meiga9]Esperando encargo de Maruxa
+			[Meiga9]Hay Esperando un Encargo de Maruxa13
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga19]EntregoLANZA
+			[Meiga19]Han Entregado Armas10
+			[Meiga19]Esperando encargo de Maruxa
+			[Meiga19]Hay Esperando un Encargo de Maruxa14
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga16]EntregoLANZA
+			[Meiga16]Han Entregado Armas11
+			[Meiga16]Esperando encargo de Maruxa
+			[Meiga16]Hay Esperando un Encargo de Maruxa15
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga7]EntregoLANZA
+			[Meiga7]Han Entregado Armas12
+			[Meiga7]Esperando encargo de Maruxa
+			[Meiga7]Hay Esperando un Encargo de Maruxa16
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga13]EntregoTRABUCO
+			[Meiga13]Han Entregado Armas13
+			[Meiga13]Esperando encargo de Maruxa
+			[Meiga13]Hay Esperando un Encargo de Maruxa17
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga1]EntregoLANZA
+			[Meiga1]Han Entregado Armas14
+			[Meiga1]Esperando encargo de Maruxa
+			[Meiga1]Hay Esperando un Encargo de Maruxa18
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga23]EntregoLANZA
+			[Meiga23]Han Entregado Armas15
+			[Meiga23]Esperando encargo de Maruxa
+			[Meiga23]Hay Esperando un Encargo de Maruxa19
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga21]EntregoALABARDA
+			[Meiga21]Han Entregado Armas16
+			[Meiga21]Esperando encargo de Maruxa
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga24]EntregoALABARDA
+			[Meiga24]Han Entregado Armas17
+			[Meiga24]Esperando encargo de Maruxa
+			[Meiga21]Hay Esperando un Encargo de Maruxa20
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga24]Hay Esperando un Encargo de Maruxa21
+			[Meiga3]EntregoTRABUCO
+			[Meiga3]Han Entregado Armas18
+			[Meiga3]Esperando encargo de Maruxa
+			[Meiga3]Hay Esperando un Encargo de Maruxa22
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga14]EntregoALABARDA
+			[Meiga14]Han Entregado Armas19
+			[Meiga14]Esperando encargo de Maruxa
+			[Meiga14]Hay Esperando un Encargo de Maruxa23
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga5]EntregoALABARDA
+			[Meiga5]Han Entregado Armas20
+			[Meiga5]Esperando encargo de Maruxa
+			[Meiga5]Hay Esperando un Encargo de Maruxa24
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga12]EntregoMOSQUETE
+			[Meiga12]Han Entregado Armas21
+			[Meiga12]Esperando encargo de Maruxa
+			[Meiga12]Hay Esperando un Encargo de Maruxa25
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga25]EntregoMOSQUETE
+			[Meiga25]Han Entregado Armas22
+			[Meiga25]Esperando encargo de Maruxa
+			[Meiga25]Hay Esperando un Encargo de Maruxa26
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga15]EntregoALABARDA
+			[Meiga15]Han Entregado Armas23
+			[Meiga15]Esperando encargo de Maruxa
+			[Meiga15]Hay Esperando un Encargo de Maruxa27
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga10]EntregoALABARDA
+			[Meiga10]Han Entregado Armas24
+			[Meiga10]Esperando encargo de Maruxa
+			[Meiga10]Hay Esperando un Encargo de Maruxa28
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga6]EntregoLANZA
+			[Meiga6]Han Entregado Armas25
+			[Meiga6]Esperando encargo de Maruxa
+			[Meiga6]Hay Esperando un Encargo de Maruxa29
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga2]EntregoLANZA
+			[Meiga2]Han Entregado Armas26
+			[Meiga2]Esperando encargo de Maruxa
+			[Meiga2]Hay Esperando un Encargo de Maruxa30
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]n_armas9
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4343)
+		[Marxua]MANDRAGORA(1846)
+		[Marxua]MANDRAGORA(175)
+		[Marxua]PLUMA(1571)
+		[Marxua]MANDRAGORA(942)
+		[Marxua]AGUA(3592)
+		[Marxua]GUANO(2743)
+		[Marxua]MANDRAGORA(1339)
+		[Marxua]MANDRAGORA(3089)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga26]Maruxa me ha soltado
+			[Meiga26]He recibido un encargoLANZA
+			[Meiga26]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4272)
+		[Marxua]PLUMA(3167)
+		[Marxua]GUANO(1916)
+		[Marxua]MANDRAGORA(1716)
+		[Marxua]MANDRAGORA(1969)
+		[Marxua]MANDRAGORA(2363)
+		[Marxua]MANDRAGORA(2170)
+		[Marxua]PLUMA(1079)
+		[Marxua]AGUA(3198)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga27]Maruxa me ha soltado
+			[Meiga27]He recibido un encargoLANZA
+			[Meiga27]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(893)
+		[Marxua]GUANO(1333)
+		[Marxua]GUANO(118)
+		[Marxua]PLUMA(4284)
+		[Marxua]AGUA(3748)
+		[Marxua]MANDRAGORA(3939)
+		[Marxua]MANDRAGORA(1575)
+			[Meiga26]Acabo de llegar al Huerto Hay esperando : 1
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga28]Maruxa me ha soltado
+			[Meiga28]He recibido un encargoLANZA
+			[Meiga28]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2949)
+		[Marxua]GUANO(1539)
+		[Marxua]AGUA(715)
+		[Marxua]PLUMA(38)
+		[Marxua]GUANO(3237)
+		[Marxua]AGUA(3194)
+		[Marxua]MANDRAGORA(3524)
+			[Meiga27]Acabo de llegar al Huerto Hay esperando : 2
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga29]Maruxa me ha soltado
+			[Meiga29]He recibido un encargoMOSQUETE
+			[Meiga29]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(131)
+		[Marxua]MANDRAGORA(4528)
+			[Meiga28]Acabo de llegar al Huerto Hay esperando : 3
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga20]Maruxa me ha soltado
+			[Meiga20]He recibido un encargoMOSQUETE
+			[Meiga20]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2111)
+		[Marxua]GUANO(2686)
+		[Marxua]GUANO(2238)
+		[Marxua]PLUMA(3179)
+		[Marxua]GUANO(2266)
+		[Marxua]AGUA(826)
+		[Marxua]AGUA(3231)
+			[Meiga29]Acabo de llegar al Huerto Hay esperando : 4
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga18]Maruxa me ha soltado
+			[Meiga18]He recibido un encargoLANZA
+			[Meiga18]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3874)
+		[Marxua]GUANO(2653)
+		[Marxua]GUANO(117)
+		[Marxua]GUANO(616)
+		[Marxua]GUANO(2979)
+		[Marxua]MANDRAGORA(4677)
+		[Marxua]PLUMA(3308)
+			[Meiga20]Acabo de llegar al Huerto Hay esperando : 5
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga0]Maruxa me ha soltado
+			[Meiga0]He recibido un encargoLANZA
+			[Meiga0]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4369)
+			[Meiga18]Acabo de llegar al Huerto Hay esperando : 6
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga11]Maruxa me ha soltado
+			[Meiga11]He recibido un encargoTRABUCO
+			[Meiga11]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(2790)
+			[Meiga0]Acabo de llegar al Huerto Hay esperando : 7
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga17]Maruxa me ha soltado
+			[Meiga17]He recibido un encargoALABARDA
+			[Meiga17]He soltado a maruxa
+	[Sinforiano]EntregoFIN_LOTE
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+			[Meiga11]Acabo de llegar al Huerto Hay esperando : 9
+			[Meiga17]Acabo de llegar al Huerto Hay esperando : 10
+			[Meiga17]Estamos todas en el huerto
+			[Meiga17]Esperando en el huerto10Encargos Recibidos por Meigas9
+			[Meiga17]Empiezo a recitar el conjuro
+			[Meiga26]Empiezo a recitar el conjuro
+			[Meiga27]Empiezo a recitar el conjuro
+			[Meiga0]Empiezo a recitar el conjuro
+			[Meiga11]Empiezo a recitar el conjuro
+			[Meiga28]Empiezo a recitar el conjuro
+			[Meiga29]Empiezo a recitar el conjuro
+			[Meiga20]Empiezo a recitar el conjuro
+			[Meiga18]Empiezo a recitar el conjuro
+		[Marxua]Empiezo a recitar el conjuro
+			[Meiga28]He terminado conjuro
+			[Meiga0]He terminado conjuro
+			[Meiga26]He terminado conjuro
+		[Marxua]He recitado
+			[Meiga27]He terminado conjuro
+			[Meiga20]He terminado conjuro
+			[Meiga17]He terminado conjuro
+			[Meiga29]He terminado conjuro
+			[Meiga11]He terminado conjuro
+			[Meiga18]He terminado conjuro
+			[Meiga18]Hemos recitado todas
+			[Meiga18]Han recitado ya10Encargos Recibidos por Meigas9
+			[Meiga18]EntregoLANZA
+			[Meiga18]Han Entregado Armas1
+			[Meiga18]Esperando encargo de Maruxa
+			[Meiga18]Hay Esperando un Encargo de Maruxa22
+	[Sinforiano]Esperando que las meigas tengan Armas Para mi
+			[Meiga28]EntregoLANZA
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga26]EntregoLANZA
+			[Meiga28]Han Entregado Armas2
+			[Meiga28]Esperando encargo de Maruxa
+			[Meiga28]Hay Esperando un Encargo de Maruxa23
+			[Meiga0]EntregoLANZA
+			[Meiga27]EntregoLANZA
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga26]Han Entregado Armas3
+			[Meiga26]Esperando encargo de Maruxa
+			[Meiga0]Han Entregado Armas4
+			[Meiga20]EntregoMOSQUETE
+			[Meiga27]Han Entregado Armas5
+			[Meiga27]Esperando encargo de Maruxa
+			[Meiga20]Han Entregado Armas6
+			[Meiga20]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga26]Hay Esperando un Encargo de Maruxa24
+			[Meiga0]Esperando encargo de Maruxa
+			[Meiga17]EntregoALABARDA
+			[Meiga17]Han Entregado Armas7
+			[Meiga17]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga27]Hay Esperando un Encargo de Maruxa25
+			[Meiga29]EntregoMOSQUETE
+			[Meiga29]Han Entregado Armas8
+			[Meiga29]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga20]Hay Esperando un Encargo de Maruxa26
+			[Meiga11]EntregoTRABUCO
+			[Meiga11]Han Entregado Armas9
+			[Meiga11]Esperando encargo de Maruxa
+			[Meiga11]Hay Esperando un Encargo de Maruxa27
+			[Meiga0]Hay Esperando un Encargo de Maruxa28
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]n_armas27
+	[Sinforiano]EntregoMOSQUETE
+			[Meiga17]Hay Esperando un Encargo de Maruxa29
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(3360)
+		[Marxua]MANDRAGORA(2964)
+			[Meiga29]Hay Esperando un Encargo de Maruxa30
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga4]Maruxa me ha soltado
+			[Meiga4]He recibido un encargoMOSQUETE
+			[Meiga4]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2171)
+		[Marxua]GUANO(1366)
+		[Marxua]MANDRAGORA(4699)
+		[Marxua]GUANO(4177)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga22]Maruxa me ha soltado
+			[Meiga22]He recibido un encargoALABARDA
+			[Meiga22]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4004)
+		[Marxua]PLUMA(1329)
+		[Marxua]PLUMA(942)
+		[Marxua]AGUA(4139)
+		[Marxua]GUANO(2810)
+		[Marxua]AGUA(3011)
+		[Marxua]PLUMA(2355)
+		[Marxua]PLUMA(3633)
+		[Marxua]AGUA(360)
+			[Meiga4]Acabo de llegar al Huerto Hay esperando : 1
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga8]Maruxa me ha soltado
+			[Meiga8]He recibido un encargoTRABUCO
+			[Meiga8]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4736)
+		[Marxua]GUANO(552)
+		[Marxua]MANDRAGORA(44)
+		[Marxua]PLUMA(3091)
+		[Marxua]GUANO(1774)
+			[Meiga22]Acabo de llegar al Huerto Hay esperando : 2
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga9]Maruxa me ha soltado
+			[Meiga9]He recibido un encargoLANZA
+			[Meiga9]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1953)
+		[Marxua]MANDRAGORA(1095)
+		[Marxua]MANDRAGORA(2647)
+		[Marxua]AGUA(2675)
+		[Marxua]AGUA(2155)
+		[Marxua]AGUA(3874)
+		[Marxua]GUANO(3661)
+		[Marxua]MANDRAGORA(1812)
+		[Marxua]GUANO(1278)
+			[Meiga8]Acabo de llegar al Huerto Hay esperando : 3
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga19]Maruxa me ha soltado
+			[Meiga19]He recibido un encargoALABARDA
+			[Meiga19]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4726)
+		[Marxua]GUANO(2048)
+		[Marxua]MANDRAGORA(1330)
+			[Meiga9]Acabo de llegar al Huerto Hay esperando : 4
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga16]Maruxa me ha soltado
+			[Meiga16]He recibido un encargoALABARDA
+			[Meiga16]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1414)
+		[Marxua]MANDRAGORA(2892)
+		[Marxua]GUANO(2550)
+		[Marxua]AGUA(2257)
+		[Marxua]PLUMA(2378)
+		[Marxua]MANDRAGORA(3233)
+		[Marxua]GUANO(2420)
+		[Marxua]MANDRAGORA(4008)
+		[Marxua]PLUMA(765)
+			[Meiga19]Acabo de llegar al Huerto Hay esperando : 5
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga7]Maruxa me ha soltado
+			[Meiga7]He recibido un encargoTRABUCO
+			[Meiga7]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(979)
+		[Marxua]AGUA(4991)
+			[Meiga16]Acabo de llegar al Huerto Hay esperando : 6
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga13]Maruxa me ha soltado
+			[Meiga13]He recibido un encargoMOSQUETE
+			[Meiga13]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4506)
+		[Marxua]PLUMA(4177)
+		[Marxua]PLUMA(2456)
+		[Marxua]PLUMA(2749)
+		[Marxua]PLUMA(4633)
+		[Marxua]GUANO(4625)
+		[Marxua]GUANO(4005)
+		[Marxua]PLUMA(1611)
+			[Meiga7]Acabo de llegar al Huerto Hay esperando : 7
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga1]Maruxa me ha soltado
+			[Meiga1]He recibido un encargoALABARDA
+			[Meiga1]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(788)
+			[Meiga13]Acabo de llegar al Huerto Hay esperando : 8
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga23]Maruxa me ha soltado
+			[Meiga23]He recibido un encargoALABARDA
+			[Meiga23]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4002)
+		[Marxua]AGUA(4243)
+			[Meiga1]Acabo de llegar al Huerto Hay esperando : 9
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga21]Maruxa me ha soltado
+			[Meiga21]He recibido un encargoALABARDA
+			[Meiga21]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1756)
+		[Marxua]MANDRAGORA(4754)
+			[Meiga23]Acabo de llegar al Huerto Hay esperando : 10
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga24]Maruxa me ha soltado
+			[Meiga24]He recibido un encargoLANZA
+			[Meiga24]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(3506)
+		[Marxua]PLUMA(3409)
+		[Marxua]PLUMA(3847)
+			[Meiga21]Acabo de llegar al Huerto Hay esperando : 11
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga3]Maruxa me ha soltado
+			[Meiga3]He recibido un encargoTRABUCO
+			[Meiga3]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4930)
+		[Marxua]MANDRAGORA(785)
+		[Marxua]MANDRAGORA(2598)
+		[Marxua]PLUMA(674)
+		[Marxua]MANDRAGORA(2748)
+		[Marxua]MANDRAGORA(2871)
+		[Marxua]MANDRAGORA(4062)
+		[Marxua]MANDRAGORA(2131)
+			[Meiga24]Acabo de llegar al Huerto Hay esperando : 12
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga14]Maruxa me ha soltado
+			[Meiga14]He recibido un encargoLANZA
+			[Meiga14]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(117)
+		[Marxua]AGUA(3159)
+		[Marxua]MANDRAGORA(4795)
+		[Marxua]AGUA(2895)
+		[Marxua]MANDRAGORA(882)
+			[Meiga3]Acabo de llegar al Huerto Hay esperando : 13
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga5]Maruxa me ha soltado
+			[Meiga5]He recibido un encargoMOSQUETE
+			[Meiga5]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(3494)
+		[Marxua]MANDRAGORA(744)
+		[Marxua]GUANO(2108)
+		[Marxua]GUANO(3831)
+		[Marxua]PLUMA(119)
+		[Marxua]PLUMA(1467)
+			[Meiga14]Acabo de llegar al Huerto Hay esperando : 14
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga12]Maruxa me ha soltado
+			[Meiga12]He recibido un encargoTRABUCO
+			[Meiga12]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]AGUA(284)
+		[Marxua]AGUA(4934)
+		[Marxua]AGUA(592)
+		[Marxua]PLUMA(3362)
+		[Marxua]PLUMA(4405)
+		[Marxua]MANDRAGORA(2529)
+		[Marxua]MANDRAGORA(4218)
+		[Marxua]AGUA(3127)
+		[Marxua]PLUMA(4756)
+			[Meiga5]Acabo de llegar al Huerto Hay esperando : 15
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga25]Maruxa me ha soltado
+			[Meiga25]He recibido un encargoTRABUCO
+			[Meiga25]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1056)
+		[Marxua]GUANO(4795)
+		[Marxua]MANDRAGORA(3640)
+		[Marxua]MANDRAGORA(4677)
+		[Marxua]PLUMA(872)
+		[Marxua]MANDRAGORA(2555)
+		[Marxua]PLUMA(3203)
+		[Marxua]MANDRAGORA(258)
+		[Marxua]PLUMA(283)
+		[Marxua]MANDRAGORA(1750)
+			[Meiga12]Acabo de llegar al Huerto Hay esperando : 16
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga15]Maruxa me ha soltado
+			[Meiga15]He recibido un encargoALABARDA
+			[Meiga15]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1792)
+		[Marxua]PLUMA(352)
+			[Meiga25]Acabo de llegar al Huerto Hay esperando : 17
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga10]Maruxa me ha soltado
+			[Meiga10]He recibido un encargoTRABUCO
+			[Meiga10]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(2029)
+			[Meiga15]Acabo de llegar al Huerto Hay esperando : 18
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga6]Maruxa me ha soltado
+			[Meiga6]He recibido un encargoLANZA
+			[Meiga6]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2612)
+		[Marxua]GUANO(3501)
+		[Marxua]GUANO(2499)
+		[Marxua]MANDRAGORA(1322)
+		[Marxua]PLUMA(3287)
+			[Meiga10]Acabo de llegar al Huerto Hay esperando : 19
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga2]Maruxa me ha soltado
+			[Meiga2]He recibido un encargoALABARDA
+			[Meiga2]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4081)
+		[Marxua]AGUA(2453)
+		[Marxua]AGUA(4372)
+		[Marxua]PLUMA(2119)
+		[Marxua]MANDRAGORA(2505)
+		[Marxua]GUANO(3046)
+			[Meiga6]Acabo de llegar al Huerto Hay esperando : 20
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga18]Maruxa me ha soltado
+			[Meiga18]He recibido un encargoLANZA
+			[Meiga18]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(344)
+		[Marxua]GUANO(4373)
+		[Marxua]GUANO(4277)
+		[Marxua]PLUMA(1114)
+		[Marxua]GUANO(2510)
+		[Marxua]MANDRAGORA(31)
+		[Marxua]AGUA(1722)
+		[Marxua]PLUMA(2663)
+		[Marxua]MANDRAGORA(2784)
+			[Meiga2]Acabo de llegar al Huerto Hay esperando : 21
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga28]Maruxa me ha soltado
+			[Meiga28]He recibido un encargoMOSQUETE
+			[Meiga28]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(338)
+		[Marxua]MANDRAGORA(292)
+		[Marxua]MANDRAGORA(4712)
+		[Marxua]GUANO(3732)
+		[Marxua]AGUA(1358)
+			[Meiga18]Acabo de llegar al Huerto Hay esperando : 22
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga26]Maruxa me ha soltado
+			[Meiga26]He recibido un encargoLANZA
+			[Meiga26]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2649)
+		[Marxua]AGUA(166)
+		[Marxua]PLUMA(4209)
+		[Marxua]MANDRAGORA(2595)
+		[Marxua]PLUMA(4835)
+		[Marxua]GUANO(3428)
+		[Marxua]MANDRAGORA(296)
+			[Meiga28]Acabo de llegar al Huerto Hay esperando : 23
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga27]Maruxa me ha soltado
+			[Meiga27]He recibido un encargoLANZA
+			[Meiga27]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(735)
+		[Marxua]PLUMA(4559)
+		[Marxua]MANDRAGORA(3158)
+		[Marxua]AGUA(1906)
+		[Marxua]PLUMA(186)
+		[Marxua]AGUA(3846)
+		[Marxua]PLUMA(362)
+		[Marxua]PLUMA(3107)
+			[Meiga26]Acabo de llegar al Huerto Hay esperando : 24
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga20]Maruxa me ha soltado
+			[Meiga20]He recibido un encargoMOSQUETE
+			[Meiga20]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1897)
+		[Marxua]PLUMA(3169)
+		[Marxua]PLUMA(2357)
+		[Marxua]PLUMA(205)
+			[Meiga27]Acabo de llegar al Huerto Hay esperando : 25
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga11]Maruxa me ha soltado
+			[Meiga11]He recibido un encargoLANZA
+			[Meiga11]He soltado a maruxa
+	[Sinforiano]EntregoFIN_LOTE
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+			[Meiga20]Acabo de llegar al Huerto Hay esperando : 27
+			[Meiga11]Acabo de llegar al Huerto Hay esperando : 28
+			[Meiga11]Estamos todas en el huerto
+			[Meiga11]Esperando en el huerto28Encargos Recibidos por Meigas27
+			[Meiga11]Empiezo a recitar el conjuro
+			[Meiga4]Empiezo a recitar el conjuro
+			[Meiga22]Empiezo a recitar el conjuro
+			[Meiga8]Empiezo a recitar el conjuro
+			[Meiga9]Empiezo a recitar el conjuro
+			[Meiga19]Empiezo a recitar el conjuro
+			[Meiga16]Empiezo a recitar el conjuro
+			[Meiga7]Empiezo a recitar el conjuro
+			[Meiga13]Empiezo a recitar el conjuro
+			[Meiga1]Empiezo a recitar el conjuro
+			[Meiga23]Empiezo a recitar el conjuro
+			[Meiga21]Empiezo a recitar el conjuro
+			[Meiga24]Empiezo a recitar el conjuro
+			[Meiga3]Empiezo a recitar el conjuro
+			[Meiga14]Empiezo a recitar el conjuro
+			[Meiga5]Empiezo a recitar el conjuro
+			[Meiga12]Empiezo a recitar el conjuro
+			[Meiga25]Empiezo a recitar el conjuro
+			[Meiga15]Empiezo a recitar el conjuro
+			[Meiga10]Empiezo a recitar el conjuro
+			[Meiga6]Empiezo a recitar el conjuro
+			[Meiga2]Empiezo a recitar el conjuro
+			[Meiga18]Empiezo a recitar el conjuro
+			[Meiga28]Empiezo a recitar el conjuro
+			[Meiga26]Empiezo a recitar el conjuro
+			[Meiga27]Empiezo a recitar el conjuro
+		[Marxua]Empiezo a recitar el conjuro
+			[Meiga20]Empiezo a recitar el conjuro
+			[Meiga28]He terminado conjuro
+			[Meiga22]He terminado conjuro
+			[Meiga19]He terminado conjuro
+		[Marxua]He recitado
+			[Meiga8]He terminado conjuro
+			[Meiga15]He terminado conjuro
+			[Meiga13]He terminado conjuro
+			[Meiga23]He terminado conjuro
+			[Meiga12]He terminado conjuro
+			[Meiga14]He terminado conjuro
+			[Meiga9]He terminado conjuro
+			[Meiga20]He terminado conjuro
+			[Meiga2]He terminado conjuro
+			[Meiga10]He terminado conjuro
+			[Meiga3]He terminado conjuro
+			[Meiga18]He terminado conjuro
+			[Meiga11]He terminado conjuro
+			[Meiga21]He terminado conjuro
+			[Meiga5]He terminado conjuro
+			[Meiga16]He terminado conjuro
+			[Meiga1]He terminado conjuro
+			[Meiga6]He terminado conjuro
+			[Meiga25]He terminado conjuro
+			[Meiga7]He terminado conjuro
+			[Meiga27]He terminado conjuro
+			[Meiga24]He terminado conjuro
+			[Meiga26]He terminado conjuro
+			[Meiga4]He terminado conjuro
+			[Meiga4]Hemos recitado todas
+			[Meiga4]Han recitado ya28Encargos Recibidos por Meigas27
+			[Meiga4]EntregoMOSQUETE
+			[Meiga28]EntregoMOSQUETE
+			[Meiga4]Han Entregado Armas1
+			[Meiga4]Esperando encargo de Maruxa
+			[Meiga4]Hay Esperando un Encargo de Maruxa4
+	[Sinforiano]Esperando que las meigas tengan Armas Para mi
+			[Meiga8]EntregoTRABUCO
+			[Meiga28]Han Entregado Armas2
+			[Meiga28]Esperando encargo de Maruxa
+			[Meiga28]Hay Esperando un Encargo de Maruxa5
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+			[Meiga22]EntregoALABARDA
+			[Meiga21]EntregoALABARDA
+			[Meiga8]Han Entregado Armas3
+			[Meiga8]Esperando encargo de Maruxa
+			[Meiga8]Hay Esperando un Encargo de Maruxa6
+			[Meiga19]EntregoALABARDA
+			[Meiga23]EntregoALABARDA
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+			[Meiga3]EntregoTRABUCO
+			[Meiga2]EntregoALABARDA
+			[Meiga22]Han Entregado Armas4
+			[Meiga22]Esperando encargo de Maruxa
+			[Meiga21]Han Entregado Armas5
+			[Meiga21]Esperando encargo de Maruxa
+			[Meiga10]EntregoTRABUCO
+			[Meiga15]EntregoALABARDA
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga12]EntregoTRABUCO
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga13]EntregoMOSQUETE
+			[Meiga14]EntregoLANZA
+			[Meiga9]EntregoLANZA
+			[Meiga20]EntregoMOSQUETE
+			[Meiga22]Hay Esperando un Encargo de Maruxa7
+			[Meiga19]Han Entregado Armas6
+			[Meiga19]Esperando encargo de Maruxa
+			[Meiga19]Hay Esperando un Encargo de Maruxa8
+			[Meiga21]Hay Esperando un Encargo de Maruxa9
+			[Meiga11]EntregoLANZA
+			[Meiga11]Han Entregado Armas7
+			[Meiga11]Esperando encargo de Maruxa
+			[Meiga11]Hay Esperando un Encargo de Maruxa10
+			[Meiga23]Han Entregado Armas8
+			[Meiga23]Esperando encargo de Maruxa
+			[Meiga23]Hay Esperando un Encargo de Maruxa11
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga3]Han Entregado Armas9
+			[Meiga18]EntregoLANZA
+			[Meiga5]EntregoMOSQUETE
+			[Meiga3]Esperando encargo de Maruxa
+			[Meiga3]Hay Esperando un Encargo de Maruxa12
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga16]EntregoALABARDA
+			[Meiga2]Han Entregado Armas10
+			[Meiga2]Esperando encargo de Maruxa
+			[Meiga2]Hay Esperando un Encargo de Maruxa13
+			[Meiga1]EntregoALABARDA
+			[Meiga1]Han Entregado Armas11
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga10]Han Entregado Armas12
+			[Meiga10]Esperando encargo de Maruxa
+			[Meiga10]Hay Esperando un Encargo de Maruxa14
+			[Meiga6]EntregoLANZA
+			[Meiga15]Han Entregado Armas13
+			[Meiga15]Esperando encargo de Maruxa
+			[Meiga15]Hay Esperando un Encargo de Maruxa15
+			[Meiga12]Han Entregado Armas14
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga13]Han Entregado Armas15
+			[Meiga27]EntregoLANZA
+			[Meiga24]EntregoLANZA
+			[Meiga1]Esperando encargo de Maruxa
+			[Meiga1]Hay Esperando un Encargo de Maruxa16
+			[Meiga25]EntregoTRABUCO
+			[Meiga12]Esperando encargo de Maruxa
+			[Meiga12]Hay Esperando un Encargo de Maruxa17
+			[Meiga7]EntregoTRABUCO
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga13]Esperando encargo de Maruxa
+			[Meiga13]Hay Esperando un Encargo de Maruxa18
+			[Meiga14]Han Entregado Armas16
+			[Meiga14]Esperando encargo de Maruxa
+			[Meiga14]Hay Esperando un Encargo de Maruxa19
+			[Meiga26]EntregoLANZA
+			[Meiga26]Han Entregado Armas17
+			[Meiga26]Esperando encargo de Maruxa
+			[Meiga26]Hay Esperando un Encargo de Maruxa20
+			[Meiga9]Han Entregado Armas18
+			[Meiga9]Esperando encargo de Maruxa
+			[Meiga9]Hay Esperando un Encargo de Maruxa21
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga20]Han Entregado Armas19
+			[Meiga20]Esperando encargo de Maruxa
+			[Meiga20]Hay Esperando un Encargo de Maruxa22
+			[Meiga18]Han Entregado Armas20
+			[Meiga18]Esperando encargo de Maruxa
+			[Meiga18]Hay Esperando un Encargo de Maruxa23
+			[Meiga5]Han Entregado Armas21
+			[Meiga5]Esperando encargo de Maruxa
+			[Meiga5]Hay Esperando un Encargo de Maruxa24
+			[Meiga16]Han Entregado Armas22
+			[Meiga16]Esperando encargo de Maruxa
+			[Meiga16]Hay Esperando un Encargo de Maruxa25
+			[Meiga6]Han Entregado Armas23
+			[Meiga6]Esperando encargo de Maruxa
+			[Meiga6]Hay Esperando un Encargo de Maruxa26
+			[Meiga27]Han Entregado Armas24
+			[Meiga27]Esperando encargo de Maruxa
+			[Meiga27]Hay Esperando un Encargo de Maruxa27
+			[Meiga24]Han Entregado Armas25
+			[Meiga24]Esperando encargo de Maruxa
+			[Meiga24]Hay Esperando un Encargo de Maruxa28
+			[Meiga25]Han Entregado Armas26
+			[Meiga25]Esperando encargo de Maruxa
+			[Meiga25]Hay Esperando un Encargo de Maruxa29
+			[Meiga7]Han Entregado Armas27
+			[Meiga7]Esperando encargo de Maruxa
+			[Meiga7]Hay Esperando un Encargo de Maruxa30
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]n_armas18
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(3984)
+		[Marxua]GUANO(133)
+		[Marxua]GUANO(4368)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga0]Maruxa me ha soltado
+			[Meiga0]He recibido un encargoALABARDA
+			[Meiga0]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(3766)
+		[Marxua]AGUA(2078)
+		[Marxua]GUANO(806)
+		[Marxua]PLUMA(1295)
+		[Marxua]AGUA(3022)
+		[Marxua]MANDRAGORA(2229)
+		[Marxua]AGUA(2259)
+		[Marxua]PLUMA(764)
+		[Marxua]MANDRAGORA(4398)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga17]Maruxa me ha soltado
+			[Meiga17]He recibido un encargoALABARDA
+			[Meiga17]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1323)
+		[Marxua]MANDRAGORA(2984)
+		[Marxua]GUANO(2491)
+		[Marxua]MANDRAGORA(4236)
+		[Marxua]AGUA(4330)
+		[Marxua]MANDRAGORA(4446)
+		[Marxua]PLUMA(2351)
+		[Marxua]MANDRAGORA(1597)
+		[Marxua]PLUMA(2451)
+			[Meiga0]Acabo de llegar al Huerto Hay esperando : 1
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga29]Maruxa me ha soltado
+			[Meiga29]He recibido un encargoLANZA
+			[Meiga29]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1232)
+		[Marxua]PLUMA(2303)
+		[Marxua]GUANO(1124)
+		[Marxua]GUANO(3953)
+		[Marxua]AGUA(2309)
+			[Meiga17]Acabo de llegar al Huerto Hay esperando : 2
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga4]Maruxa me ha soltado
+			[Meiga4]He recibido un encargoTRABUCO
+			[Meiga4]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(2554)
+		[Marxua]GUANO(2525)
+		[Marxua]GUANO(1101)
+		[Marxua]AGUA(4244)
+		[Marxua]GUANO(4212)
+		[Marxua]MANDRAGORA(1016)
+			[Meiga29]Acabo de llegar al Huerto Hay esperando : 3
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga28]Maruxa me ha soltado
+			[Meiga28]He recibido un encargoLANZA
+			[Meiga28]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1434)
+		[Marxua]AGUA(226)
+		[Marxua]AGUA(3844)
+		[Marxua]GUANO(1802)
+		[Marxua]GUANO(4209)
+		[Marxua]GUANO(2507)
+		[Marxua]MANDRAGORA(4964)
+		[Marxua]GUANO(1288)
+		[Marxua]MANDRAGORA(2811)
+			[Meiga4]Acabo de llegar al Huerto Hay esperando : 4
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga8]Maruxa me ha soltado
+			[Meiga8]He recibido un encargoMOSQUETE
+			[Meiga8]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4264)
+		[Marxua]PLUMA(3097)
+		[Marxua]GUANO(3596)
+		[Marxua]PLUMA(348)
+		[Marxua]MANDRAGORA(4859)
+		[Marxua]MANDRAGORA(4207)
+		[Marxua]MANDRAGORA(1343)
+		[Marxua]GUANO(4953)
+			[Meiga28]Acabo de llegar al Huerto Hay esperando : 5
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga22]Maruxa me ha soltado
+			[Meiga22]He recibido un encargoALABARDA
+			[Meiga22]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(3568)
+		[Marxua]MANDRAGORA(3965)
+		[Marxua]MANDRAGORA(2804)
+		[Marxua]AGUA(1718)
+			[Meiga8]Acabo de llegar al Huerto Hay esperando : 6
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga19]Maruxa me ha soltado
+			[Meiga19]He recibido un encargoMOSQUETE
+			[Meiga19]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1700)
+		[Marxua]AGUA(545)
+		[Marxua]PLUMA(3470)
+			[Meiga22]Acabo de llegar al Huerto Hay esperando : 7
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga21]Maruxa me ha soltado
+			[Meiga21]He recibido un encargoTRABUCO
+			[Meiga21]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1332)
+		[Marxua]MANDRAGORA(4381)
+			[Meiga19]Acabo de llegar al Huerto Hay esperando : 8
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga11]Maruxa me ha soltado
+			[Meiga11]He recibido un encargoLANZA
+			[Meiga11]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1337)
+		[Marxua]AGUA(945)
+		[Marxua]PLUMA(988)
+		[Marxua]GUANO(1132)
+		[Marxua]PLUMA(948)
+			[Meiga21]Acabo de llegar al Huerto Hay esperando : 9
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga23]Maruxa me ha soltado
+			[Meiga23]He recibido un encargoMOSQUETE
+			[Meiga23]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2901)
+		[Marxua]GUANO(1750)
+		[Marxua]AGUA(4276)
+		[Marxua]GUANO(4791)
+		[Marxua]MANDRAGORA(2166)
+			[Meiga11]Acabo de llegar al Huerto Hay esperando : 10
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga3]Maruxa me ha soltado
+			[Meiga3]He recibido un encargoLANZA
+			[Meiga3]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(41)
+		[Marxua]GUANO(4524)
+			[Meiga23]Acabo de llegar al Huerto Hay esperando : 11
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga2]Maruxa me ha soltado
+			[Meiga2]He recibido un encargoLANZA
+			[Meiga2]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(2656)
+		[Marxua]GUANO(1951)
+		[Marxua]PLUMA(915)
+		[Marxua]MANDRAGORA(1962)
+		[Marxua]PLUMA(1846)
+		[Marxua]GUANO(2695)
+			[Meiga3]Acabo de llegar al Huerto Hay esperando : 12
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga10]Maruxa me ha soltado
+			[Meiga10]He recibido un encargoALABARDA
+			[Meiga10]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(62)
+		[Marxua]PLUMA(4909)
+			[Meiga2]Acabo de llegar al Huerto Hay esperando : 13
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga15]Maruxa me ha soltado
+			[Meiga15]He recibido un encargoMOSQUETE
+			[Meiga15]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(3156)
+		[Marxua]PLUMA(575)
+		[Marxua]PLUMA(1933)
+		[Marxua]PLUMA(4354)
+		[Marxua]PLUMA(4423)
+		[Marxua]GUANO(426)
+			[Meiga10]Acabo de llegar al Huerto Hay esperando : 14
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga1]Maruxa me ha soltado
+			[Meiga1]He recibido un encargoMOSQUETE
+			[Meiga1]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4944)
+		[Marxua]PLUMA(3172)
+		[Marxua]AGUA(1753)
+		[Marxua]GUANO(4639)
+		[Marxua]AGUA(1589)
+		[Marxua]GUANO(1195)
+			[Meiga15]Acabo de llegar al Huerto Hay esperando : 15
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga12]Maruxa me ha soltado
+			[Meiga12]He recibido un encargoLANZA
+			[Meiga12]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(755)
+		[Marxua]MANDRAGORA(2978)
+		[Marxua]AGUA(1812)
+		[Marxua]AGUA(4756)
+		[Marxua]PLUMA(1450)
+		[Marxua]MANDRAGORA(62)
+		[Marxua]MANDRAGORA(497)
+		[Marxua]PLUMA(3693)
+		[Marxua]PLUMA(2652)
+			[Meiga1]Acabo de llegar al Huerto Hay esperando : 16
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga13]Maruxa me ha soltado
+			[Meiga13]He recibido un encargoMOSQUETE
+			[Meiga13]He soltado a maruxa
+	[Sinforiano]EntregoFIN_LOTE
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+			[Meiga12]Acabo de llegar al Huerto Hay esperando : 18
+			[Meiga13]Acabo de llegar al Huerto Hay esperando : 19
+			[Meiga13]Estamos todas en el huerto
+			[Meiga13]Esperando en el huerto19Encargos Recibidos por Meigas18
+			[Meiga13]Empiezo a recitar el conjuro
+			[Meiga0]Empiezo a recitar el conjuro
+			[Meiga17]Empiezo a recitar el conjuro
+			[Meiga29]Empiezo a recitar el conjuro
+			[Meiga4]Empiezo a recitar el conjuro
+			[Meiga28]Empiezo a recitar el conjuro
+			[Meiga8]Empiezo a recitar el conjuro
+			[Meiga22]Empiezo a recitar el conjuro
+			[Meiga19]Empiezo a recitar el conjuro
+			[Meiga21]Empiezo a recitar el conjuro
+			[Meiga23]Empiezo a recitar el conjuro
+			[Meiga11]Empiezo a recitar el conjuro
+			[Meiga3]Empiezo a recitar el conjuro
+			[Meiga2]Empiezo a recitar el conjuro
+			[Meiga10]Empiezo a recitar el conjuro
+			[Meiga15]Empiezo a recitar el conjuro
+		[Marxua]Empiezo a recitar el conjuro
+			[Meiga1]Empiezo a recitar el conjuro
+			[Meiga12]Empiezo a recitar el conjuro
+			[Meiga0]He terminado conjuro
+			[Meiga8]He terminado conjuro
+			[Meiga3]He terminado conjuro
+			[Meiga11]He terminado conjuro
+			[Meiga15]He terminado conjuro
+			[Meiga12]He terminado conjuro
+			[Meiga2]He terminado conjuro
+			[Meiga13]He terminado conjuro
+			[Meiga23]He terminado conjuro
+			[Meiga4]He terminado conjuro
+		[Marxua]He recitado
+			[Meiga10]He terminado conjuro
+			[Meiga29]He terminado conjuro
+			[Meiga22]He terminado conjuro
+			[Meiga1]He terminado conjuro
+			[Meiga28]He terminado conjuro
+			[Meiga19]He terminado conjuro
+			[Meiga21]He terminado conjuro
+			[Meiga17]He terminado conjuro
+			[Meiga17]Hemos recitado todas
+			[Meiga17]Han recitado ya19Encargos Recibidos por Meigas18
+			[Meiga17]EntregoALABARDA
+			[Meiga0]EntregoALABARDA
+			[Meiga17]Han Entregado Armas1
+			[Meiga17]Esperando encargo de Maruxa
+			[Meiga8]EntregoMOSQUETE
+			[Meiga3]EntregoLANZA
+			[Meiga23]EntregoMOSQUETE
+			[Meiga17]Hay Esperando un Encargo de Maruxa13
+			[Meiga4]EntregoTRABUCO
+			[Meiga8]Han Entregado Armas2
+			[Meiga8]Esperando encargo de Maruxa
+			[Meiga8]Hay Esperando un Encargo de Maruxa14
+	[Sinforiano]Esperando que las meigas tengan Armas Para mi
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+			[Meiga0]Han Entregado Armas3
+			[Meiga0]Esperando encargo de Maruxa
+			[Meiga11]EntregoLANZA
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga0]Hay Esperando un Encargo de Maruxa15
+			[Meiga15]EntregoMOSQUETE
+			[Meiga12]EntregoLANZA
+			[Meiga2]EntregoLANZA
+			[Meiga13]EntregoMOSQUETE
+			[Meiga3]Han Entregado Armas4
+			[Meiga3]Esperando encargo de Maruxa
+			[Meiga3]Hay Esperando un Encargo de Maruxa16
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga23]Han Entregado Armas5
+			[Meiga23]Esperando encargo de Maruxa
+			[Meiga23]Hay Esperando un Encargo de Maruxa17
+			[Meiga10]EntregoALABARDA
+			[Meiga10]Han Entregado Armas6
+			[Meiga10]Esperando encargo de Maruxa
+			[Meiga10]Hay Esperando un Encargo de Maruxa18
+			[Meiga29]EntregoLANZA
+			[Meiga29]Han Entregado Armas7
+			[Meiga29]Esperando encargo de Maruxa
+			[Meiga29]Hay Esperando un Encargo de Maruxa19
+			[Meiga22]EntregoALABARDA
+			[Meiga22]Han Entregado Armas8
+			[Meiga22]Esperando encargo de Maruxa
+			[Meiga22]Hay Esperando un Encargo de Maruxa20
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga4]Han Entregado Armas9
+			[Meiga4]Esperando encargo de Maruxa
+			[Meiga4]Hay Esperando un Encargo de Maruxa21
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga1]EntregoMOSQUETE
+			[Meiga1]Han Entregado Armas10
+			[Meiga1]Esperando encargo de Maruxa
+			[Meiga1]Hay Esperando un Encargo de Maruxa22
+			[Meiga19]EntregoMOSQUETE
+			[Meiga19]Han Entregado Armas11
+			[Meiga19]Esperando encargo de Maruxa
+			[Meiga19]Hay Esperando un Encargo de Maruxa23
+			[Meiga28]EntregoLANZA
+			[Meiga28]Han Entregado Armas12
+			[Meiga28]Esperando encargo de Maruxa
+			[Meiga28]Hay Esperando un Encargo de Maruxa24
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga11]Han Entregado Armas13
+			[Meiga11]Esperando encargo de Maruxa
+			[Meiga11]Hay Esperando un Encargo de Maruxa25
+			[Meiga21]EntregoTRABUCO
+			[Meiga21]Han Entregado Armas14
+			[Meiga21]Esperando encargo de Maruxa
+			[Meiga21]Hay Esperando un Encargo de Maruxa26
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga15]Han Entregado Armas15
+			[Meiga15]Esperando encargo de Maruxa
+			[Meiga15]Hay Esperando un Encargo de Maruxa27
+			[Meiga12]Han Entregado Armas16
+			[Meiga12]Esperando encargo de Maruxa
+			[Meiga12]Hay Esperando un Encargo de Maruxa28
+			[Meiga2]Han Entregado Armas17
+			[Meiga2]Esperando encargo de Maruxa
+			[Meiga2]Hay Esperando un Encargo de Maruxa29
+			[Meiga13]Han Entregado Armas18
+			[Meiga13]Esperando encargo de Maruxa
+			[Meiga13]Hay Esperando un Encargo de Maruxa30
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]n_armas29
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1133)
+		[Marxua]AGUA(3707)
+		[Marxua]AGUA(3678)
+		[Marxua]AGUA(1351)
+		[Marxua]AGUA(3998)
+		[Marxua]MANDRAGORA(3170)
+		[Marxua]MANDRAGORA(1866)
+		[Marxua]AGUA(3324)
+		[Marxua]GUANO(1357)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga14]Maruxa me ha soltado
+			[Meiga14]He recibido un encargoLANZA
+			[Meiga14]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3566)
+		[Marxua]GUANO(4166)
+		[Marxua]AGUA(3222)
+		[Marxua]AGUA(4192)
+		[Marxua]PLUMA(1179)
+		[Marxua]MANDRAGORA(256)
+		[Marxua]GUANO(4315)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga26]Maruxa me ha soltado
+			[Meiga26]He recibido un encargoALABARDA
+			[Meiga26]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4792)
+		[Marxua]AGUA(3876)
+		[Marxua]MANDRAGORA(4183)
+		[Marxua]GUANO(2401)
+		[Marxua]GUANO(3442)
+		[Marxua]PLUMA(703)
+		[Marxua]PLUMA(2184)
+		[Marxua]GUANO(1816)
+		[Marxua]AGUA(372)
+			[Meiga14]Acabo de llegar al Huerto Hay esperando : 1
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga9]Maruxa me ha soltado
+			[Meiga9]He recibido un encargoALABARDA
+			[Meiga9]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2176)
+		[Marxua]MANDRAGORA(2656)
+		[Marxua]GUANO(2437)
+		[Marxua]AGUA(4653)
+		[Marxua]MANDRAGORA(4744)
+		[Marxua]GUANO(438)
+		[Marxua]AGUA(4622)
+		[Marxua]MANDRAGORA(2400)
+		[Marxua]AGUA(4768)
+		[Marxua]AGUA(3401)
+			[Meiga26]Acabo de llegar al Huerto Hay esperando : 2
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga20]Maruxa me ha soltado
+			[Meiga20]He recibido un encargoALABARDA
+			[Meiga20]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(624)
+		[Marxua]MANDRAGORA(4535)
+			[Meiga9]Acabo de llegar al Huerto Hay esperando : 3
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga18]Maruxa me ha soltado
+			[Meiga18]He recibido un encargoMOSQUETE
+			[Meiga18]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1326)
+		[Marxua]PLUMA(1709)
+			[Meiga20]Acabo de llegar al Huerto Hay esperando : 4
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga5]Maruxa me ha soltado
+			[Meiga5]He recibido un encargoTRABUCO
+			[Meiga5]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2217)
+		[Marxua]AGUA(2099)
+		[Marxua]PLUMA(1275)
+		[Marxua]AGUA(3369)
+		[Marxua]GUANO(3756)
+		[Marxua]AGUA(3043)
+		[Marxua]MANDRAGORA(948)
+			[Meiga18]Acabo de llegar al Huerto Hay esperando : 5
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga16]Maruxa me ha soltado
+			[Meiga16]He recibido un encargoMOSQUETE
+			[Meiga16]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4789)
+		[Marxua]GUANO(696)
+		[Marxua]PLUMA(913)
+		[Marxua]MANDRAGORA(1876)
+		[Marxua]PLUMA(1706)
+		[Marxua]MANDRAGORA(4633)
+		[Marxua]PLUMA(158)
+		[Marxua]PLUMA(2601)
+			[Meiga5]Acabo de llegar al Huerto Hay esperando : 6
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga6]Maruxa me ha soltado
+			[Meiga6]He recibido un encargoTRABUCO
+			[Meiga6]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(840)
+		[Marxua]MANDRAGORA(2972)
+		[Marxua]AGUA(128)
+			[Meiga16]Acabo de llegar al Huerto Hay esperando : 7
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga27]Maruxa me ha soltado
+			[Meiga27]He recibido un encargoMOSQUETE
+			[Meiga27]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3730)
+			[Meiga6]Acabo de llegar al Huerto Hay esperando : 8
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga24]Maruxa me ha soltado
+			[Meiga24]He recibido un encargoTRABUCO
+			[Meiga24]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(2722)
+		[Marxua]MANDRAGORA(3080)
+		[Marxua]GUANO(4938)
+		[Marxua]MANDRAGORA(3716)
+		[Marxua]GUANO(4921)
+		[Marxua]MANDRAGORA(651)
+		[Marxua]GUANO(1697)
+			[Meiga27]Acabo de llegar al Huerto Hay esperando : 9
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga25]Maruxa me ha soltado
+			[Meiga25]He recibido un encargoMOSQUETE
+			[Meiga25]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(427)
+		[Marxua]AGUA(1924)
+		[Marxua]GUANO(3)
+		[Marxua]GUANO(3237)
+		[Marxua]AGUA(3539)
+		[Marxua]GUANO(3460)
+			[Meiga24]Acabo de llegar al Huerto Hay esperando : 10
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga7]Maruxa me ha soltado
+			[Meiga7]He recibido un encargoLANZA
+			[Meiga7]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(732)
+		[Marxua]AGUA(2521)
+		[Marxua]AGUA(1951)
+			[Meiga25]Acabo de llegar al Huerto Hay esperando : 11
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga17]Maruxa me ha soltado
+			[Meiga17]He recibido un encargoMOSQUETE
+			[Meiga17]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4763)
+		[Marxua]GUANO(3836)
+			[Meiga7]Acabo de llegar al Huerto Hay esperando : 12
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga8]Maruxa me ha soltado
+			[Meiga8]He recibido un encargoMOSQUETE
+			[Meiga8]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1618)
+		[Marxua]GUANO(2116)
+		[Marxua]MANDRAGORA(2905)
+		[Marxua]AGUA(2759)
+		[Marxua]AGUA(1018)
+		[Marxua]MANDRAGORA(1862)
+		[Marxua]MANDRAGORA(1967)
+		[Marxua]AGUA(1750)
+			[Meiga17]Acabo de llegar al Huerto Hay esperando : 13
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga0]Maruxa me ha soltado
+			[Meiga0]He recibido un encargoMOSQUETE
+			[Meiga0]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4802)
+		[Marxua]PLUMA(2752)
+		[Marxua]AGUA(20)
+		[Marxua]MANDRAGORA(1858)
+		[Marxua]AGUA(4753)
+		[Marxua]PLUMA(705)
+			[Meiga8]Acabo de llegar al Huerto Hay esperando : 14
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga3]Maruxa me ha soltado
+			[Meiga3]He recibido un encargoTRABUCO
+			[Meiga3]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1971)
+		[Marxua]PLUMA(1618)
+		[Marxua]AGUA(2245)
+		[Marxua]PLUMA(4253)
+		[Marxua]GUANO(1790)
+			[Meiga0]Acabo de llegar al Huerto Hay esperando : 15
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga23]Maruxa me ha soltado
+			[Meiga23]He recibido un encargoMOSQUETE
+			[Meiga23]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(766)
+		[Marxua]GUANO(3024)
+			[Meiga3]Acabo de llegar al Huerto Hay esperando : 16
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga10]Maruxa me ha soltado
+			[Meiga10]He recibido un encargoLANZA
+			[Meiga10]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1177)
+		[Marxua]PLUMA(1273)
+		[Marxua]AGUA(2616)
+		[Marxua]MANDRAGORA(4793)
+		[Marxua]PLUMA(4553)
+		[Marxua]PLUMA(4370)
+		[Marxua]AGUA(4530)
+		[Marxua]MANDRAGORA(1267)
+		[Marxua]AGUA(4553)
+			[Meiga23]Acabo de llegar al Huerto Hay esperando : 17
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga29]Maruxa me ha soltado
+			[Meiga29]He recibido un encargoLANZA
+			[Meiga29]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4742)
+			[Meiga10]Acabo de llegar al Huerto Hay esperando : 18
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga22]Maruxa me ha soltado
+			[Meiga22]He recibido un encargoLANZA
+			[Meiga22]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4947)
+		[Marxua]MANDRAGORA(778)
+		[Marxua]AGUA(3970)
+		[Marxua]MANDRAGORA(2371)
+		[Marxua]GUANO(4351)
+		[Marxua]MANDRAGORA(2161)
+			[Meiga29]Acabo de llegar al Huerto Hay esperando : 19
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga4]Maruxa me ha soltado
+			[Meiga4]He recibido un encargoTRABUCO
+			[Meiga4]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4230)
+		[Marxua]GUANO(2695)
+		[Marxua]GUANO(1992)
+		[Marxua]MANDRAGORA(4586)
+			[Meiga22]Acabo de llegar al Huerto Hay esperando : 20
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga1]Maruxa me ha soltado
+			[Meiga1]He recibido un encargoALABARDA
+			[Meiga1]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(2985)
+		[Marxua]GUANO(2359)
+		[Marxua]AGUA(2973)
+		[Marxua]GUANO(4895)
+		[Marxua]PLUMA(1403)
+		[Marxua]PLUMA(2001)
+		[Marxua]PLUMA(4947)
+		[Marxua]MANDRAGORA(3183)
+		[Marxua]GUANO(2439)
+			[Meiga4]Acabo de llegar al Huerto Hay esperando : 21
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga19]Maruxa me ha soltado
+			[Meiga19]He recibido un encargoMOSQUETE
+			[Meiga19]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2657)
+		[Marxua]PLUMA(2806)
+		[Marxua]MANDRAGORA(3319)
+			[Meiga1]Acabo de llegar al Huerto Hay esperando : 22
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga28]Maruxa me ha soltado
+			[Meiga28]He recibido un encargoMOSQUETE
+			[Meiga28]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(3786)
+			[Meiga19]Acabo de llegar al Huerto Hay esperando : 23
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga11]Maruxa me ha soltado
+			[Meiga11]He recibido un encargoMOSQUETE
+			[Meiga11]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1932)
+		[Marxua]PLUMA(3682)
+		[Marxua]AGUA(4092)
+		[Marxua]MANDRAGORA(2726)
+		[Marxua]GUANO(2246)
+		[Marxua]AGUA(598)
+		[Marxua]GUANO(527)
+		[Marxua]PLUMA(3189)
+			[Meiga28]Acabo de llegar al Huerto Hay esperando : 24
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga21]Maruxa me ha soltado
+			[Meiga21]He recibido un encargoMOSQUETE
+			[Meiga21]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4529)
+		[Marxua]GUANO(1680)
+		[Marxua]MANDRAGORA(859)
+		[Marxua]GUANO(100)
+		[Marxua]AGUA(2196)
+			[Meiga11]Acabo de llegar al Huerto Hay esperando : 25
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga15]Maruxa me ha soltado
+			[Meiga15]He recibido un encargoLANZA
+			[Meiga15]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2372)
+		[Marxua]GUANO(3569)
+		[Marxua]GUANO(295)
+		[Marxua]AGUA(1185)
+		[Marxua]GUANO(3986)
+		[Marxua]GUANO(3824)
+			[Meiga21]Acabo de llegar al Huerto Hay esperando : 26
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga12]Maruxa me ha soltado
+			[Meiga12]He recibido un encargoTRABUCO
+			[Meiga12]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(73)
+		[Marxua]AGUA(2371)
+		[Marxua]AGUA(2956)
+		[Marxua]AGUA(3651)
+		[Marxua]PLUMA(1029)
+		[Marxua]AGUA(508)
+		[Marxua]MANDRAGORA(4469)
+		[Marxua]GUANO(4262)
+		[Marxua]GUANO(4739)
+		[Marxua]AGUA(4583)
+			[Meiga15]Acabo de llegar al Huerto Hay esperando : 27
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga2]Maruxa me ha soltado
+			[Meiga2]He recibido un encargoALABARDA
+			[Meiga2]He soltado a maruxa
+	[Sinforiano]EntregoFIN_LOTE
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+			[Meiga12]Acabo de llegar al Huerto Hay esperando : 29
+			[Meiga2]Acabo de llegar al Huerto Hay esperando : 30
+			[Meiga2]Estamos todas en el huerto
+			[Meiga2]Esperando en el huerto30Encargos Recibidos por Meigas29
+			[Meiga2]Empiezo a recitar el conjuro
+			[Meiga14]Empiezo a recitar el conjuro
+			[Meiga26]Empiezo a recitar el conjuro
+			[Meiga9]Empiezo a recitar el conjuro
+			[Meiga20]Empiezo a recitar el conjuro
+			[Meiga18]Empiezo a recitar el conjuro
+			[Meiga16]Empiezo a recitar el conjuro
+			[Meiga6]Empiezo a recitar el conjuro
+			[Meiga27]Empiezo a recitar el conjuro
+			[Meiga24]Empiezo a recitar el conjuro
+			[Meiga5]Empiezo a recitar el conjuro
+			[Meiga25]Empiezo a recitar el conjuro
+			[Meiga17]Empiezo a recitar el conjuro
+			[Meiga0]Empiezo a recitar el conjuro
+			[Meiga3]Empiezo a recitar el conjuro
+			[Meiga23]Empiezo a recitar el conjuro
+			[Meiga10]Empiezo a recitar el conjuro
+			[Meiga7]Empiezo a recitar el conjuro
+			[Meiga4]Empiezo a recitar el conjuro
+			[Meiga1]Empiezo a recitar el conjuro
+			[Meiga19]Empiezo a recitar el conjuro
+			[Meiga28]Empiezo a recitar el conjuro
+			[Meiga11]Empiezo a recitar el conjuro
+			[Meiga21]Empiezo a recitar el conjuro
+			[Meiga15]Empiezo a recitar el conjuro
+		[Marxua]Empiezo a recitar el conjuro
+			[Meiga12]Empiezo a recitar el conjuro
+			[Meiga8]Empiezo a recitar el conjuro
+			[Meiga29]Empiezo a recitar el conjuro
+			[Meiga22]Empiezo a recitar el conjuro
+			[Meiga9]He terminado conjuro
+			[Meiga1]He terminado conjuro
+			[Meiga7]He terminado conjuro
+			[Meiga21]He terminado conjuro
+			[Meiga4]He terminado conjuro
+			[Meiga23]He terminado conjuro
+			[Meiga27]He terminado conjuro
+			[Meiga10]He terminado conjuro
+			[Meiga26]He terminado conjuro
+			[Meiga12]He terminado conjuro
+			[Meiga2]He terminado conjuro
+			[Meiga6]He terminado conjuro
+			[Meiga14]He terminado conjuro
+			[Meiga19]He terminado conjuro
+			[Meiga5]He terminado conjuro
+			[Meiga3]He terminado conjuro
+			[Meiga24]He terminado conjuro
+			[Meiga8]He terminado conjuro
+			[Meiga0]He terminado conjuro
+			[Meiga28]He terminado conjuro
+			[Meiga15]He terminado conjuro
+			[Meiga22]He terminado conjuro
+			[Meiga20]He terminado conjuro
+			[Meiga11]He terminado conjuro
+			[Meiga29]He terminado conjuro
+		[Marxua]He recitado
+			[Meiga17]He terminado conjuro
+			[Meiga16]He terminado conjuro
+			[Meiga25]He terminado conjuro
+			[Meiga18]He terminado conjuro
+			[Meiga18]Hemos recitado todas
+			[Meiga18]Han recitado ya30Encargos Recibidos por Meigas29
+			[Meiga18]EntregoMOSQUETE
+			[Meiga18]Han Entregado Armas1
+			[Meiga18]Esperando encargo de Maruxa
+			[Meiga18]Hay Esperando un Encargo de Maruxa2
+			[Meiga1]EntregoALABARDA
+			[Meiga9]EntregoALABARDA
+			[Meiga1]Han Entregado Armas2
+			[Meiga1]Esperando encargo de Maruxa
+			[Meiga1]Hay Esperando un Encargo de Maruxa3
+			[Meiga4]EntregoTRABUCO
+			[Meiga4]Han Entregado Armas3
+			[Meiga4]Esperando encargo de Maruxa
+			[Meiga4]Hay Esperando un Encargo de Maruxa4
+			[Meiga7]EntregoLANZA
+			[Meiga9]Han Entregado Armas4
+			[Meiga9]Esperando encargo de Maruxa
+			[Meiga9]Hay Esperando un Encargo de Maruxa5
+			[Meiga10]EntregoLANZA
+			[Meiga10]Han Entregado Armas5
+			[Meiga10]Esperando encargo de Maruxa
+			[Meiga10]Hay Esperando un Encargo de Maruxa6
+			[Meiga26]EntregoALABARDA
+			[Meiga26]Han Entregado Armas6
+			[Meiga26]Esperando encargo de Maruxa
+			[Meiga26]Hay Esperando un Encargo de Maruxa7
+			[Meiga12]EntregoTRABUCO
+			[Meiga12]Han Entregado Armas7
+			[Meiga12]Esperando encargo de Maruxa
+			[Meiga12]Hay Esperando un Encargo de Maruxa8
+			[Meiga7]Han Entregado Armas8
+			[Meiga7]Esperando encargo de Maruxa
+			[Meiga7]Hay Esperando un Encargo de Maruxa9
+	[Sinforiano]Esperando que las meigas tengan Armas Para mi
+			[Meiga2]EntregoALABARDA
+	[Sinforiano]He recibidoTRABUCOArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga21]EntregoMOSQUETE
+			[Meiga2]Han Entregado Armas9
+			[Meiga2]Esperando encargo de Maruxa
+			[Meiga21]Han Entregado Armas10
+			[Meiga21]Esperando encargo de Maruxa
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga2]Hay Esperando un Encargo de Maruxa10
+			[Meiga14]EntregoLANZA
+			[Meiga19]EntregoMOSQUETE
+			[Meiga21]Hay Esperando un Encargo de Maruxa11
+			[Meiga5]EntregoTRABUCO
+			[Meiga6]EntregoTRABUCO
+			[Meiga23]EntregoMOSQUETE
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+			[Meiga27]EntregoMOSQUETE
+			[Meiga14]Han Entregado Armas11
+			[Meiga24]EntregoTRABUCO
+			[Meiga24]Han Entregado Armas12
+			[Meiga24]Esperando encargo de Maruxa
+			[Meiga24]Hay Esperando un Encargo de Maruxa12
+			[Meiga8]EntregoMOSQUETE
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga0]EntregoMOSQUETE
+			[Meiga3]EntregoTRABUCO
+			[Meiga14]Esperando encargo de Maruxa
+			[Meiga14]Hay Esperando un Encargo de Maruxa13
+			[Meiga28]EntregoMOSQUETE
+			[Meiga19]Han Entregado Armas13
+			[Meiga19]Esperando encargo de Maruxa
+			[Meiga5]Han Entregado Armas14
+	[Sinforiano]He recibidoMOSQUETEArma
+			[Meiga6]Han Entregado Armas15
+			[Meiga15]EntregoLANZA
+			[Meiga19]Hay Esperando un Encargo de Maruxa14
+			[Meiga5]Esperando encargo de Maruxa
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga5]Hay Esperando un Encargo de Maruxa15
+			[Meiga6]Esperando encargo de Maruxa
+			[Meiga6]Hay Esperando un Encargo de Maruxa16
+			[Meiga23]Han Entregado Armas16
+			[Meiga23]Esperando encargo de Maruxa
+			[Meiga27]Han Entregado Armas17
+	[Sinforiano]He recibidoLANZAArma
+			[Meiga8]Han Entregado Armas18
+			[Meiga23]Hay Esperando un Encargo de Maruxa17
+			[Meiga27]Esperando encargo de Maruxa
+			[Meiga27]Hay Esperando un Encargo de Maruxa18
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga8]Esperando encargo de Maruxa
+			[Meiga11]EntregoMOSQUETE
+			[Meiga29]EntregoLANZA
+	[Sinforiano]Me han despertado inicio otra vez bucle
+			[Meiga17]EntregoMOSQUETE
+			[Meiga22]EntregoLANZA
+			[Meiga0]Han Entregado Armas19
+			[Meiga20]EntregoALABARDA
+			[Meiga3]Han Entregado Armas20
+			[Meiga3]Esperando encargo de Maruxa
+			[Meiga8]Hay Esperando un Encargo de Maruxa19
+			[Meiga28]Han Entregado Armas21
+			[Meiga3]Hay Esperando un Encargo de Maruxa20
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga16]EntregoMOSQUETE
+			[Meiga25]EntregoMOSQUETE
+			[Meiga0]Esperando encargo de Maruxa
+			[Meiga0]Hay Esperando un Encargo de Maruxa21
+			[Meiga28]Esperando encargo de Maruxa
+			[Meiga28]Hay Esperando un Encargo de Maruxa22
+			[Meiga15]Han Entregado Armas22
+			[Meiga15]Esperando encargo de Maruxa
+			[Meiga15]Hay Esperando un Encargo de Maruxa23
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga11]Han Entregado Armas23
+			[Meiga11]Esperando encargo de Maruxa
+			[Meiga29]Han Entregado Armas24
+			[Meiga29]Esperando encargo de Maruxa
+			[Meiga11]Hay Esperando un Encargo de Maruxa24
+			[Meiga17]Han Entregado Armas25
+			[Meiga29]Hay Esperando un Encargo de Maruxa25
+			[Meiga17]Esperando encargo de Maruxa
+			[Meiga17]Hay Esperando un Encargo de Maruxa26
+			[Meiga22]Han Entregado Armas26
+			[Meiga22]Esperando encargo de Maruxa
+			[Meiga22]Hay Esperando un Encargo de Maruxa27
+			[Meiga20]Han Entregado Armas27
+			[Meiga20]Esperando encargo de Maruxa
+			[Meiga20]Hay Esperando un Encargo de Maruxa28
+			[Meiga16]Han Entregado Armas28
+			[Meiga16]Esperando encargo de Maruxa
+			[Meiga16]Hay Esperando un Encargo de Maruxa29
+			[Meiga25]Han Entregado Armas29
+			[Meiga25]Esperando encargo de Maruxa
+			[Meiga25]Hay Esperando un Encargo de Maruxa30
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]n_armas23
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1515)
+		[Marxua]GUANO(2935)
+		[Marxua]AGUA(3565)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga13]Maruxa me ha soltado
+			[Meiga13]He recibido un encargoALABARDA
+			[Meiga13]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2475)
+		[Marxua]MANDRAGORA(4607)
+		[Marxua]AGUA(1472)
+		[Marxua]PLUMA(3989)
+		[Marxua]GUANO(3602)
+		[Marxua]PLUMA(3822)
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga18]Maruxa me ha soltado
+			[Meiga18]He recibido un encargoLANZA
+			[Meiga18]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1088)
+		[Marxua]AGUA(2151)
+		[Marxua]GUANO(942)
+		[Marxua]PLUMA(4268)
+		[Marxua]GUANO(2289)
+		[Marxua]GUANO(4619)
+		[Marxua]MANDRAGORA(3215)
+			[Meiga13]Acabo de llegar al Huerto Hay esperando : 1
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga1]Maruxa me ha soltado
+			[Meiga1]He recibido un encargoTRABUCO
+			[Meiga1]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3382)
+		[Marxua]GUANO(4800)
+		[Marxua]GUANO(1898)
+		[Marxua]GUANO(2372)
+			[Meiga18]Acabo de llegar al Huerto Hay esperando : 2
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga4]Maruxa me ha soltado
+			[Meiga4]He recibido un encargoALABARDA
+			[Meiga4]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(3747)
+		[Marxua]MANDRAGORA(2338)
+		[Marxua]PLUMA(3742)
+		[Marxua]AGUA(1036)
+		[Marxua]GUANO(2742)
+		[Marxua]GUANO(4712)
+		[Marxua]PLUMA(1043)
+		[Marxua]MANDRAGORA(320)
+		[Marxua]GUANO(2055)
+		[Marxua]PLUMA(3598)
+			[Meiga1]Acabo de llegar al Huerto Hay esperando : 3
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga9]Maruxa me ha soltado
+			[Meiga9]He recibido un encargoTRABUCO
+			[Meiga9]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(4319)
+		[Marxua]PLUMA(2614)
+		[Marxua]GUANO(3391)
+		[Marxua]MANDRAGORA(3596)
+		[Marxua]AGUA(1109)
+			[Meiga4]Acabo de llegar al Huerto Hay esperando : 4
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga10]Maruxa me ha soltado
+			[Meiga10]He recibido un encargoLANZA
+			[Meiga10]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1271)
+		[Marxua]MANDRAGORA(4846)
+		[Marxua]MANDRAGORA(4004)
+		[Marxua]GUANO(1361)
+		[Marxua]GUANO(4657)
+			[Meiga9]Acabo de llegar al Huerto Hay esperando : 5
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga26]Maruxa me ha soltado
+			[Meiga26]He recibido un encargoMOSQUETE
+			[Meiga26]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4133)
+		[Marxua]GUANO(4797)
+		[Marxua]PLUMA(3840)
+		[Marxua]GUANO(2773)
+		[Marxua]GUANO(4563)
+		[Marxua]AGUA(2414)
+			[Meiga10]Acabo de llegar al Huerto Hay esperando : 6
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga12]Maruxa me ha soltado
+			[Meiga12]He recibido un encargoMOSQUETE
+			[Meiga12]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(1204)
+		[Marxua]PLUMA(4462)
+		[Marxua]MANDRAGORA(4715)
+		[Marxua]PLUMA(3630)
+		[Marxua]MANDRAGORA(4282)
+		[Marxua]GUANO(3559)
+		[Marxua]PLUMA(4587)
+		[Marxua]AGUA(3422)
+			[Meiga26]Acabo de llegar al Huerto Hay esperando : 7
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga7]Maruxa me ha soltado
+			[Meiga7]He recibido un encargoMOSQUETE
+			[Meiga7]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(1837)
+		[Marxua]PLUMA(4566)
+		[Marxua]MANDRAGORA(3160)
+		[Marxua]GUANO(3405)
+		[Marxua]AGUA(2786)
+		[Marxua]MANDRAGORA(16)
+			[Meiga12]Acabo de llegar al Huerto Hay esperando : 8
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga2]Maruxa me ha soltado
+			[Meiga2]He recibido un encargoALABARDA
+			[Meiga2]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(3198)
+		[Marxua]GUANO(370)
+		[Marxua]MANDRAGORA(82)
+		[Marxua]GUANO(1373)
+		[Marxua]GUANO(2787)
+		[Marxua]GUANO(2923)
+		[Marxua]GUANO(1328)
+		[Marxua]AGUA(4195)
+			[Meiga7]Acabo de llegar al Huerto Hay esperando : 9
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga21]Maruxa me ha soltado
+			[Meiga21]He recibido un encargoMOSQUETE
+			[Meiga21]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2584)
+		[Marxua]MANDRAGORA(2258)
+		[Marxua]GUANO(2)
+		[Marxua]GUANO(2628)
+		[Marxua]GUANO(1)
+		[Marxua]PLUMA(2953)
+		[Marxua]AGUA(3638)
+		[Marxua]AGUA(4635)
+		[Marxua]AGUA(4802)
+		[Marxua]AGUA(1116)
+			[Meiga2]Acabo de llegar al Huerto Hay esperando : 10
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga24]Maruxa me ha soltado
+			[Meiga24]He recibido un encargoALABARDA
+			[Meiga24]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4698)
+		[Marxua]AGUA(4031)
+			[Meiga21]Acabo de llegar al Huerto Hay esperando : 11
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga14]Maruxa me ha soltado
+			[Meiga14]He recibido un encargoALABARDA
+			[Meiga14]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(3121)
+			[Meiga24]Acabo de llegar al Huerto Hay esperando : 12
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga19]Maruxa me ha soltado
+			[Meiga19]He recibido un encargoALABARDA
+			[Meiga19]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1577)
+		[Marxua]AGUA(921)
+		[Marxua]GUANO(2799)
+		[Marxua]GUANO(1034)
+		[Marxua]AGUA(1007)
+		[Marxua]AGUA(3772)
+			[Meiga14]Acabo de llegar al Huerto Hay esperando : 13
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga5]Maruxa me ha soltado
+			[Meiga5]He recibido un encargoLANZA
+			[Meiga5]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(2336)
+			[Meiga19]Acabo de llegar al Huerto Hay esperando : 14
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga6]Maruxa me ha soltado
+			[Meiga6]He recibido un encargoALABARDA
+			[Meiga6]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1450)
+		[Marxua]GUANO(391)
+		[Marxua]MANDRAGORA(274)
+		[Marxua]MANDRAGORA(729)
+		[Marxua]AGUA(2594)
+			[Meiga5]Acabo de llegar al Huerto Hay esperando : 15
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga23]Maruxa me ha soltado
+			[Meiga23]He recibido un encargoLANZA
+			[Meiga23]He soltado a maruxa
+	[Sinforiano]EntregoTRABUCO
+		[Marxua]He recibidoTRABUCO
+		[Marxua]Redactar receta
+		[Marxua]GUANO(2466)
+		[Marxua]GUANO(1677)
+		[Marxua]AGUA(2605)
+		[Marxua]PLUMA(1598)
+		[Marxua]PLUMA(1708)
+		[Marxua]MANDRAGORA(4487)
+		[Marxua]GUANO(970)
+		[Marxua]GUANO(2529)
+			[Meiga6]Acabo de llegar al Huerto Hay esperando : 16
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga27]Maruxa me ha soltado
+			[Meiga27]He recibido un encargoTRABUCO
+			[Meiga27]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1028)
+		[Marxua]GUANO(3386)
+		[Marxua]PLUMA(2761)
+		[Marxua]MANDRAGORA(2949)
+		[Marxua]MANDRAGORA(4311)
+		[Marxua]AGUA(4163)
+		[Marxua]MANDRAGORA(2515)
+			[Meiga23]Acabo de llegar al Huerto Hay esperando : 17
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga8]Maruxa me ha soltado
+			[Meiga8]He recibido un encargoMOSQUETE
+			[Meiga8]He soltado a maruxa
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]AGUA(1718)
+		[Marxua]GUANO(3642)
+		[Marxua]MANDRAGORA(3242)
+		[Marxua]GUANO(4329)
+		[Marxua]AGUA(1023)
+		[Marxua]PLUMA(3501)
+		[Marxua]GUANO(3635)
+		[Marxua]MANDRAGORA(1687)
+		[Marxua]GUANO(1279)
+		[Marxua]AGUA(279)
+			[Meiga27]Acabo de llegar al Huerto Hay esperando : 18
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga3]Maruxa me ha soltado
+			[Meiga3]He recibido un encargoALABARDA
+			[Meiga3]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4435)
+			[Meiga8]Acabo de llegar al Huerto Hay esperando : 19
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga0]Maruxa me ha soltado
+			[Meiga0]He recibido un encargoMOSQUETE
+			[Meiga0]He soltado a maruxa
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(4507)
+		[Marxua]GUANO(2351)
+			[Meiga3]Acabo de llegar al Huerto Hay esperando : 20
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga28]Maruxa me ha soltado
+			[Meiga28]He recibido un encargoMOSQUETE
+			[Meiga28]He soltado a maruxa
+	[Sinforiano]EntregoLANZA
+		[Marxua]He recibidoLANZA
+		[Marxua]Redactar receta
+		[Marxua]MANDRAGORA(3908)
+		[Marxua]MANDRAGORA(1256)
+		[Marxua]GUANO(1419)
+		[Marxua]PLUMA(2025)
+		[Marxua]MANDRAGORA(521)
+		[Marxua]PLUMA(399)
+		[Marxua]MANDRAGORA(4242)
+		[Marxua]PLUMA(3588)
+			[Meiga0]Acabo de llegar al Huerto Hay esperando : 21
+		[Marxua]Entrego Encargo a Meiga
+			[Meiga15]Maruxa me ha soltado
+			[Meiga15]He recibido un encargoLANZA
+			[Meiga15]He soltado a maruxa
+	[Sinforiano]EntregoFIN_LOTE
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+			[Meiga28]Acabo de llegar al Huerto Hay esperando : 23
+			[Meiga15]Acabo de llegar al Huerto Hay esperando : 24
+			[Meiga15]Estamos todas en el huerto
+			[Meiga15]Esperando en el huerto24Encargos Recibidos por Meigas23
+			[Meiga15]Empiezo a recitar el conjuro
+			[Meiga13]Empiezo a recitar el conjuro
+			[Meiga1]Empiezo a recitar el conjuro
+			[Meiga4]Empiezo a recitar el conjuro
+			[Meiga9]Empiezo a recitar el conjuro
+			[Meiga10]Empiezo a recitar el conjuro
+			[Meiga12]Empiezo a recitar el conjuro
+			[Meiga18]Empiezo a recitar el conjuro
+			[Meiga7]Empiezo a recitar el conjuro
+			[Meiga26]Empiezo a recitar el conjuro
+			[Meiga2]Empiezo a recitar el conjuro
+			[Meiga21]Empiezo a recitar el conjuro
+			[Meiga24]Empiezo a recitar el conjuro
+			[Meiga14]Empiezo a recitar el conjuro
+			[Meiga19]Empiezo a recitar el conjuro
+			[Meiga5]Empiezo a recitar el conjuro
+			[Meiga6]Empiezo a recitar el conjuro
+			[Meiga23]Empiezo a recitar el conjuro
+			[Meiga27]Empiezo a recitar el conjuro
+			[Meiga8]Empiezo a recitar el conjuro
+			[Meiga3]Empiezo a recitar el conjuro
+			[Meiga0]Empiezo a recitar el conjuro
+		[Marxua]Empiezo a recitar el conjuro
+			[Meiga28]Empiezo a recitar el conjuro
+			[Meiga12]He terminado conjuro
+			[Meiga26]He terminado conjuro
+			[Meiga5]He terminado conjuro
+			[Meiga3]He terminado conjuro
+			[Meiga0]He terminado conjuro
+			[Meiga10]He terminado conjuro
+			[Meiga27]He terminado conjuro
+		[Marxua]He recitado
+			[Meiga21]He terminado conjuro
+			[Meiga1]He terminado conjuro
+			[Meiga15]He terminado conjuro
+			[Meiga19]He terminado conjuro
+			[Meiga18]He terminado conjuro
+			[Meiga6]He terminado conjuro
+			[Meiga13]He terminado conjuro
+			[Meiga2]He terminado conjuro
+			[Meiga8]He terminado conjuro
+			[Meiga28]He terminado conjuro
+			[Meiga7]He terminado conjuro
+			[Meiga14]He terminado conjuro
+			[Meiga4]He terminado conjuro
+			[Meiga24]He terminado conjuro
+			[Meiga9]He terminado conjuro
+			[Meiga23]He terminado conjuro
+			[Meiga23]Hemos recitado todas
+			[Meiga23]Han recitado ya24Encargos Recibidos por Meigas23
+			[Meiga23]EntregoLANZA
+			[Meiga12]EntregoMOSQUETE
+			[Meiga23]Han Entregado Armas1
+			[Meiga23]Esperando encargo de Maruxa
+			[Meiga23]Hay Esperando un Encargo de Maruxa8
+			[Meiga12]Han Entregado Armas2
+			[Meiga12]Esperando encargo de Maruxa
+			[Meiga12]Hay Esperando un Encargo de Maruxa9
+			[Meiga5]EntregoLANZA
+			[Meiga5]Han Entregado Armas3
+			[Meiga5]Esperando encargo de Maruxa
+			[Meiga5]Hay Esperando un Encargo de Maruxa10
+			[Meiga26]EntregoMOSQUETE
+			[Meiga26]Han Entregado Armas4
+			[Meiga26]Esperando encargo de Maruxa
+			[Meiga26]Hay Esperando un Encargo de Maruxa11
+			[Meiga10]EntregoLANZA
+			[Meiga10]Han Entregado Armas5
+			[Meiga10]Esperando encargo de Maruxa
+			[Meiga10]Hay Esperando un Encargo de Maruxa12
+			[Meiga27]EntregoTRABUCO
+			[Meiga27]Han Entregado Armas6
+			[Meiga27]Esperando encargo de Maruxa
+			[Meiga27]Hay Esperando un Encargo de Maruxa13
+			[Meiga0]EntregoMOSQUETE
+			[Meiga0]Han Entregado Armas7
+			[Meiga0]Esperando encargo de Maruxa
+			[Meiga0]Hay Esperando un Encargo de Maruxa14
+			[Meiga3]EntregoALABARDA
+			[Meiga3]Han Entregado Armas8
+			[Meiga3]Esperando encargo de Maruxa
+			[Meiga3]Hay Esperando un Encargo de Maruxa15
+			[Meiga21]EntregoMOSQUETE
+			[Meiga21]Han Entregado Armas9
+			[Meiga21]Esperando encargo de Maruxa
+			[Meiga21]Hay Esperando un Encargo de Maruxa16
+	[Sinforiano]Esperando que las meigas tengan Armas Para mi
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoMOSQUETEArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga1]EntregoTRABUCO
+			[Meiga1]Han Entregado Armas10
+			[Meiga1]Esperando encargo de Maruxa
+			[Meiga1]Hay Esperando un Encargo de Maruxa17
+			[Meiga28]EntregoMOSQUETE
+			[Meiga28]Han Entregado Armas11
+			[Meiga28]Esperando encargo de Maruxa
+			[Meiga28]Hay Esperando un Encargo de Maruxa18
+			[Meiga15]EntregoLANZA
+			[Meiga15]Han Entregado Armas12
+			[Meiga15]Esperando encargo de Maruxa
+			[Meiga15]Hay Esperando un Encargo de Maruxa19
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoLANZAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga7]EntregoMOSQUETE
+			[Meiga7]Han Entregado Armas13
+			[Meiga7]Esperando encargo de Maruxa
+			[Meiga7]Hay Esperando un Encargo de Maruxa20
+			[Meiga19]EntregoALABARDA
+			[Meiga19]Han Entregado Armas14
+			[Meiga19]Esperando encargo de Maruxa
+			[Meiga19]Hay Esperando un Encargo de Maruxa21
+			[Meiga14]EntregoALABARDA
+			[Meiga14]Han Entregado Armas15
+			[Meiga14]Esperando encargo de Maruxa
+			[Meiga14]Hay Esperando un Encargo de Maruxa22
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga18]EntregoLANZA
+			[Meiga18]Han Entregado Armas16
+			[Meiga18]Esperando encargo de Maruxa
+			[Meiga18]Hay Esperando un Encargo de Maruxa23
+			[Meiga4]EntregoALABARDA
+			[Meiga4]Han Entregado Armas17
+			[Meiga4]Esperando encargo de Maruxa
+			[Meiga4]Hay Esperando un Encargo de Maruxa24
+			[Meiga6]EntregoALABARDA
+			[Meiga6]Han Entregado Armas18
+			[Meiga6]Esperando encargo de Maruxa
+			[Meiga6]Hay Esperando un Encargo de Maruxa25
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga13]EntregoALABARDA
+			[Meiga13]Han Entregado Armas19
+			[Meiga13]Esperando encargo de Maruxa
+			[Meiga13]Hay Esperando un Encargo de Maruxa26
+			[Meiga2]EntregoALABARDA
+			[Meiga2]Han Entregado Armas20
+			[Meiga2]Esperando encargo de Maruxa
+			[Meiga2]Hay Esperando un Encargo de Maruxa27
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga8]EntregoMOSQUETE
+			[Meiga8]Han Entregado Armas21
+			[Meiga8]Esperando encargo de Maruxa
+			[Meiga8]Hay Esperando un Encargo de Maruxa28
+			[Meiga24]EntregoALABARDA
+			[Meiga24]Han Entregado Armas22
+			[Meiga24]Esperando encargo de Maruxa
+			[Meiga24]Hay Esperando un Encargo de Maruxa29
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoALABARDAArma
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+			[Meiga9]EntregoTRABUCO
+			[Meiga9]Han Entregado Armas23
+			[Meiga9]Esperando encargo de Maruxa
+			[Meiga9]Hay Esperando un Encargo de Maruxa30
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoFIN_LOTEArma
+		[Marxua]Recibo Fin Simulacion
