@@ -1,4 +1,4 @@
-import java.net.PasswordAuthentication;
+
 import java.util.concurrent.Semaphore;
 
 public class Marxua extends Hilo {
@@ -7,7 +7,6 @@ public class Marxua extends Hilo {
 
     private static int n;
     private static Veiga.Arma armaActual;
-    private static int recibo = 0;
 
     static private Semaphore MutexArma = new Semaphore(1);
     // Declaramos una barrera, para que cuando tengamos el arma, la procesemos

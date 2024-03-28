@@ -11,6 +11,12 @@ public class Meigas extends Hilo {
     private static int vida = 0;
     public static int nMeigasTerminadasEsperando = 0;
     public static int nMeigasTerminadasHanEnviadoASinforiano = 0;
+    public static int MeigasDentroFDC = 0;
+    public static int MeigasEsperandoFDC = 0;
+    public static int MeigasDentroCN = 0;
+    public static int MeigasEsperandoCN = 0;
+    public static int MeigasEsperandoACocinarPSC = 0;
+    public static int MeigasCocinandoPSC = 0;
 
     static private Semaphore EsperandoComprobacionEnvio = new Semaphore(0);
     static private Semaphore EsperandoEncargoMeigas = new Semaphore(0);
@@ -18,11 +24,17 @@ public class Meigas extends Hilo {
     static public Semaphore EsperandoTemrminarConjuro = new Semaphore(0);
     static public Semaphore EntregandoArmasASinforiano = new Semaphore(0);
     static public Semaphore EsperandoMeigasASinforiano = new Semaphore(0);
+    static public Semaphore BFuenteDoCaño = new Semaphore(0, true);
+    static public Semaphore BCuevaNegra = new Semaphore(0, true);
+    static public Semaphore BPlazaSanCosme = new Semaphore(0);
 
     static private Semaphore MutexMeigas = new Semaphore(1);
     static public Semaphore MutexMeigasVida = new Semaphore(1);
     static public Semaphore MutexHuerto = new Semaphore(1);
     static public Semaphore MutexEntregaSinforiano = new Semaphore(1);
+    static public Semaphore MutexFonteDoCaño = new Semaphore(1);
+    static public Semaphore MutexCuevaNegra = new Semaphore(1);
+    static public Semaphore MutexPlazaSanCosme = new Semaphore(1);
 
     static private Receta EncargoAux;
     public Receta Encargo;
@@ -64,6 +76,7 @@ public class Meigas extends Hilo {
             // Realizare otra
 
             // BUSCAR INGREDIENTES INDIVIDUALESingredientes
+
             Pausa(Veiga.TMIN_COCCION, Veiga.TMAX_COCCION);
             HuertoXiana();
             EntregoARMASinforiano();
@@ -252,5 +265,191 @@ public class Meigas extends Hilo {
         MutexMeigasVida.release();
     }
 
+    public void ComprobarIngredientes() {
+
+        /*
+         * Dependiendo de que Ingrediente es
+         * Tendre que ir a un sitio para conseguirlo
+         */
+
+        // PARA CADA INGREDEINTE, RECOLECTA
+        // ESPERA QUE ALGUNO DE LOS TREDBEDES ESTE LIBRE HAY 3
+        // AÑADE EL INGREDEINTE EN LA MARMITA.
+        // REMUEVE EL INGREDEINTE POR SU TIEMPO DE COOCION
+        // LIBERA EL TREBEDE
+        // ESCOGE EL SIGUIENTE Y REPITE
+
+        for (int i = 0; i < Veiga.MAX_INGREDIENTES_RECETA; i++) {
+
+            if (this.Encargo.receta_Arma[i] == null) {
+                // Si el elemento es nulo, sal del bucle
+                break;
+            }
+
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.PLUMA.name())) {
+                IslaSoña();
+
+            }
+
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.AGUA.name())) {
+                FonteDoCaño();
+
+            }
+
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.GUANO.name())) {
+                CuevaNegra();
+
+            }
+
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.MANDRAGORA.name())) {
+
+            }
+
+            /********************************
+             * PLAZA SAN COSME*********************************************************
+             */
+            // SOLO HAY 3 NTREBEDES
+            // SOLO PUEDEN COCINAR 3 A LA VEZ
+            try {
+                MutexPlazaSanCosme.acquire();
+                MeigasEsperandoACocinarPSC++;
+                if (MeigasCocinandoPSC < Veiga.N_TREBEDES) {
+
+                    BPlazaSanCosme.release();
+
+                }
+                MutexPlazaSanCosme.release();
+                BPlazaSanCosme.acquire();
+
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            try {
+                MutexPlazaSanCosme.acquire();
+                MeigasCocinandoPSC++;
+                MeigasEsperandoACocinarPSC--;
+                MutexPlazaSanCosme.release();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            Pausa(this.Encargo.receta_Arma[i].tiempo_de_coccion);
+
+        }
+
+        try {
+            MutexPlazaSanCosme.acquire();
+            MeigasCocinandoPSC--;
+            MutexPlazaSanCosme.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void IslaSoña() {
+
+        TioAnton.AñadirBarreraEmbarcadero();
+        /* Me baja en la playa */
+
+        Pausa(Veiga.TMIN_RECOLECTAR_PLUMA, Veiga.TMAX_RECOLECTAR_PLUMA);
+
+        TioAnton.AñadirBarreraPlaya();
+
+    }
+
+    public void FonteDoCaño() {
+
+        /* Acercarse a la fuente y Esperar su turno a servirse */
+
+        try {
+            MutexFonteDoCaño.acquire();
+            MeigasEsperandoFDC++;
+            if (MeigasDentroFDC == 0) {
+                BFuenteDoCaño.release();
+            }
+            MutexFonteDoCaño.release();
+            BFuenteDoCaño.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        try {
+            MutexFonteDoCaño.acquire();
+            MeigasEsperandoFDC--;
+            MeigasDentroFDC++;
+            MutexFonteDoCaño.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        Pausa(Veiga.TMIN_RECOLECTAR_AGUA, Veiga.TMAX_RECOLECTAR_AGUA);
+
+        try {
+            MutexFonteDoCaño.acquire();
+            MeigasDentroFDC--;
+            MutexFonteDoCaño.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void CuevaNegra() {
+
+        // Esperar Turno Siguiendo la Ley de Mallas
+        // MAX3, La primera Comprueba que haya 0 Personas
+        // No es que Tenga que esperar a que haya 3 Meigas
+        // Si no que mientras pueda entrar no hay problema
+        try {
+            MutexCuevaNegra.acquire();
+            MeigasEsperandoCN++;
+            this.trazador.Print("Hay Dentro" + MeigasDentroCN + "Hay esperando" + MeigasEsperandoCN);
+            if (MeigasDentroCN < Veiga.CAPACIDAD_CUEVA) {
+                BCuevaNegra.release();
+            }
+            MutexCuevaNegra.release();
+            BCuevaNegra.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        try {
+            MutexCuevaNegra.acquire();
+            MeigasEsperandoCN--;
+            MeigasDentroCN++;
+            this.trazador.Print("Hay Dentro" + MeigasDentroCN);
+            MutexCuevaNegra.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Dentro de la Cueva solo puede haber 3
+        Pausa(Veiga.TMIN_RECOLECTAR_GUANO, Veiga.TMAX_RECOLECTAR_GUANO);
+        // Salir de la Cueva
+
+        try {
+            MutexCuevaNegra.acquire();
+            MeigasDentroCN--;
+            MutexCuevaNegra.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void PlazaSanCosme() {
+
+    }
 }
 // atributo propio de la clase
