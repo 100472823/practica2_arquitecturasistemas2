@@ -312,7 +312,7 @@ public class Meigas extends Hilo {
             }
 
             if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.MANDRAGORA.name())) {
-
+                BosqueDelLobo();
             }
 
             /********************************
@@ -467,6 +467,22 @@ public class Meigas extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+    }
+
+    public void BosqueDelLobo() {
+
+        // Primero Debe Cruzar de Sur a Norte El puente
+        // Al llegar al bosque, si no hay meigas suficientes es decir esperando 7, no
+        // puede pasar
+        // Cruzan hasta el Claro,
+        Pausa(Veiga.TMIN_BOSQUE, Veiga.TMAX_BOSQUE);
+        // Ya estan en el claro,
+        // Desenterrar la raiz de Mandragora, lo que le lleva a cada una
+        // un tiempo distinto Aleatorio,d e TMIN, y TMAX.
+        // Se reunen con Sus compas para salir
+        // cuando estan lo vuelven a cruzar el bosque
+        // Cruzan el Puente
 
     }
 
