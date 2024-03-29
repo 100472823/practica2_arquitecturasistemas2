@@ -42,8 +42,7 @@ public class TioAnton extends Hilo {
 
     public void run() {
 
-        trazador.Print("TioAnton");
-        trazador.Print("Inicio El Hilo");
+        trazador.Print("Inicio El Hilo Tio Anton");
 
         while (end_tioAnton == 0) {
 
@@ -60,7 +59,7 @@ public class TioAnton extends Hilo {
             trazador.Print("En la Playa");
             EsperarPlaya();
             // Cambiar nombre
-            // PlayaABarca();
+            PlayaABarca();
 
             Navego();
             BajoATierra();
@@ -81,7 +80,7 @@ public class TioAnton extends Hilo {
             try {
                 MutexBarca.acquire();
                 trazador.Print("Voy a hazer releases de" + NPERSONASBARCA);
-                BarreraBARCA.release(2);
+                BarreraBARCA.release(NPERSONASBARCA);
 
                 NPERSONASBARCA = 0;
                 NBarreraBarcaDespuesRelease = 0;
@@ -129,14 +128,27 @@ public class TioAnton extends Hilo {
     }
 
     public static void AñadirBarreraPlaya() {
+
         try {
 
             MutexTioAnton.acquire();
             // Añado una persona a la barca
             NBarreraPlaya++;
             MutexTioAnton.release();
+            trazador.Print("Me quedo pillado en la Barrera de la playa");
             BarreraPlaya.acquire();
-            // Barr.acquire();
+
+            MutexTioAnton.acquire();
+            // Añado una persona a la barca
+            NBarreraPlaya--;
+            MutexTioAnton.release();
+            MutexBarca.acquire();
+            NPERSONASBARCA++;
+            MutexBarca.release();
+            // trazador.Print("AÑADO " + String.valueOf(NPERSONASBARCA) + "pasajeros a la //
+            // cola de BARCA COLA MEIGAS");
+            trazador.Print("Me quedo pillado en la Barrera de la barca ya he sumado me deberia de quedar pillado");
+            BarreraBARCA.acquire();
 
             // Primero modifico la variable, y hago que se me queden pillados aqui.
         } catch (InterruptedException e) {
@@ -145,6 +157,7 @@ public class TioAnton extends Hilo {
         }
 
     }
+
     /* MODIFICAR NOMBRES */
     /* SACAR FUNCION ABRIR */
 
@@ -192,12 +205,22 @@ public class TioAnton extends Hilo {
     }
 
     public void EsperarPlaya() {
+
         navegando = false;
         status = playa;
 
-        Pausa(Veiga.TESPERA_PLAYA);
+        try {
+            MutexTioAnton.acquire();
+            trazador.Print(NBarreraPlaya + "Hay esperando La Playa");
+            MutexTioAnton.release();
 
-        // Un una vez pase el tiempo
+            BarreraPlaya.release(Veiga.CAPACIDAD_BARCA);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        Pausa(Veiga.TESPERA_PLAYA);
 
     }
 
@@ -239,57 +262,44 @@ public class TioAnton extends Hilo {
         }
 
     }
-    /*
-     * public void PlayaABarca() {
-     * 
-     * try {
-     * 
-     * MutexBarreraPlaya.acquire();
-     * trazador.Print(String.valueOf(NBarreraPlaya) + "Esperando Playa");
-     * 
-     * if (NBarreraPlaya != 0) {
-     * 
-     * // No separar local embarcadero y embarcadero.
-     * trazador.Print(String.valueOf(NBarreraPlaya));
-     * if (NBarreraPlaya >= 2) {
-     * AñadimosPlaya = 2;
-     * } else if (NBarreraPlaya == 1) {
-     * 
-     * AñadimosPlaya = 1;
-     * 
-     * } else {
-     * AñadimosPlaya = 0;
-     * }
-     * trazador.Print(String.valueOf(AñadimosPlaya) + "AñadimosPlaya");
-     * MutexBarreraPlaya.release();
-     * 
-     * for (int i = 0; i < AñadimosPlaya; i++) {
-     * 
-     * BarreraPlaya.release();
-     * // BARCA.release();
-     * // Añado una persona a la barca
-     * 
-     * MutexBarreraBarca.acquire();
-     * NPERSONASBARCA++;
-     * MutexBarreraBarca.release();
-     * MutexBarreraPlaya.acquire();
-     * NBarreraPlaya--;
-     * MutexBarreraPlaya.release();
-     * 
-     * }
-     * MutexBarreraBarca.acquire();
-     * trazador.Print("Vuelvo hacia el embarcadero con " +
-     * String.valueOf(NPERSONASBARCA) + "pasajeros");
-     * MutexBarreraBarca.release();
-     * }
-     * 
-     * } catch (InterruptedException e) {
-     * e.printStackTrace();
-     * 
-     * }
-     * 
-     * }
-     * 
-     */
+
+    public void PlayaABarca() {
+        /*
+         * PASO EL ESTAR PILLADO DEL EMBARCADERO A QUE ESTEN PILLADOS EN EL DE LA BARCA
+         */
+        trazador.Print("Entro");
+        try {
+
+            // Habra que hacer un acquire
+            // para cerrar el embarcadero, si solo se monta 1 persona
+            /* Cambiar de BARCA */
+            /* Comprobar x-capacidad */
+            MutexBarca.acquire();
+            if (NPERSONASBARCA == 1) {
+
+                BarreraPlaya.acquire();
+                // si solo hay una persona en el embarcadero
+                // entraria 1, y se quedaria la puerta abierta para
+                // el siguiente que pase
+
+            } else if (NPERSONASBARCA == 0) {
+
+                for (int i = 0; i < 2; i++) {
+
+                    BarreraPlaya.acquire();
+
+                }
+
+            }
+
+            trazador.Print(" Salgo desde la playa con" + String.valueOf(NPERSONASBARCA) + "pasajeros");
+            MutexBarca.release();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+
+        }
+
+    }
 
 }

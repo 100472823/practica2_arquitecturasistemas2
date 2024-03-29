@@ -1,101 +1,120 @@
 		[Marxua] Inicio Hilo Marxua
 		[Marxua]Esperando Recibir Lote
 	[Sinforiano] Inicio Sinforiano
-			[Meiga3]Inicio Hilo Meiga n 3
-			[Meiga4]Inicio Hilo Meiga n 4
-			[Meiga4]Esperando encargo de Maruxa
-			[Meiga5]Inicio Hilo Meiga n 5
-			[Meiga5]Esperando encargo de Maruxa
-			[Meiga0]Inicio Hilo Meiga n 0
-			[Meiga0]Esperando encargo de Maruxa
-			[Meiga1]Inicio Hilo Meiga n 1
-			[Meiga1]Esperando encargo de Maruxa
-			[Meiga6]Inicio Hilo Meiga n 6
-			[Meiga6]Esperando encargo de Maruxa
-			[Meiga2]Inicio Hilo Meiga n 2
-			[Meiga2]Esperando encargo de Maruxa
-			[Meiga7]Inicio Hilo Meiga n 7
-			[Meiga8]Inicio Hilo Meiga n 8
-			[Meiga8]Esperando encargo de Maruxa
-			[Meiga9]Inicio Hilo Meiga n 9
-			[Meiga9]Esperando encargo de Maruxa
-			[Meiga10]Inicio Hilo Meiga n 10
-			[Meiga10]Esperando encargo de Maruxa
-			[Meiga11]Inicio Hilo Meiga n 11
-			[Meiga11]Esperando encargo de Maruxa
-			[Meiga12]Inicio Hilo Meiga n 12
-			[Meiga12]Esperando encargo de Maruxa
-			[Meiga13]Inicio Hilo Meiga n 13
-			[Meiga13]Esperando encargo de Maruxa
-			[Meiga16]Inicio Hilo Meiga n 16
-			[Meiga16]Esperando encargo de Maruxa
-			[Meiga15]Inicio Hilo Meiga n 15
-			[Meiga15]Esperando encargo de Maruxa
-			[Meiga17]Inicio Hilo Meiga n 17
-			[Meiga17]Esperando encargo de Maruxa
-			[Meiga18]Inicio Hilo Meiga n 18
-			[Meiga18]Esperando encargo de Maruxa
-			[Meiga19]Inicio Hilo Meiga n 19
-			[Meiga19]Esperando encargo de Maruxa
-			[Meiga20]Inicio Hilo Meiga n 20
-			[Meiga20]Esperando encargo de Maruxa
-			[Meiga22]Inicio Hilo Meiga n 22
-			[Meiga22]Esperando encargo de Maruxa
-			[Meiga21]Inicio Hilo Meiga n 21
-			[Meiga21]Esperando encargo de Maruxa
-			[Meiga23]Inicio Hilo Meiga n 23
-			[Meiga23]Esperando encargo de Maruxa
-			[Meiga24]Inicio Hilo Meiga n 24
-			[Meiga24]Esperando encargo de Maruxa
-			[Meiga25]Inicio Hilo Meiga n 25
-			[Meiga25]Esperando encargo de Maruxa
-			[Meiga26]Inicio Hilo Meiga n 26
-			[Meiga26]Esperando encargo de Maruxa
-			[Meiga27]Inicio Hilo Meiga n 27
-			[Meiga27]Esperando encargo de Maruxa
-			[Meiga14]Inicio Hilo Meiga n 14
-			[Meiga14]Esperando encargo de Maruxa
-			[Meiga28]Inicio Hilo Meiga n 28
-			[Meiga28]Esperando encargo de Maruxa
-			[Meiga29]Inicio Hilo Meiga n 29
-			[Meiga29]Esperando encargo de Maruxa
-			[Meiga3]Esperando encargo de Maruxa
-	[Sinforiano]n_lotes9
-			[Meiga4]Hay Esperando un Encargo de Maruxa1
-			[Meiga7]Esperando encargo de Maruxa
-	[Sinforiano]n_armas8
-			[Meiga5]Hay Esperando un Encargo de Maruxa2
-			[Meiga0]Hay Esperando un Encargo de Maruxa3
-			[Meiga1]Hay Esperando un Encargo de Maruxa4
-			[Meiga6]Hay Esperando un Encargo de Maruxa5
-			[Meiga2]Hay Esperando un Encargo de Maruxa6
-			[Meiga8]Hay Esperando un Encargo de Maruxa7
-			[Meiga9]Hay Esperando un Encargo de Maruxa8
-	[Sinforiano]EntregoMOSQUETE
-			[Meiga10]Hay Esperando un Encargo de Maruxa9
-			[Meiga11]Hay Esperando un Encargo de Maruxa10
-			[Meiga12]Hay Esperando un Encargo de Maruxa11
-			[Meiga13]Hay Esperando un Encargo de Maruxa12
-			[Meiga16]Hay Esperando un Encargo de Maruxa13
-			[Meiga15]Hay Esperando un Encargo de Maruxa14
-		[Marxua]He recibidoMOSQUETE
+					[Meiga0]Inicio Hilo Meiga n 0
+					[Meiga0]Esperando encargo de Maruxa
+	[Sinforiano]n_lotes3
+			[TioAnton]Inicio El Hilo Tio Anton
+			[TioAnton]Llego A embarcadero
+					[Meiga1]Inicio Hilo Meiga n 1
+					[Meiga1]Esperando encargo de Maruxa
+					[Meiga0]Hay Esperando un Encargo de Maruxa1
+	[Sinforiano]n_armas1
+			[TioAnton]0Hay esperando en el embarcadero
+					[Meiga1]Hay Esperando un Encargo de Maruxa2
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
 		[Marxua]Redactar receta
-			[Meiga17]Hay Esperando un Encargo de Maruxa15
-			[Meiga18]Hay Esperando un Encargo de Maruxa16
-			[Meiga19]Hay Esperando un Encargo de Maruxa17
-			[Meiga20]Hay Esperando un Encargo de Maruxa18
-			[Meiga22]Hay Esperando un Encargo de Maruxa19
-			[Meiga21]Hay Esperando un Encargo de Maruxa20
-			[Meiga23]Hay Esperando un Encargo de Maruxa21
-			[Meiga24]Hay Esperando un Encargo de Maruxa22
-			[Meiga25]Hay Esperando un Encargo de Maruxa23
-			[Meiga26]Hay Esperando un Encargo de Maruxa24
-			[Meiga27]Hay Esperando un Encargo de Maruxa25
-			[Meiga14]Hay Esperando un Encargo de Maruxa26
-			[Meiga28]Hay Esperando un Encargo de Maruxa27
-			[Meiga29]Hay Esperando un Encargo de Maruxa28
-			[Meiga3]Hay Esperando un Encargo de Maruxa29
-			[Meiga7]Hay Esperando un Encargo de Maruxa30
-		[Marxua]GUANO(1198)
-		[Marxua]MANDRAGORA(841)
-		[Marxua]MANDRAGORA(1570)
+		[Marxua]AGUA(3234)
+		[Marxua]MANDRAGORA(1974)
+		[Marxua]GUANO(4974)
+		[Marxua]AGUA(792)
+			[TioAnton]Esperando en el embarcadero
+			[TioAnton]Entro
+		[Marxua]Entrego Encargo a Meiga
+					[Meiga0]Maruxa me ha soltado
+					[Meiga0]He recibido un encargoALABARDA
+			[TioAnton] Salgo desde el embarcadero con0pasajeros
+					[Meiga0]He soltado a maruxa
+					[Meiga0]Comprobacion de Ingrediente
+	[Sinforiano]EntregoFIN_LOTE
+			[TioAnton]Voy a NAVEGAR CON 0
+			[TioAnton]En plena Travesia, Remando
+					[Meiga0]Tengo Como ingrediente: AGUAVoy a la Fonte
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+					[Meiga0]Me Acerco a la Fuente
+					[Meiga0]Recolectando Agua
+			[TioAnton]En la Playa
+			[TioAnton]0Hay esperando La Playa
+					[Meiga0]He terminado de Recolectar Agua
+					[Meiga0]Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible
+					[Meiga0]Estoy Dentro ya tengo un Trebedes Disponible
+					[Meiga0]Estoy Cocinando
+			[TioAnton]Entro
+			[TioAnton] Salgo desde la playa con0pasajeros
+			[TioAnton]Voy a NAVEGAR CON 0
+			[TioAnton]En plena Travesia, Remando
+			[TioAnton]Llego A embarcadero
+			[TioAnton]0Hay esperando en el embarcadero
+					[Meiga0]He terminado de cocinarAGUACon un tiempo de Coocion de3234
+					[Meiga0]Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible
+					[Meiga0]Estoy Dentro ya tengo un Trebedes Disponible
+					[Meiga0]Estoy Cocinando
+					[Meiga0]He terminado de cocinarMANDRAGORACon un tiempo de Coocion de1974
+					[Meiga0]Tengo Como ingrediente: GUANOVoy a la CUEVA
+					[Meiga0]Hay Dentro0Hay esperando1
+					[Meiga0]Estoy Dentro de la Cueva Negra
+					[Meiga0]Hay Dentro1
+					[Meiga0]Empiezo a Recolectar Guano
+			[TioAnton]Esperando en el embarcadero
+			[TioAnton]Entro
+			[TioAnton] Salgo desde el embarcadero con0pasajeros
+			[TioAnton]Voy a NAVEGAR CON 0
+			[TioAnton]En plena Travesia, Remando
+					[Meiga0]Ya he recolectado el guano
+					[Meiga0]he Terminado Salgo de la Cueva, Dejo Libre para los demas
+					[Meiga0]Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible
+					[Meiga0]Estoy Dentro ya tengo un Trebedes Disponible
+					[Meiga0]Estoy Cocinando
+			[TioAnton]En la Playa
+			[TioAnton]0Hay esperando La Playa
+			[TioAnton]Entro
+			[TioAnton] Salgo desde la playa con0pasajeros
+			[TioAnton]Voy a NAVEGAR CON 0
+			[TioAnton]En plena Travesia, Remando
+					[Meiga0]He terminado de cocinarGUANOCon un tiempo de Coocion de4974
+					[Meiga0]Tengo Como ingrediente: AGUAVoy a la Fonte
+					[Meiga0]Me Acerco a la Fuente
+					[Meiga0]Recolectando Agua
+			[TioAnton]Llego A embarcadero
+			[TioAnton]0Hay esperando en el embarcadero
+					[Meiga0]He terminado de Recolectar Agua
+					[Meiga0]Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible
+					[Meiga0]Estoy Dentro ya tengo un Trebedes Disponible
+					[Meiga0]Estoy Cocinando
+					[Meiga0]He terminado de cocinarAGUACon un tiempo de Coocion de792
+					[Meiga0]Acabo de llegar al Huerto Hay esperando : 2
+					[Meiga0]Estamos todas en el huerto
+					[Meiga0]Esperando en el huerto2Encargos Recibidos por Meigas1
+					[Meiga0]Empiezo a recitar el conjuro
+		[Marxua]Empiezo a recitar el conjuro
+			[TioAnton]Esperando en el embarcadero
+			[TioAnton]Entro
+			[TioAnton] Salgo desde el embarcadero con0pasajeros
+			[TioAnton]Voy a NAVEGAR CON 0
+			[TioAnton]En plena Travesia, Remando
+		[Marxua]He recitado
+			[TioAnton]En la Playa
+			[TioAnton]0Hay esperando La Playa
+					[Meiga0]He terminado conjuro
+					[Meiga0]Hemos recitado todas
+					[Meiga0]Han recitado ya2Encargos Recibidos por Meigas1
+	[Sinforiano]Esperando que las meigas tengan Armas Para mi
+					[Meiga0]EntregoALABARDA
+					[Meiga0]Han Entregado Armas1
+					[Meiga0]Esperando encargo de Maruxa
+	[Sinforiano]He recibidoALABARDAArma
+					[Meiga0]Hay Esperando un Encargo de Maruxa2
+	[Sinforiano]Esperando Recibir Armas Completa de Meiga
+	[Sinforiano]Me han despertado inicio otra vez bucle
+	[Sinforiano]He recibidoFIN_LOTEArma
+	[Sinforiano]n_armas1
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]PLUMA(4264)
+		[Marxua]GUANO(1279)
+		[Marxua]AGUA(3840)
+		[Marxua]MANDRAGORA(4803)
+		[Marxua]PLUMA(1368)

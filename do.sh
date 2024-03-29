@@ -1,3 +1,6 @@
+
+
+
 #!/bin/bash
 
 # Limpiar la terminal
@@ -5,7 +8,7 @@ clear
 
 # Compilar todos los archivos Java
 echo "Compilando Barrera.java..."
-javac Barrera.java
+javac Receta.java
 echo "Compilando Hilo.java..."
 javac Hilo.java
 echo "Compilando Marxua.java..."
@@ -25,11 +28,8 @@ javac Veiga.java
 
 # Ejecutar el programa principal (Veiga.java)
 echo "Ejecutando Veiga.java..."
-java Veiga
+java Veiga 
 
-# Ejecutar el programa principal (Veiga.java)
-echo "Ejecutando Veiga.java..."
-java Veiga > log.txt
 
 # Borrar archivos .class
 echo "Borrando archivos .class..."

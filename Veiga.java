@@ -2,10 +2,10 @@ import java.util.concurrent.Semaphore;
 
 public class Veiga {
 
-    public static final int N_MEIGAS = 30;
-    public static final int MAX_LOTES = 10;
-    public static final int MAX_ARMAS_LOTE = 30;
-    public static final int MAX_INGREDIENTES_RECETA = 10;
+    public static final int N_MEIGAS = 2;
+    public static final int MAX_LOTES = 4;
+    public static final int MAX_ARMAS_LOTE = 2;
+    public static final int MAX_INGREDIENTES_RECETA = 5;
     public static final int N_TREBEDES = 3;
     public static final int CAPACIDAD_BARCA = 2;
     public static final int CAPACIDAD_CUEVA = 3;
@@ -72,7 +72,7 @@ public class Veiga {
         // Tio Anton se muere de viejo, y sera cuando el programa principal lo decida
         TioAnton Anton = new TioAnton();
 
-        // Anton.start();
+        Anton.start();
 
         // Como funciona el tema de los hilos, por que si anton esta esperando ????
         // si el main, sigue fucnionando con anton.barcaAnton.embarco; ???????

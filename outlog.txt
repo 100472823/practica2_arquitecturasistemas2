@@ -1,0 +1,96 @@
+		[Marxua] Inicio Hilo Marxua
+		[Marxua]Esperando Recibir Lote
+	[Sinforiano] Inicio Sinforiano
+			[TioAnton]Inicio El Hilo Tio Anton
+			[TioAnton]Llego A embarcadero
+					[Meiga0]Inicio Hilo Meiga n 0
+					[Meiga1]Inicio Hilo Meiga n 1
+					[Meiga1]Esperando encargo de Maruxa
+	[Sinforiano]n_lotes1
+					[Meiga0]Esperando encargo de Maruxa
+			[TioAnton]0Hay esperando en el embarcadero
+					[Meiga1]Hay Esperando un Encargo de Maruxa1
+	[Sinforiano]n_armas1
+					[Meiga0]Hay Esperando un Encargo de Maruxa2
+	[Sinforiano]EntregoALABARDA
+		[Marxua]He recibidoALABARDA
+		[Marxua]Redactar receta
+		[Marxua]GUANO(1168)
+		[Marxua]PLUMA(4766)
+		[Marxua]AGUA(89)
+			[TioAnton]Esperando en el embarcadero
+			[TioAnton]Entro
+		[Marxua]Entrego Encargo a Meiga
+					[Meiga1]Maruxa me ha soltado
+					[Meiga1]He recibido un encargoALABARDA
+					[Meiga1]He soltado a maruxa
+					[Meiga1]Comprobacion de Ingrediente
+	[Sinforiano]EntregoFIN_LOTE
+		[Marxua]He recibido FIN LOTE, Me voy al HUERTO
+		[Marxua]En el Huerto
+			[TioAnton] Salgo desde el embarcadero con0pasajeros
+			[TioAnton]Voy a NAVEGAR CON 0
+			[TioAnton]En plena Travesia, Remando
+					[Meiga1]Tengo Como ingrediente: GUANOVoy a la CUEVA
+					[Meiga1]Hay Dentro0Hay esperando1
+					[Meiga1]Estoy Dentro de la Cueva Negra
+					[Meiga1]Hay Dentro1
+					[Meiga1]Empiezo a Recolectar Guano
+					[Meiga1]Ya he recolectado el guano
+					[Meiga1]he Terminado Salgo de la Cueva, Dejo Libre para los demas
+					[Meiga1]Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible
+					[Meiga1]Estoy Dentro ya tengo un Trebedes Disponible
+					[Meiga1]Estoy Cocinando
+					[Meiga1]He terminado de cocinarGUANOCon un tiempo de Coocion de1168
+					[Meiga1]Tengo Como ingrediente: PLUMAVoy a la ISLA A POR PLUMAS
+					[Meiga1]De Camino A la Isla
+			[TioAnton]En la Playa
+			[TioAnton]0Hay esperando La Playa
+			[TioAnton]Entro
+			[TioAnton] Salgo desde la playa con0pasajeros
+			[TioAnton]Voy a NAVEGAR CON 0
+			[TioAnton]En plena Travesia, Remando
+			[TioAnton]Llego A embarcadero
+			[TioAnton]1Hay esperando en el embarcadero
+			[TioAnton]Esperando en el embarcadero
+			[TioAnton]Entro
+			[TioAnton] Salgo desde el embarcadero con1pasajeros
+			[TioAnton]Voy a NAVEGAR CON 1
+			[TioAnton]En plena Travesia, Remando
+			[TioAnton]Voy a hazer releases de1
+			[TioAnton]En la Playa
+			[TioAnton]0Hay esperando La Playa
+					[Meiga1]Ya estoy en la Isla, Comiendo a Recolectar Pluma
+					[Meiga1]He Terminado De Recolectar Pluma
+					[Meiga1]Ya tengo la pluma voy de vuelta al embarcadero
+			[TioAnton]Me quedo pillado en la Barrera de la playa
+			[TioAnton]Me quedo pillado en la Barrera de la barca ya he sumado me deberia de quedar pillad
+					[Meiga1]Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible
+					[Meiga1]Estoy Dentro ya tengo un Trebedes Disponible
+					[Meiga1]Estoy Cocinando
+			[TioAnton]Entro
+			[TioAnton] Salgo desde la playa con1pasajeros
+			[TioAnton]Voy a NAVEGAR CON 1
+			[TioAnton]En plena Travesia, Remando
+		[Marxua] Inicio Hilo Marxua
+		[Marxua]Esperando Recibir Lote
+	[Sinforiano] Inicio Sinforiano
+			[TioAnton]Inicio El Hilo Tio Anton
+			[TioAnton]Llego A embarcadero
+			[TioAnton]0Hay esperando en el embarcadero
+	[Sinforiano]n_lotes2
+					[Meiga0]Inicio Hilo Meiga n 0
+					[Meiga0]Esperando encargo de Maruxa
+					[Meiga1]Inicio Hilo Meiga n 1
+					[Meiga1]Esperando encargo de Maruxa
+	[Sinforiano]n_armas1
+					[Meiga0]Hay Esperando un Encargo de Maruxa1
+					[Meiga1]Hay Esperando un Encargo de Maruxa2
+	[Sinforiano]EntregoMOSQUETE
+		[Marxua]He recibidoMOSQUETE
+		[Marxua]Redactar receta
+		[Marxua]GUANO(4681)
+		[Marxua]PLUMA(306)
+		[Marxua]MANDRAGORA(2855)
+		[Marxua]PLUMA(1891)
+		[Marxua]MANDRAGORA(4035)

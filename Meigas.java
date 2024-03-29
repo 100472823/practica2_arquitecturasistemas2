@@ -42,7 +42,7 @@ public class Meigas extends Hilo {
     public Meigas(int n) {
 
         this.Numero_Meiga = n;
-        this.trazador = new Trazador(3, "Meiga" + this.Numero_Meiga);
+        this.trazador = new Trazador(5, "Meiga" + this.Numero_Meiga);
 
     }
 
@@ -77,7 +77,8 @@ public class Meigas extends Hilo {
 
             // BUSCAR INGREDIENTES INDIVIDUALESingredientes
 
-            Pausa(Veiga.TMIN_COCCION, Veiga.TMAX_COCCION);
+            ComprobarIngredientes();
+
             HuertoXiana();
             EntregoARMASinforiano();
 
@@ -266,7 +267,7 @@ public class Meigas extends Hilo {
     }
 
     public void ComprobarIngredientes() {
-
+        this.trazador.Print("Comprobacion de Ingrediente");
         /*
          * Dependiendo de que Ingrediente es
          * Tendre que ir a un sitio para conseguirlo
@@ -279,24 +280,33 @@ public class Meigas extends Hilo {
         // LIBERA EL TREBEDE
         // ESCOGE EL SIGUIENTE Y REPITE
 
-        for (int i = 0; i < Veiga.MAX_INGREDIENTES_RECETA; i++) {
+        for (int i = 0; i < this.Encargo.receta_Arma.length; i++) {
 
             if (this.Encargo.receta_Arma[i] == null) {
                 // Si el elemento es nulo, sal del bucle
+                this.trazador.Print("he terminado de Hacer los Ingredientes");
                 break;
             }
 
             if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.PLUMA.name())) {
+                trazador.Print("Tengo Como ingrediente: " + this.Encargo.receta_Arma[i].ingrediente.name()
+                        + "Voy a la ISLA A POR PLUMAS");
                 IslaSoña();
 
             }
 
             if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.AGUA.name())) {
+                trazador.Print("Tengo Como ingrediente: " + this.Encargo.receta_Arma[i].ingrediente.name()
+                        + "Voy a la Fonte");
+
                 FonteDoCaño();
 
             }
 
             if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.GUANO.name())) {
+                trazador.Print("Tengo Como ingrediente: " + this.Encargo.receta_Arma[i].ingrediente.name()
+                        + "Voy a la CUEVA");
+
                 CuevaNegra();
 
             }
@@ -310,6 +320,7 @@ public class Meigas extends Hilo {
              */
             // SOLO HAY 3 NTREBEDES
             // SOLO PUEDEN COCINAR 3 A LA VEZ
+            this.trazador.Print("Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible");
             try {
                 MutexPlazaSanCosme.acquire();
                 MeigasEsperandoACocinarPSC++;
@@ -330,34 +341,42 @@ public class Meigas extends Hilo {
                 MutexPlazaSanCosme.acquire();
                 MeigasCocinandoPSC++;
                 MeigasEsperandoACocinarPSC--;
+                this.trazador.Print("Estoy Dentro ya tengo un Trebedes Disponible");
                 MutexPlazaSanCosme.release();
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
 
+            this.trazador.Print("Estoy Cocinando");
+
             Pausa(this.Encargo.receta_Arma[i].tiempo_de_coccion);
 
-        }
+            try {
+                MutexPlazaSanCosme.acquire();
+                MeigasCocinandoPSC--;
+                MutexPlazaSanCosme.release();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 
-        try {
-            MutexPlazaSanCosme.acquire();
-            MeigasCocinandoPSC--;
-            MutexPlazaSanCosme.release();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            this.trazador.Print("He terminado de cocinar" + this.Encargo.receta_Arma[i].ingrediente.name()
+                    + "Con un tiempo de Coocion de" + this.Encargo.receta_Arma[i].tiempo_de_coccion);
         }
 
     }
 
     public void IslaSoña() {
 
+        this.trazador.Print("De Camino A la Isla");
         TioAnton.AñadirBarreraEmbarcadero();
         /* Me baja en la playa */
-
+        this.trazador.Print("Ya estoy en la Isla, Comiendo a Recolectar Pluma");
         Pausa(Veiga.TMIN_RECOLECTAR_PLUMA, Veiga.TMAX_RECOLECTAR_PLUMA);
+        this.trazador.Print("He Terminado De Recolectar Pluma");
 
+        this.trazador.Print("Ya tengo la pluma voy de vuelta al embarcadero");
         TioAnton.AñadirBarreraPlaya();
 
     }
@@ -365,7 +384,7 @@ public class Meigas extends Hilo {
     public void FonteDoCaño() {
 
         /* Acercarse a la fuente y Esperar su turno a servirse */
-
+        this.trazador.Print("Me Acerco a la Fuente");
         try {
             MutexFonteDoCaño.acquire();
             MeigasEsperandoFDC++;
@@ -388,9 +407,9 @@ public class Meigas extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        this.trazador.Print("Recolectando Agua");
         Pausa(Veiga.TMIN_RECOLECTAR_AGUA, Veiga.TMAX_RECOLECTAR_AGUA);
-
+        this.trazador.Print("He terminado de Recolectar Agua");
         try {
             MutexFonteDoCaño.acquire();
             MeigasDentroFDC--;
@@ -426,20 +445,23 @@ public class Meigas extends Hilo {
             MutexCuevaNegra.acquire();
             MeigasEsperandoCN--;
             MeigasDentroCN++;
+            this.trazador.Print("Estoy Dentro de la Cueva Negra");
             this.trazador.Print("Hay Dentro" + MeigasDentroCN);
             MutexCuevaNegra.release();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        this.trazador.Print("Empiezo a Recolectar Guano");
         // Dentro de la Cueva solo puede haber 3
         Pausa(Veiga.TMIN_RECOLECTAR_GUANO, Veiga.TMAX_RECOLECTAR_GUANO);
+        this.trazador.Print("Ya he recolectado el guano");
         // Salir de la Cueva
 
         try {
             MutexCuevaNegra.acquire();
             MeigasDentroCN--;
+            this.trazador.Print("he Terminado Salgo de la Cueva, Dejo Libre para los demas");
             MutexCuevaNegra.release();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
@@ -448,8 +470,5 @@ public class Meigas extends Hilo {
 
     }
 
-    public void PlazaSanCosme() {
-
-    }
 }
 // atributo propio de la clase
