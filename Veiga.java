@@ -2,7 +2,7 @@ import java.util.concurrent.Semaphore;
 
 public class Veiga {
 
-    public static final int N_MEIGAS = 4;
+    public static final int N_MEIGAS = 30;
     public static final int MAX_LOTES = 4;
     public static final int MAX_ARMAS_LOTE = 5;
     public static final int MAX_INGREDIENTES_RECETA = 7;

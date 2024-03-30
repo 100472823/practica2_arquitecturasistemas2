@@ -17,6 +17,7 @@ public class Meigas extends Hilo {
     public static int MeigasEsperandoCN = 0;
     public static int MeigasEsperandoACocinarPSC = 0;
     public static int MeigasCocinandoPSC = 0;
+    public static int NumeroDeMandragoras = 0;
 
     static private Semaphore EsperandoComprobacionEnvio = new Semaphore(0);
     static private Semaphore EsperandoEncargoMeigas = new Semaphore(0);
@@ -35,6 +36,7 @@ public class Meigas extends Hilo {
     static public Semaphore MutexFonteDoCaño = new Semaphore(1);
     static public Semaphore MutexCuevaNegra = new Semaphore(1);
     static public Semaphore MutexPlazaSanCosme = new Semaphore(1);
+    static public Semaphore MutexNumeroDeMandragoras = new Semaphore(1);
 
     static private Receta EncargoAux;
     public Receta Encargo;
@@ -76,6 +78,7 @@ public class Meigas extends Hilo {
             // Realizare otra
 
             // BUSCAR INGREDIENTES INDIVIDUALESingredientes
+            ComprobarNumeroMandragoras();
 
             ComprobarIngredientes();
 
@@ -467,7 +470,12 @@ public class Meigas extends Hilo {
     public void BosqueDelLobo() {
 
         // Primero Debe Cruzar de Sur a Norte El puente
+        PonteDePedra.EsperandoSur(this.trazador);
         // Al llegar al bosque, si no hay meigas suficientes es decir esperando 7, no
+        // En el caso de que El total de Las Meigas, No necesiten Unicamente (No Repiten
+        // ) Mas de 7
+        // En Ese caso se cambiara el limite
+        // Al numero de Meigas Inferior A 7, Que Pueden Pasar
         // puede pasar
         // Cruzan hasta el Claro,
         Pausa(Veiga.TMIN_BOSQUE, Veiga.TMAX_BOSQUE);
@@ -476,7 +484,34 @@ public class Meigas extends Hilo {
         // un tiempo distinto Aleatorio,d e TMIN, y TMAX.
         // Se reunen con Sus compas para salir
         // cuando estan lo vuelven a cruzar el bosque
-        // Cruzan el Puente
+        // Cruzan el Puente Norte A Sur
+
+    }
+
+    public void ComprobarNumeroMandragoras() {
+        // Tengo Que Comprobar En todo El array De Encargos, De Todas Las Meigas
+        // Tengo que obligarlas Que lo Comprueben Si no, No voy a Saber Nunca El numero
+        // de Meigas Unicas
+        // Las que Esten Despiertas Por que Tienen Encargo
+        for (int i = 0; i < this.Encargo.receta_Arma.length; i++) {
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.MANDRAGORA.name())) {
+                try {
+                    MutexNumeroDeMandragoras.acquire();
+                    NumeroDeMandragoras++;
+                    this.trazador.Print("Tiene Mandragora Sumo " + " " + NumeroDeMandragoras);
+                    MutexNumeroDeMandragoras.release();
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                // Paso Al siguiente
+                // Este Array, Contiene los ingredientes de una receza, En cuento Encuentre,
+                // Mandragora, Quiero que Sume 1 y que termie
+                break;
+            }
+
+        }
 
     }
 
