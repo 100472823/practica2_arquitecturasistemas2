@@ -514,6 +514,7 @@ public class Meigas extends Hilo {
         }
 
     }
+    // Planteado papel, Hay que tener en cuenta cuando van varias veces
 
 }
 // atributo propio de la clase
