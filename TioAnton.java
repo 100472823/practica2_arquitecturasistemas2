@@ -2,7 +2,7 @@ import java.util.concurrent.Semaphore;
 
 public class TioAnton extends Hilo {
 
-    private int end_tioAnton = 0;
+    private static int end_tioAnton = 0;
 
     private static Trazador trazador = new Trazador(3, "TioAnton");
 
@@ -64,10 +64,10 @@ public class TioAnton extends Hilo {
             Navego();
             BajoATierra();
         }
-
+        trazador.Print("Me han Avisado de Que Tengo que Morir Por viejo");
     }
 
-    public void end() {
+    public static void end() {
 
         end_tioAnton = 1;
 

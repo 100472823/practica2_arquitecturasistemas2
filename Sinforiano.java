@@ -67,6 +67,8 @@ public class Sinforiano extends Hilo {
         trazador.Print("Entrego" + Veiga.Arma.FIN_SIMULACION.name());
         // Cuando termine el while, tengo que pasarle, el FIN SIMULACION
         // UNA vez termine el ultimo lote.
+        trazador.Print("Aviso a Tio Anton");
+
         trazador.Print("Fin Hilo Sinforiano");
     }
 

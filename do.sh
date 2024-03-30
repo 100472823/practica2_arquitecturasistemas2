@@ -23,6 +23,8 @@ echo "Compilando Trazador.java..."
 javac Trazador.java
 echo "Compilando Paso.java..."
 javac Paso.java
+echo "Compilando PonteDePedra.java"
+javac PonteDePedra.java
 echo "Compilando Veiga.java..."
 javac Veiga.java
 

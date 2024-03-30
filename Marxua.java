@@ -46,7 +46,7 @@ public class Marxua extends Hilo {
                 SiguienteArma();
 
             }
-
+            BarreraArmaEnvio.release();
         } catch (InterruptedException e) {
             e.printStackTrace();
 

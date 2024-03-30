@@ -24,9 +24,9 @@ public class Meigas extends Hilo {
     static public Semaphore EsperandoTemrminarConjuro = new Semaphore(0);
     static public Semaphore EntregandoArmasASinforiano = new Semaphore(0);
     static public Semaphore EsperandoMeigasASinforiano = new Semaphore(0);
-    static public Semaphore BFuenteDoCaño = new Semaphore(0, true);
-    static public Semaphore BCuevaNegra = new Semaphore(0, true);
-    static public Semaphore BPlazaSanCosme = new Semaphore(0);
+    static public Semaphore BFuenteDoCaño = new Semaphore(1, true);
+    static public Semaphore BCuevaNegra = new Semaphore(3, true);
+    static public Semaphore BPlazaSanCosme = new Semaphore(3);
 
     static private Semaphore MutexMeigas = new Semaphore(1);
     static public Semaphore MutexMeigasVida = new Semaphore(1);
@@ -312,7 +312,7 @@ public class Meigas extends Hilo {
             }
 
             if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.MANDRAGORA.name())) {
-                BosqueDelLobo();
+                // BosqueDelLobo();
             }
 
             /********************************
@@ -322,13 +322,10 @@ public class Meigas extends Hilo {
             // SOLO PUEDEN COCINAR 3 A LA VEZ
             this.trazador.Print("Estoy en La Plaza San Cosme Esperando A que haya un Trebedes Disponible");
             try {
+                // Semaforo Capacidad, De 3.
                 MutexPlazaSanCosme.acquire();
                 MeigasEsperandoACocinarPSC++;
-                if (MeigasCocinandoPSC < Veiga.N_TREBEDES) {
 
-                    BPlazaSanCosme.release();
-
-                }
                 MutexPlazaSanCosme.release();
                 BPlazaSanCosme.acquire();
 
@@ -363,6 +360,7 @@ public class Meigas extends Hilo {
 
             this.trazador.Print("He terminado de cocinar" + this.Encargo.receta_Arma[i].ingrediente.name()
                     + "Con un tiempo de Coocion de" + this.Encargo.receta_Arma[i].tiempo_de_coccion);
+            BPlazaSanCosme.release();
         }
 
     }
@@ -382,15 +380,14 @@ public class Meigas extends Hilo {
     }
 
     public void FonteDoCaño() {
+        // Semaforo de Capacidad 1
 
         /* Acercarse a la fuente y Esperar su turno a servirse */
         this.trazador.Print("Me Acerco a la Fuente");
         try {
             MutexFonteDoCaño.acquire();
             MeigasEsperandoFDC++;
-            if (MeigasDentroFDC == 0) {
-                BFuenteDoCaño.release();
-            }
+
             MutexFonteDoCaño.release();
             BFuenteDoCaño.acquire();
         } catch (InterruptedException e) {
@@ -418,11 +415,11 @@ public class Meigas extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        BFuenteDoCaño.release();
     }
 
     public void CuevaNegra() {
-
+        // Cambiar Semaforo de Capacidad de 3
         // Esperar Turno Siguiendo la Ley de Mallas
         // MAX3, La primera Comprueba que haya 0 Personas
         // No es que Tenga que esperar a que haya 3 Meigas
@@ -431,9 +428,6 @@ public class Meigas extends Hilo {
             MutexCuevaNegra.acquire();
             MeigasEsperandoCN++;
             this.trazador.Print("Hay Dentro" + MeigasDentroCN + "Hay esperando" + MeigasEsperandoCN);
-            if (MeigasDentroCN < Veiga.CAPACIDAD_CUEVA) {
-                BCuevaNegra.release();
-            }
             MutexCuevaNegra.release();
             BCuevaNegra.acquire();
         } catch (InterruptedException e) {
@@ -467,7 +461,7 @@ public class Meigas extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        BCuevaNegra.release();
     }
 
     public void BosqueDelLobo() {
