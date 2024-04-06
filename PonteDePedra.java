@@ -13,6 +13,7 @@ public class PonteDePedra extends Hilo {
     public static int EsperandoSur = 0;
     public static int DentroDelPuente = 0;
     public static int Control = 0;
+    public static int SalgoDelPuente = 0;
     // VACIO ES QUE EL CONTADOR DEL PUENTE ESTE VACIO
 
     static private Semaphore MutexPuenteDePedra = new Semaphore(1);
@@ -35,11 +36,12 @@ public class PonteDePedra extends Hilo {
             MutexPuenteDePedra.acquire();
             EsperandoSur++;
             Status = EsperandoSurS;
-            if (DentroDelPuente == vacio) {
-                BEsperandoSur.release(EsperandoSur);
-            }
             MutexPuenteDePedra.release();
-            BEsperandoSur.acquire();
+            // SI ESTA VACIO ENTRO SOLO ESPERO CUANDO HAY GENTE
+            if (DentroDelPuente != vacio) {
+
+                BEsperandoSur.acquire();
+            }
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
@@ -48,7 +50,7 @@ public class PonteDePedra extends Hilo {
 
         try {
             MutexPuenteDePedra.acquire();
-            EsperandoSur = 0;
+            EsperandoSur--;
             MutexPuenteDePedra.release();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
@@ -58,17 +60,18 @@ public class PonteDePedra extends Hilo {
         CruzoElPuente(trazador);
     }
 
-    public void EsperandoNorte(Trazador trazador) {
+    public static void EsperandoNorte(Trazador trazador) {
 
         try {
             MutexPuenteDePedra.acquire();
             EsperandoNorte++;
+            trazador.Print("Estoy Esperando para cerzar desde el NORTE");
             Status = EsperandoNorteS;
-            if (DentroDelPuente == vacio) {
-                BEsperandoNorte.release(EsperandoNorte);
-            }
             MutexPuenteDePedra.release();
-            BEsperandoNorte.acquire();
+            if (DentroDelPuente != vacio) {
+                BEsperandoNorte.acquire();
+
+            }
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
@@ -77,7 +80,7 @@ public class PonteDePedra extends Hilo {
 
         try {
             MutexPuenteDePedra.acquire();
-            EsperandoNorte = 0;
+            EsperandoNorte--;
             MutexPuenteDePedra.release();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
@@ -123,7 +126,6 @@ public class PonteDePedra extends Hilo {
         try {
             MutexPuenteDePedra.acquire();
 
-            DentroDelPuente = 0;
             /*
              * Si Hay gente esperando en ambos sitios, le damos prioridad al NORTE
              * En el Caso de que haya gente Solo en el Norte, Esperando Pueden Pasar
@@ -136,7 +138,9 @@ public class PonteDePedra extends Hilo {
              * En el Caso de haya gente en los 2 lados Es decir que sus Colas Sean Distintas
              * de 0 Tiene Preferencia el Norte
              */
+            // Controlar, EL estatus para imprimir
             if (EsperandoNorte != 0 && EsperandoSur != 0) {
+                Status = EsperandoNorteS;
                 BEsperandoNorte.release(EsperandoNorte);
                 trazador.Print(
                         "Hay Gente Esperando en El Norte y En el Sur, los Dejo Pasar a Los Del norte que tienen Preferencia");
@@ -146,7 +150,7 @@ public class PonteDePedra extends Hilo {
             // O no,
             // Entrarian Al Puente Los que Estan Esperando en el Norte
             if (EsperandoNorte != 0) {
-
+                Status = EsperandoNorteS;
                 BEsperandoNorte.release(EsperandoNorte);
                 trazador.Print("Hay Gente Esperando en El Norte, los Dejo Pasar");
 
@@ -154,9 +158,14 @@ public class PonteDePedra extends Hilo {
               // No hay Nadie Esperando En el norte, Y hay gente Esperando en El Sur
               // Entonces Entrarian Los Del Sur
             if (EsperandoSur != 0 && EsperandoNorte == 0) {
-
+                Status = EsperandoSurS;
                 BEsperandoSur.release(EsperandoSur);
                 trazador.Print("Hay Gente Esperando en El Sur, los Dejo Pasar");
+            }
+            SalgoDelPuente++;
+            if (DentroDelPuente == SalgoDelPuente) {
+                DentroDelPuente = 0;
+                SalgoDelPuente = 0;
             }
 
             MutexPuenteDePedra.release();
@@ -164,6 +173,8 @@ public class PonteDePedra extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        trazador.Print("He terminado de salir del puente");
         // Antes de Salir Si hay Gente Esperando En Alguno de Los Lados
         // Eso si, si hay uno dentro ya no puede entrar nadie mas
 

@@ -55,7 +55,7 @@ public class Marxua extends Hilo {
         // Si el arma, es fin de simulacion, tendremos que avisar
         // A todas las meigas
         trazador.Print("Recibo Fin Simulacion");
-        Meigas.MaruxaAvisaMuerte();
+        Meigas.FinMeigas(Marxua.trazador);
 
     }
 
