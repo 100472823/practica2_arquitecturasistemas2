@@ -316,6 +316,8 @@ public class Meigas extends Hilo {
             }
 
             if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.MANDRAGORA.name())) {
+                trazador.Print("Tengo Como ingrediente: " + this.Encargo.receta_Arma[i].ingrediente.name()
+                        + "Voy al BOSQUE");
                 BosqueDelLobo();
             }
 

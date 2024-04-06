@@ -152,7 +152,7 @@ public class PonteDePedra extends Hilo {
             if (EsperandoNorte != 0) {
                 Status = EsperandoNorteS;
                 BEsperandoNorte.release(EsperandoNorte);
-                trazador.Print("Hay Gente Esperando en El Norte, los Dejo Pasar");
+                trazador.Print("Hay Gente Esperando en El Norte, los Dejo Pasar" + EsperandoNorte);
 
             } // Solo En El Caso Especifico En el Cual;
               // No hay Nadie Esperando En el norte, Y hay gente Esperando en El Sur
@@ -160,7 +160,7 @@ public class PonteDePedra extends Hilo {
             if (EsperandoSur != 0 && EsperandoNorte == 0) {
                 Status = EsperandoSurS;
                 BEsperandoSur.release(EsperandoSur);
-                trazador.Print("Hay Gente Esperando en El Sur, los Dejo Pasar");
+                trazador.Print("Hay Gente Esperando en El Sur, los Dejo Pasar" + EsperandoSur);
             }
             SalgoDelPuente++;
             if (DentroDelPuente == SalgoDelPuente) {
