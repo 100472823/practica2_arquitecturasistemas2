@@ -3,9 +3,9 @@ import java.util.concurrent.Semaphore;
 public class Veiga {
 
     public static final int N_MEIGAS = 30;
-    public static final int MAX_LOTES = 4;
-    public static final int MAX_ARMAS_LOTE = 5;
-    public static final int MAX_INGREDIENTES_RECETA = 7;
+    public static final int MAX_LOTES = 2;
+    public static final int MAX_ARMAS_LOTE = 30;
+    public static final int MAX_INGREDIENTES_RECETA = 10;
     public static final int N_TREBEDES = 3;
     public static final int CAPACIDAD_BARCA = 2;
     public static final int CAPACIDAD_CUEVA = 3;
@@ -51,6 +51,8 @@ public class Veiga {
 
     public static void main(String[] args) throws InterruptedException {
 
+        Trazador trazador = new Trazador(0, "Veiga");
+
         // Crear NMeigas. que son 30, 30 objetos de meigas.
         // uno de, Marxua, y de seforiano.
 
@@ -74,30 +76,22 @@ public class Veiga {
 
         Anton.start();
 
-        // Como funciona el tema de los hilos, por que si anton esta esperando ????
-        // si el main, sigue fucnionando con anton.barcaAnton.embarco; ???????
-
-        // Quien se esta metiendo en la barca. // HAce falta saber quien ??????????
-
-        // Cuando alguien quiera añadirse a la cola del embarcadero.
-        // metodo embarcadero, y playa
-
-        // Gestionar colas Embarcadero y Playa con Cola Barca.
-
-        // Cuando alguien quiera entrar ya sea en el embarcadero o en la playa,
-        // 1 pasaran por las colas de los sitios y cuando la barca,
-        // se encuentre en este, pasaran a la barca
-
-        // Estaria en bucle;
-
         Seforiano.join();
+        trazador.Print("Se ha unido sinforiano");
+
         TioAnton.end();
-        Anton.join();
 
         for (int i = 0; i < N_MEIGAS; i++) {
+            System.out.println(i);
+
             Megias_Array[i].join();
+            trazador.Print("se ha unido Meiga" + i);
 
         }
+        Marxua.join();
+        trazador.Print("Se han terminado Maruxa");
+        Anton.join();
+        trazador.Print("Se han unido Anton");
 
         // una vez que estas han terminado, que terminen todas las demas
 

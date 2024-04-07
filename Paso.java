@@ -5,7 +5,7 @@ public class Paso {
     public int tiempo_de_coccion;
 
     public enum Ingrediente {
-        PLUMA, AGUA, GUANO, MANDRAGORA;
+        PLUMA, AGUA, GUANO, MANDRAGORA,SABINA;
 
         private static Ingrediente[] valores = values();
 

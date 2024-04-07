@@ -18,6 +18,13 @@ public class Meigas extends Hilo {
     public static int MeigasEsperandoACocinarPSC = 0;
     public static int MeigasCocinandoPSC = 0;
     public static int NumeroDeMandragoras = 0;
+    public int NumeroDeMandragorasTotalesEnCadaUna = 0;
+    public static int NumeroEsperandoBosque = 0;
+    public static int Grupo_Bosque_Actual = 0;
+    public static int NumeroEsperandoBosqueSalir = 0;
+    public static int NDentroDelBosque = 0;
+    public static int MeigasEsperandoParaSabinas = 0;
+    public static int NumeroDeSabinas = 0;
 
     static private Semaphore EsperandoComprobacionEnvio = new Semaphore(0);
     static private Semaphore EsperandoEncargoMeigas = new Semaphore(0);
@@ -28,6 +35,10 @@ public class Meigas extends Hilo {
     static public Semaphore BFuenteDoCaño = new Semaphore(1, true);
     static public Semaphore BCuevaNegra = new Semaphore(3, true);
     static public Semaphore BPlazaSanCosme = new Semaphore(3);
+    static public Semaphore BBosqueDelLobo = new Semaphore(0);
+    static public Semaphore BBosqueDelLoboSalir = new Semaphore(0);
+    static public Semaphore BSabinaMeigas = new Semaphore(0);
+    static public Semaphore BSabinaMeigasRecolectando = new Semaphore(0);
 
     static private Semaphore MutexMeigas = new Semaphore(1);
     static public Semaphore MutexMeigasVida = new Semaphore(1);
@@ -37,6 +48,10 @@ public class Meigas extends Hilo {
     static public Semaphore MutexCuevaNegra = new Semaphore(1);
     static public Semaphore MutexPlazaSanCosme = new Semaphore(1);
     static public Semaphore MutexNumeroDeMandragoras = new Semaphore(1);
+    static public Semaphore MutexEsperandoBosque = new Semaphore(1);
+    static public Semaphore MutexEsperandoBosqueSalir = new Semaphore(1);
+    static public Semaphore MutexRecolectarSabinasMeigas = new Semaphore(1);
+    static public Semaphore MutexNSabinas = new Semaphore(1);
 
     static private Receta EncargoAux;
     public Receta Encargo;
@@ -55,25 +70,15 @@ public class Meigas extends Hilo {
          * IMPLEMENTACION DE HILOS MEIGAS
          ***********************/
 
-        // FALTA WHILE
-        try {
-            MutexMeigasVida.acquire();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        while (vida == 0) {
-            MutexMeigasVida.release();
+        EsperandoEncargo();
 
-            EsperandoEncargo();
+        // En cuanto Maruxa libera por que tiene un encargo
+        // Compruebo ese encargo, y se lo confirmo a Maruxa que lo he recibido por
 
-            // En cuanto Maruxa libera por que tiene un encargo
-            // Compruebo ese encargo, y se lo confirmo a Maruxa que lo he recibido por
-
-            // se quedara ahi
-            // Hasta que yo se lo confirme
-            ReciboEncargo();
-
+        // se quedara ahi
+        // Hasta que yo se lo confirme
+        ReciboEncargo();
+        while (!this.Encargo.armaActual.name().equals(Veiga.Arma.FIN_SIMULACION.name())) {
             // Dependiendo del ingrediente que necesite, realizare una cosa
             // Realizare otra
 
@@ -84,6 +89,9 @@ public class Meigas extends Hilo {
 
             HuertoXiana();
             EntregoARMASinforiano();
+            EsperandoEncargo();
+            ReciboEncargo();
+            // Recibo El nuevo y lo compruebo, Si es el Fin de simulacion
 
             // Hay que limpiar las variables
             // Para el siguiente Lote
@@ -91,8 +99,9 @@ public class Meigas extends Hilo {
             /*************************
              * * IMPLEMENTACION DE HILOS MEIGAS
              *******************/
-        }
 
+        }
+        this.trazador.Print("Fin");
         /****************** PARTE PRUEBAS BARCA *********************************** */
 
         // TioAnton.AñadirBarreraEmbarcadero();
@@ -258,15 +267,13 @@ public class Meigas extends Hilo {
 
     }
 
-    public static void MaruxaAvisaMuerte() {
-        try {
-            MutexMeigasVida.acquire();
-            vida = 1;
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+    public static void FinMeigas(Trazador trazador) {
+        // Tengo que despertar a todas las meigas que tenga.
+        // Y pasarles el FIN SIMULACION
+        for (int i = 0; i < Veiga.N_MEIGAS; i++) {
+            EnvioEncargo(Veiga.Arma.FIN_SIMULACION, null);
         }
-        MutexMeigasVida.release();
+        trazador.Print("He Avisado a todas las meigas que estaban esperandome");
     }
 
     public void ComprobarIngredientes() {
@@ -315,7 +322,10 @@ public class Meigas extends Hilo {
             }
 
             if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.MANDRAGORA.name())) {
-                // BosqueDelLobo();
+                BosqueDelLobo();
+            }
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.SABINA.name())) {
+                RecolectarSabina();
             }
 
             /********************************
@@ -341,7 +351,8 @@ public class Meigas extends Hilo {
                 MutexPlazaSanCosme.acquire();
                 MeigasCocinandoPSC++;
                 MeigasEsperandoACocinarPSC--;
-                this.trazador.Print("Estoy Dentro ya tengo un Trebedes Disponible");
+                this.trazador.Print("Estoy Dentro ya tengo un Trebedes Disponible" + "Hay MeigasCocinando actual"
+                        + MeigasCocinandoPSC);
                 MutexPlazaSanCosme.release();
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
@@ -471,18 +482,142 @@ public class Meigas extends Hilo {
 
         // Primero Debe Cruzar de Sur a Norte El puente
         PonteDePedra.EsperandoSur(this.trazador);
+        // Una vez Cruzado El puente
         // Al llegar al bosque, si no hay meigas suficientes es decir esperando 7, no
-        // En el caso de que El total de Las Meigas, No necesiten Unicamente (No Repiten
-        // ) Mas de 7
-        // En Ese caso se cambiara el limite
-        // Al numero de Meigas Inferior A 7, Que Pueden Pasar
-        // puede pasar
-        // Cruzan hasta el Claro,
+        // De Normal Necesitamos tener Un grupo de 7;
+        try {
+            MutexEsperandoBosque.acquire();
+            NumeroEsperandoBosque++;
+            this.trazador.Print("Acabo de llegar al Bosque Esperando al grupo");
+            MutexEsperandoBosque.release();
+            /* Comprobacion De Limite, Para grupo */
+            MutexEsperandoBosque.acquire();
+            if (NumeroDeMandragoras < Veiga.GRUPO_BOSQUE) {
+                // Tendre que Esperar A NumeroDeMandragoras
+                // Por que En este Momento, El limite Es Menor que 7
+                Grupo_Bosque_Actual = NumeroDeMandragoras;
+
+            } else if (NumeroDeMandragoras >= Veiga.GRUPO_BOSQUE) {
+
+                // Entonces, Si es Mayor, Entonces Tendremos que Esperar Al Bosque
+
+                Grupo_Bosque_Actual = Veiga.GRUPO_BOSQUE;
+            }
+            if (NumeroEsperandoBosque == Grupo_Bosque_Actual && NDentroDelBosque == 0) {
+
+                this.trazador.Print("Se puede formar un grupo de " + Grupo_Bosque_Actual);
+                BBosqueDelLobo.release(Grupo_Bosque_Actual);
+                // Numero de gente que esta esperando- El numero de gente, que va a entrar
+                NumeroEsperandoBosque = NumeroEsperandoBosque - Grupo_Bosque_Actual;
+            }
+
+            MutexEsperandoBosque.release();
+
+            BBosqueDelLobo.acquire();
+            // Si le digo que Si Hay gente Dentro, No puede hacer Release
+            // Tendra que Hacerlo El que Sale Del Bosque??
+            // Dudas
+
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        /* DENTRO DEL BOSQUE */
+        // No Puede Haber Mas De 7 Personas; dentro del bosque
+        // Duda es, si la primera meiga que tiene mandragora, va a pensar que solo esta
+        // ella,
+        // y tdavia no se han enviado los encargos
+
+        try {
+            MutexEsperandoBosque.acquire();
+            NDentroDelBosque++;
+            this.trazador.Print("Tenemos un Grupo de: " + NDentroDelBosque);
+            MutexEsperandoBosque.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        this.trazador.Print("Voy a Cruzar El Bosque");
         Pausa(Veiga.TMIN_BOSQUE, Veiga.TMAX_BOSQUE);
+        this.trazador.Print("Ya he terminado De Cruzar El bosque");
         // Ya estan en el claro,
         // Desenterrar la raiz de Mandragora, lo que le lleva a cada una
         // un tiempo distinto Aleatorio,d e TMIN, y TMAX.
+        this.trazador.Print("Empiezo A buscar la Mandragora");
+        Pausa(Veiga.TMIN_RECOLECTAR_MANDRAGORA, Veiga.TMAX_RECOLECTAR_MANDRAGORA);
+        this.trazador.Print("Ya tengo la Mandragora");
         // Se reunen con Sus compas para salir
+        try {
+            MutexEsperandoBosque.acquire();
+            NumeroEsperandoBosqueSalir++;
+            this.trazador.Print("Estoy esperando para Salir");
+            if (NumeroEsperandoBosqueSalir == NDentroDelBosque) {
+                this.trazador.Print("Estamos Esperando para salir" + NumeroEsperandoBosqueSalir);
+                BBosqueDelLoboSalir.release(NumeroEsperandoBosqueSalir);
+                NDentroDelBosque = 0;
+                NumeroEsperandoBosqueSalir = 0;
+                // BBosqueDelLobo.release(Grupo_Bosque_Actual);
+                // tendria que Ser asi que si hay alguien esperando
+                // Entonces lo Meto,Pero si el grupo es menor, Eso se debe de COmprobar antes
+                // Entonces sabriamos que no tenemos no deberia de llegar ninguno mas, Si no lo
+                // comprobnariamos Es decir que seamos 3 y llegue un 4, directamente lo
+                // tendriamos que esperar
+                // Pero si a los que estan fuera, y estan esperando por que han visto que hay un
+                // grupo ya dentro, Supongo Que sera Grupo ya de7
+                // Release???
+
+                if (Grupo_Bosque_Actual == NumeroEsperandoBosque) {
+                    this.trazador.Print("Hay gente esperando porque habia un grupo dentro " + Grupo_Bosque_Actual);
+                    BBosqueDelLobo.release(Grupo_Bosque_Actual);
+                    // Numero de gente que esta esperando- El numero de gente, que va a entrar
+                    NumeroEsperandoBosque = NumeroEsperandoBosque - Grupo_Bosque_Actual;
+
+                }
+
+            }
+            MutexEsperandoBosque.release();
+            BBosqueDelLoboSalir.acquire();
+            // Acquire
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        this.trazador.Print("Ya hemos salido del Bosque");
+
+        /* CALCULO PARA LOS SIGUIENTES VIAJES */
+        // Si La meiga, Que comprueba Esta condicion, Solo tiene que ir, A por
+        // mandragora,
+        // Una unica vez, la restamos del Numero de Meigas que Van a ir a por
+        // mandragoras
+        // y Dejamos El Numero de Veces en 0;
+        // En el Caso de que la Megia va a volver, no restamos de que tenga que ir a por
+        // mandragora
+        // Pero si que restamos de El numero propio Total de cada una
+        if (this.NumeroDeMandragorasTotalesEnCadaUna == 1) {
+            try {
+                MutexEsperandoBosque.acquire();
+                NumeroDeMandragoras--;
+                MutexEsperandoBosque.release();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            // Esta Meiga, ya no tendra que Volver,
+            this.NumeroDeMandragorasTotalesEnCadaUna = 0;
+
+        }
+
+        if (this.NumeroDeMandragorasTotalesEnCadaUna > 1) {
+            // En este Caso La meiga, tendra que volver, Por lo que, Seguir en el Numero
+            // De Mandragoras; que solo suma 1, por Elementos
+            this.NumeroDeMandragorasTotalesEnCadaUna--;
+
+        }
+
+        PonteDePedra.EsperandoNorte(this.trazador);
+
         // cuando estan lo vuelven a cruzar el bosque
         // Cruzan el Puente Norte A Sur
 
@@ -513,8 +648,88 @@ public class Meigas extends Hilo {
 
         }
 
+        // Las que Esten Despiertas Por que Tienen Encargo
+        for (int i = 0; i < this.Encargo.receta_Arma.length; i++) {
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.MANDRAGORA.name())) {
+                try {
+                    MutexNumeroDeMandragoras.acquire();
+                    this.NumeroDeMandragorasTotalesEnCadaUna++;
+                    this.trazador.Print("Tiene Mandragora Sumo Contador individual" + " "
+                            + this.NumeroDeMandragorasTotalesEnCadaUna);
+                    MutexNumeroDeMandragoras.release();
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                // En este Caso, quiero saber, Cuantos viajes en total van a necesitar hacer las
+                // Meigas
+                // Para Poder Ir Calculando Luego, Los limites Segun vayan Entrando Meigas Al
+                // Bosque
+
+            }
+
+            if (this.Encargo.receta_Arma[i].ingrediente.name().equals(Paso.Ingrediente.SABINA.name())) {
+                try {
+                    MutexNSabinas.acquire();
+                    NumeroDeSabinas++;
+                    this.trazador.Print("Tengo como ingrediente Sabina, Sumo Contador individual" + NumeroDeSabinas);
+                    MutexNSabinas.release();
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
     }
-    // Planteado papel, Hay que tener en cuenta cuando van varias veces
+
+    public void RecolectarSabina() {
+        // Si hay gente, recolectando
+        // Es decir, Maruxa le esta entregando a una meiga
+        // tendre que esperar a que termine;
+        // Si hay gente dentro, me espero
+        // Me avisaran
+        try {
+            MutexRecolectarSabinasMeigas.acquire();
+            MeigasEsperandoParaSabinas++;
+            this.trazador.Print("Esperando a Que maruxa, reparta");
+            MutexRecolectarSabinasMeigas.release();
+            // Podria comprobar aqui
+            // Si maruxa esta repartiendo
+            // O esperando Repartir
+            BSabinaMeigas.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Una vez la meiga me suelta,
+        // Maruxa se pinza, hasta que yo le pase el arma
+
+        // TendreQue Parale el arma
+        this.trazador.Print("Pasandole mi Arma a Maruxa");
+        Marxua.CheckArma(this.Encargo.armaActual, this.Numero_Meiga);
+        try {
+            BSabinaMeigasRecolectando.acquire();
+            this.trazador.Print("Ya tengo La Sabina");
+            MutexRecolectarSabinasMeigas.acquire();
+            MeigasEsperandoParaSabinas--;
+            MutexRecolectarSabinasMeigas.release();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Tendre que quedarme esperando hasta que me devuelvan
+        // Dependiendo del arma que tengo
+        // la Sabina y ya despues continuas
+        // Por que es, Maruxa, quien la recolecta y te la da
+
+    }
+
+    // Antes de Salir Suelto A MAruxa??
+    // Si hay gente esperandos
 
 }
-// atributo propio de la clase

@@ -58,11 +58,12 @@ public class PonteDePedra extends Hilo {
         CruzoElPuente(trazador);
     }
 
-    public void EsperandoNorte(Trazador trazador) {
+    public static void EsperandoNorte(Trazador trazador) {
 
         try {
             MutexPuenteDePedra.acquire();
             EsperandoNorte++;
+            trazador.Print("Estoy Esperando para cerzar desde el");
             Status = EsperandoNorteS;
             if (DentroDelPuente == vacio) {
                 BEsperandoNorte.release(EsperandoNorte);
@@ -164,6 +165,8 @@ public class PonteDePedra extends Hilo {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        trazador.Print("He terminado de salir del puente");
         // Antes de Salir Si hay Gente Esperando En Alguno de Los Lados
         // Eso si, si hay uno dentro ya no puede entrar nadie mas
 

@@ -7,12 +7,16 @@ public class Marxua extends Hilo {
 
     private static int n;
     private static Veiga.Arma armaActual;
+    private static Veiga.Arma armaActual_ComprobarSabina;
+    private static int NumeroMeiga_actual;
 
     static private Semaphore MutexArma = new Semaphore(1);
     // Declaramos una barrera, para que cuando tengamos el arma, la procesemos
     // y luego recibamos lo siguiente
     static private Semaphore BarreraArmaEnvio = new Semaphore(0);
     static private Semaphore BarreraArmaRecibo = new Semaphore(0);
+    static public Semaphore BarreraMaruxaRepartirSabina = new Semaphore(0);
+    static public Semaphore BarreraMaruxaEsperandoArma = new Semaphore(0);
 
     public Marxua() {
 
@@ -35,6 +39,8 @@ public class Marxua extends Hilo {
                     SiguienteArma();
                 }
                 trazador.Print("He recibido FIN LOTE, Me voy al HUERTO");
+                BarreraMaruxaRepartirSabina.release();
+                RepartirSabrinas();
                 HuertoXiana();
 
                 // COMO se que se ha acabado el lote igualmente antes de terminal la simulacion
@@ -55,7 +61,7 @@ public class Marxua extends Hilo {
         // Si el arma, es fin de simulacion, tendremos que avisar
         // A todas las meigas
         trazador.Print("Recibo Fin Simulacion");
-        Meigas.MaruxaAvisaMuerte();
+        Meigas.FinMeigas(Marxua.trazador);
 
     }
 
@@ -197,4 +203,98 @@ public class Marxua extends Hilo {
 
     }
 
+    // Cuando termina de encargar lotes,
+    // Antes del huerto, pasa por el jardin, para repartir brotes.
+
+    public static void CheckArma(Veiga.Arma Arma, int n) {
+
+        armaActual_ComprobarSabina = Arma;
+        BarreraMaruxaEsperandoArma.release();
+        // Suelto indicandole que ya puede comprobar la variable
+    }
+
+    public void RepartirSabrinas() {
+
+        // En el caso de que tenga que repartir sabinas pero
+        // nadie est, esperando
+        // Me estaria haciendo active waiting, pasando un release y me quedaria pillada
+        // esperando
+        // que me pasen en arma
+
+        trazador.Print("Maruxa, Esta en el jardin, procede a sacar meiga de espera");
+        try {
+            Meigas.MutexNSabinas.acquire();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        while (Meigas.NumeroDeSabinas != 0) {
+            Meigas.MutexNSabinas.release();
+
+            Meigas.BSabinaMeigas.release();
+            // Me quedo esperamndo
+            try {
+                BarreraMaruxaEsperandoArma.acquire();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            // Ya me han dicho que puedo comprobar el arma
+            // Por lo que Comienzo
+            if (Marxua.armaActual_ComprobarSabina.name().equals(Veiga.Arma.MOSQUETE.name())) {
+                trazador.Print("Tengo Como Arma: " + this.armaActual_ComprobarSabina.name()
+                        + "Le Asigno El tiempo Correspondiente");
+                // Para mosquete el tiempo que me piden
+                Pausa(1000, 1500);
+
+            }
+
+            if (Marxua.armaActual_ComprobarSabina.name().equals(Veiga.Arma.LANZA.name())) {
+                trazador.Print("Tengo Como Arma: " + this.armaActual_ComprobarSabina.name()
+                        + "Le Asigno El tiempo Correspondiente");
+                // Para mosquete el tiempo que me piden
+                Pausa(2000, 2000);
+
+            }
+
+            if (Marxua.armaActual_ComprobarSabina.name().equals(Veiga.Arma.ALABARDA.name())) {
+                trazador.Print("Tengo Como Arma: " + this.armaActual_ComprobarSabina.name()
+                        + "Le Asigno El tiempo Correspondiente");
+                // Para mosquete el tiempo que me piden
+                Pausa(3000, 3125);
+
+            }
+
+            if (Marxua.armaActual_ComprobarSabina.name().equals(Veiga.Arma.TRABUCO.name())) {
+                trazador.Print("Tengo Como Arma: " + this.armaActual_ComprobarSabina.name()
+                        + "Le Asigno El tiempo Correspondiente");
+                // Para mosquete el tiempo que me piden
+                Pausa(4000, 5210);
+
+            }
+            try {
+                Meigas.MutexNSabinas.acquire();
+                trazador.Print("Le he dado una sabina a la meiga, Resto una de las que tengo que entregar"
+                        + NumeroMeiga_actual);
+                Meigas.NumeroDeSabinas--;
+                Meigas.MutexNSabinas.release();
+
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            // RESTO SABINAS ENTREGADAS
+            // Dependiendo de cada arma, Habre hecho el Pause Correspondiente.
+            // Aqui Soltare a la meiga Queya habria terminado
+            trazador.Print("Libero a la meiga" + NumeroMeiga_actual);
+            Meigas.BSabinaMeigasRecolectando.release();
+            try {
+                Meigas.MutexNSabinas.acquire();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        Meigas.MutexNSabinas.release();
+    }
 }
