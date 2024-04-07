@@ -406,6 +406,7 @@ public class Meigas extends Hilo {
         try {
             MutexFonteDoCaño.acquire();
             MeigasEsperandoFDC--;
+            this.trazador.Print("Hay Meigas Dentro " + MeigasDentroFDC + "Hay Esperando");
             MeigasDentroFDC++;
             MutexFonteDoCaño.release();
         } catch (InterruptedException e) {
@@ -414,10 +415,11 @@ public class Meigas extends Hilo {
         }
         this.trazador.Print("Recolectando Agua");
         Pausa(Veiga.TMIN_RECOLECTAR_AGUA, Veiga.TMAX_RECOLECTAR_AGUA);
-        this.trazador.Print("He terminado de Recolectar Agua");
+
         try {
             MutexFonteDoCaño.acquire();
             MeigasDentroFDC--;
+            this.trazador.Print("He terminado de Recolectar Agua" + "Hay esperando" + MeigasEsperandoFDC);
             MutexFonteDoCaño.release();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block

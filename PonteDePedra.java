@@ -31,14 +31,14 @@ public class PonteDePedra extends Hilo {
 
     public static void EsperandoSur(Trazador trazador) {
 
-        trazador.Print("Esperando Para Cruzar SN");
         try {
             MutexPuenteDePedra.acquire();
             EsperandoSur++;
+            trazador.Print("Estoy Esperando para cerzar desde el SUR" + "Hay Esperando Conmigo " + EsperandoSur);
             Status = EsperandoSurS;
             MutexPuenteDePedra.release();
             // SI ESTA VACIO ENTRO SOLO ESPERO CUANDO HAY GENTE
-            if (DentroDelPuente != vacio) {
+            if (DentroDelPuente != 0) {
 
                 BEsperandoSur.acquire();
             }
@@ -65,10 +65,11 @@ public class PonteDePedra extends Hilo {
         try {
             MutexPuenteDePedra.acquire();
             EsperandoNorte++;
-            trazador.Print("Estoy Esperando para cerzar desde el NORTE");
+            trazador.Print("Estoy Esperando para cerzar desde el NORTE" + "Hay Esperando Conmigo " + EsperandoNorte);
             Status = EsperandoNorteS;
             MutexPuenteDePedra.release();
-            if (DentroDelPuente != vacio) {
+            if (DentroDelPuente != 0) {
+
                 BEsperandoNorte.acquire();
 
             }
@@ -133,39 +134,42 @@ public class PonteDePedra extends Hilo {
              * haya gente en el Norte
              * 
              */
-
-            /*
-             * En el Caso de haya gente en los 2 lados Es decir que sus Colas Sean Distintas
-             * de 0 Tiene Preferencia el Norte
-             */
-            // Controlar, EL estatus para imprimir
-            if (EsperandoNorte != 0 && EsperandoSur != 0) {
-                Status = EsperandoNorteS;
-                BEsperandoNorte.release(EsperandoNorte);
-                trazador.Print(
-                        "Hay Gente Esperando en El Norte y En el Sur, los Dejo Pasar a Los Del norte que tienen Preferencia");
-
-            }
-            // Si solo La cola Del Norte Tiene Gente, Es Decir, La del Sur Puede Tener Gente
-            // O no,
-            // Entrarian Al Puente Los que Estan Esperando en el Norte
-            if (EsperandoNorte != 0) {
-                Status = EsperandoNorteS;
-                BEsperandoNorte.release(EsperandoNorte);
-                trazador.Print("Hay Gente Esperando en El Norte, los Dejo Pasar" + EsperandoNorte);
-
-            } // Solo En El Caso Especifico En el Cual;
-              // No hay Nadie Esperando En el norte, Y hay gente Esperando en El Sur
-              // Entonces Entrarian Los Del Sur
-            if (EsperandoSur != 0 && EsperandoNorte == 0) {
-                Status = EsperandoSurS;
-                BEsperandoSur.release(EsperandoSur);
-                trazador.Print("Hay Gente Esperando en El Sur, los Dejo Pasar" + EsperandoSur);
-            }
             SalgoDelPuente++;
             if (DentroDelPuente == SalgoDelPuente) {
+                // Limpiar las variable solo la ultima
+                // Para indicar a las demas que pueden pasar
                 DentroDelPuente = 0;
                 SalgoDelPuente = 0;
+
+                /*
+                 * En el Caso de haya gente en los 2 lados Es decir que sus Colas Sean Distintas
+                 * de 0 Tiene Preferencia el Norte
+                 */
+                // Controlar, EL estatus para imprimir
+                if (EsperandoNorte != 0 && EsperandoSur != 0) {
+                    Status = EsperandoNorteS;
+                    BEsperandoNorte.release(EsperandoNorte);
+                    trazador.Print(
+                            "Hay Gente Esperando en El Norte y En el Sur, los Dejo Pasar a Los Del norte que tienen Preferencia");
+
+                }
+                // Si solo La cola Del Norte Tiene Gente, Es Decir, La del Sur Puede Tener Gente
+                // O no,
+                // Entrarian Al Puente Los que Estan Esperando en el Norte
+                if (EsperandoNorte != 0 && EsperandoSur == 0) {
+                    Status = EsperandoNorteS;
+                    BEsperandoNorte.release(EsperandoNorte);
+                    trazador.Print("Hay Gente Esperando en El Norte, los Dejo Pasar" + EsperandoNorte);
+
+                } // Solo En El Caso Especifico En el Cual;
+                  // No hay Nadie Esperando En el norte, Y hay gente Esperando en El Sur
+                  // Entonces Entrarian Los Del Sur
+                if (EsperandoSur != 0 && EsperandoNorte == 0) {
+                    Status = EsperandoSurS;
+                    BEsperandoSur.release(EsperandoSur);
+                    trazador.Print("Hay Gente Esperando en El Sur, los Dejo Pasar" + EsperandoSur);
+                }
+
             }
 
             MutexPuenteDePedra.release();

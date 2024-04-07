@@ -30,7 +30,7 @@ javac Veiga.java
 
 # Ejecutar el programa principal (Veiga.java)
 echo "Ejecutando Veiga.java..."
-java Veiga 
+java Veiga > salida.txt
 
 
 # Borrar archivos .class
